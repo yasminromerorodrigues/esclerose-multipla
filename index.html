@@ -11,7 +11,9 @@
 <meta property="og:locale" content="pt_BR">
 <meta property="og:title" content="Tudo sobre esclerose múltipla">
 <meta property="og:description" content="Sintomas, primeiros passos, tratamentos, direitos e histórias reais, em linguagem simples.">
-<meta property="og:image" content="og-image.png">
+<meta property="og:image" content="https://yasminromerorodrigues.github.io/esclerose-multipla/og-image.png">
+<meta property="og:url" content="https://yasminromerorodrigues.github.io/esclerose-multipla/">
+<link rel="canonical" href="https://yasminromerorodrigues.github.io/esclerose-multipla/">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -29,11 +31,6 @@
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px);
   padding-bottom:env(safe-area-inset-bottom,0px);
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --paper:#10231E; --ink:#E4D9BE; --teal:#5CC2B8; --orange:#E0603A; --sage:#2E4640; --hl:#1A322C;
-  }
 }
 :root[data-theme="dark"]{
   --paper:#10231E; --ink:#E4D9BE; --teal:#5CC2B8; --orange:#E0603A; --sage:#2E4640; --hl:#1A322C;
@@ -266,7 +263,6 @@ footer{padding:1rem 0 3rem;font-size:.82rem}
 .dots i:nth-child(2){opacity:1;background:var(--paper);outline:2px solid var(--ink)}
 /* ===== Legibilidade e estrutura (revisão) ===== */
 :root{--paper:#F3EDE0;--hl:#E6DCC6;--orange:#EE8A62;--sage:#A8B5A2;--card:#F3EDE0;--mono:"Atkinson Hyperlegible",Verdana,"Segoe UI",system-ui,sans-serif}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--card:#10231E;--sage:#3C5650;--orange:#EE8A62}}
 :root[data-theme="dark"]{--card:#10231E;--sage:#3C5650}
 :root[data-contrast="high"]{--card:#FFFFFF;--paper:#FFFFFF;--sage:#E3E3E3;--orange:#FF9C78}
 :root[data-font="easy"]{--mono:"Atkinson Hyperlegible",Verdana,"Segoe UI",system-ui,sans-serif}
@@ -924,7 +920,7 @@ nav.tabs .mlinks a.on{background:var(--teal);color:var(--on-teal)}
   try{var t=localStorage.getItem('em-theme'); if(t) root.setAttribute('data-theme',t);}catch(e){}
   btn.addEventListener('click',function(){
     var cur=root.getAttribute('data-theme');
-    if(!cur){cur=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+    if(!cur){cur='light';}
     var next=cur==='dark'?'light':'dark';
     root.setAttribute('data-theme',next);
     try{localStorage.setItem('em-theme',next);}catch(e){}
