@@ -1,0 +1,129 @@
+name: Radar EM
+
+# Busca novidades sobre esclerose múltipla todos os dias e salva em radar.json
+on:
+  schedule:
+    - cron: "0 9 * * *"   # todo dia às 6h (horário de Brasília)
+  workflow_dispatch:       # permite rodar manualmente pela aba Actions
+
+permissions:
+  contents: write
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Buscar novidades
+        run: |
+          python3 - <<'PYEOF'
+          import json, re, datetime, email.utils, urllib.request, urllib.parse
+          import xml.etree.ElementTree as ET
+
+          UA = {"User-Agent": "radar-esclerose-multipla/1.0 (GitHub Pages)"}
+
+          def get(url, timeout=40):
+              req = urllib.request.Request(url, headers=UA)
+              with urllib.request.urlopen(req, timeout=timeout) as r:
+                  return r.read()
+
+          try:
+              old = json.load(open("radar.json", encoding="utf-8"))
+          except Exception:
+              old = {}
+
+          now = datetime.datetime.now(datetime.timezone.utc)
+          out = {"updated": now.isoformat(timespec="minutes"), "news": [], "papers": [], "trials": [], "errors": []}
+
+          # 1. Notícias em português (Google Notícias)
+          try:
+              q = urllib.parse.quote('"esclerose múltipla" when:30d')
+              root = ET.fromstring(get(f"https://news.google.com/rss/search?q={q}&hl=pt-BR&gl=BR&ceid=BR:pt-419"))
+              seen = set()
+              for it in root.iter("item"):
+                  title = (it.findtext("title") or "").strip()
+                  link = (it.findtext("link") or "").strip()
+                  src_el = it.find("source")
+                  src = (src_el.text or "").strip() if src_el is not None else ""
+                  if src and title.endswith(" - " + src):
+                      title = title[: -(len(src) + 3)].strip()
+                  key = re.sub(r"\W+", "", title.lower())[:80]
+                  if not title or not link.startswith("http") or key in seen:
+                      continue
+                  seen.add(key)
+                  try:
+                      d = email.utils.parsedate_to_datetime(it.findtext("pubDate")).date().isoformat()
+                  except Exception:
+                      d = ""
+                  out["news"].append({"title": title, "url": link, "source": src, "date": d})
+              out["news"].sort(key=lambda x: x["date"], reverse=True)
+              out["news"] = out["news"][:15]
+          except Exception as e:
+              out["errors"].append("news: " + str(e)[:150])
+
+          # 2. Estudos científicos novos (PubMed)
+          TYPES = [("Meta-Analysis", "Metanálise"), ("Systematic Review", "Revisão sistemática"),
+                   ("Randomized Controlled Trial", "Ensaio clínico randomizado"), ("Clinical Trial, Phase III", "Ensaio clínico fase 3"),
+                   ("Clinical Trial", "Ensaio clínico"), ("Review", "Revisão")]
+          try:
+              term = ('"multiple sclerosis"[ti] AND (randomized controlled trial[pt] OR systematic review[pt] '
+                      'OR meta-analysis[pt] OR clinical trial, phase iii[pt])')
+              p = urllib.parse.urlencode({"db": "pubmed", "term": term, "reldate": 30, "datetype": "edat",
+                                          "retmax": 15, "sort": "pub_date", "retmode": "json"})
+              ids = json.loads(get("https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?" + p))["esearchresult"]["idlist"]
+              if ids:
+                  p = urllib.parse.urlencode({"db": "pubmed", "id": ",".join(ids), "retmode": "json"})
+                  res = json.loads(get("https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?" + p))["result"]
+                  for i in ids:
+                      r = res.get(i, {})
+                      title = re.sub(r"<[^>]+>", "", r.get("title", "")).strip()
+                      if not title:
+                          continue
+                      pts = r.get("pubtype", [])
+                      kind = next((pt for en, pt in TYPES if en in pts), "Estudo")
+                      date = (r.get("sortpubdate") or "")[:10].replace("/", "-")
+                      out["papers"].append({"title": title, "url": f"https://pubmed.ncbi.nlm.nih.gov/{i}/",
+                                            "journal": r.get("fulljournalname") or r.get("source", ""), "date": date, "type": kind})
+          except Exception as e:
+              out["errors"].append("papers: " + str(e)[:150])
+
+          # 3. Estudos clínicos recrutando no Brasil (ClinicalTrials.gov)
+          try:
+              base = {"query.cond": "multiple sclerosis", "query.locn": "Brazil", "filter.overallStatus": "RECRUITING",
+                      "pageSize": 20, "format": "json"}
+              try:
+                  data = json.loads(get("https://clinicaltrials.gov/api/v2/studies?" + urllib.parse.urlencode(dict(base, sort="LastUpdatePostDate:desc"))))
+              except Exception:
+                  data = json.loads(get("https://clinicaltrials.gov/api/v2/studies?" + urllib.parse.urlencode(base)))
+              for st in data.get("studies", []):
+                  ps = st.get("protocolSection", {})
+                  idm = ps.get("identificationModule", {})
+                  nct = idm.get("nctId")
+                  if not nct:
+                      continue
+                  phases = [ph.replace("PHASE", "Fase ").replace("EARLY_", "inicial ") for ph in ps.get("designModule", {}).get("phases", []) if ph != "NA"]
+                  locs = ps.get("contactsLocationsModule", {}).get("locations", [])
+                  cities = sorted({l.get("city", "") for l in locs if l.get("country") == "Brazil" and l.get("city")})
+                  out["trials"].append({"title": idm.get("briefTitle", ""), "url": f"https://clinicaltrials.gov/study/{nct}",
+                                        "phase": " / ".join(phases), "cities": cities[:8],
+                                        "date": ps.get("statusModule", {}).get("lastUpdatePostDateStruct", {}).get("date", "")})
+          except Exception as e:
+              out["errors"].append("trials: " + str(e)[:150])
+
+          # Se uma fonte falhar, mantém os dados anteriores dela
+          for k in ("news", "papers", "trials"):
+              if not out[k] and old.get(k):
+                  out[k] = old[k]
+
+          with open("radar.json", "w", encoding="utf-8") as f:
+              json.dump(out, f, ensure_ascii=False, indent=1)
+          print({k: len(out[k]) for k in ("news", "papers", "trials")}, out["errors"])
+          PYEOF
+
+      - name: Salvar radar.json
+        run: |
+          git config user.name "radar-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add radar.json
+          git diff --cached --quiet || (git commit -m "Radar: atualização automática" && git push)
