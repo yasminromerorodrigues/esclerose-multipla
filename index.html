@@ -200,7 +200,7 @@ h2.sub{font-size:clamp(1.8rem,7vw,2.6rem);margin-top:.5rem}
 /* Tools, glossary, myths */
 .fld{display:grid;gap:.35rem;padding:.8rem 1rem}
 .fld > label,.fld > .lbl{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:1.05rem}
-.fld input[type=date],.fld input[type=search],.fld textarea,.fld input[type=text]{font:inherit;font-size:1rem;color:var(--ink);background:var(--paper);border:2px solid var(--ink);padding:.5rem .6rem;width:100%;border-radius:0}
+.fld input[type=date],.fld input[type=search],.fld textarea,.fld input[type=text],.fld input[type=password]{font:inherit;font-size:1rem;color:var(--ink);background:var(--paper);border:2px solid var(--ink);padding:.5rem .6rem;width:100%;border-radius:0}
 .fld textarea{min-height:5.5rem;resize:vertical}
 .fld input[type=range]{width:100%;accent-color:var(--orange)}
 .rangeval{font-family:var(--display);font-weight:700;font-size:1.6rem}
@@ -329,6 +329,10 @@ footer{padding-bottom:6rem}
 .rlist .ritem a{font-weight:700;line-height:1.35}
 .rlist .ritem small{display:block;font-size:.88rem;margin-top:.25rem}
 .rlist .rempty{padding:.9rem 1rem;font-size:.95rem}
+.linkbtn{background:none;border:0;padding:.45rem .2rem;font:inherit;font-weight:700;color:var(--ink);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.hint{font-size:.88rem}
+.btn[disabled]{opacity:.6;cursor:wait}
+#conta .seg button{font-size:1.05rem;padding:.4rem .9rem}
 </style>
 </head>
 <body>
@@ -350,7 +354,7 @@ footer{padding-bottom:6rem}
       <span class="cur" id="curSec" aria-live="polite">Início</span>
       <a class="homebtn" href="#inicio" aria-label="Voltar ao início">⌂ Início</a>
     </div>
-    <div class="menu" id="menuPanel" hidden><div class="mgroup"><div class="mlinks"><a href="#inicio"><span>00</span>Início</a></div></div><div class="mgroup"><h3>Para começar</h3><div class="mlinks"><a href="#entender"><span>01</span>Entender</a><a href="#primeiros"><span>02</span>Primeiros 30 dias</a><a href="#sintomas"><span>03</span>Sintomas</a></div></div><div class="mgroup"><h3>No dia a dia</h3><div class="mlinks"><a href="#ferramentas"><span>04</span>Ferramentas</a><a href="#ajudar"><span>05</span>Como ajudar</a><a href="#direitos"><span>06</span>Direitos e acessibilidade</a><a href="#glossario"><span>07</span>Glossário e mitos</a></div></div><div class="mgroup"><h3>Ciência e tratamento</h3><div class="mlinks"><a href="#noticias"><span>08</span>Notícias de 2026</a><a href="#radar"><span>09</span>Radar diário</a><a href="#estudos"><span>10</span>Estudos pelo mundo</a><a href="#pesquisas"><span>11</span>Pesquisas marcantes</a><a href="#tratamentos"><span>12</span>Tratamentos</a><a href="#mundo"><span>13</span>Acesso no mundo</a></div></div><div class="mgroup"><h3>Histórias e mais</h3><div class="mlinks"><a href="#pessoas"><span>14</span>Pessoas</a><a href="#cultura"><span>15</span>Filmes e livros</a><a href="#sobre"><span>16</span>Sobre mim</a><a href="#fontes"><span>17</span>Fontes</a></div></div></div>
+    <div class="menu" id="menuPanel" hidden><div class="mgroup"><div class="mlinks"><a href="#inicio"><span>00</span>Início</a></div></div><div class="mgroup"><h3>Para começar</h3><div class="mlinks"><a href="#entender"><span>01</span>Entender</a><a href="#primeiros"><span>02</span>Primeiros 30 dias</a><a href="#sintomas"><span>03</span>Sintomas</a></div></div><div class="mgroup"><h3>No dia a dia</h3><div class="mlinks"><a href="#ferramentas"><span>04</span>Ferramentas</a><a href="#ajudar"><span>05</span>Como ajudar</a><a href="#direitos"><span>06</span>Direitos e acessibilidade</a><a href="#glossario"><span>07</span>Glossário e mitos</a></div></div><div class="mgroup"><h3>Ciência e tratamento</h3><div class="mlinks"><a href="#noticias"><span>08</span>Notícias de 2026</a><a href="#radar"><span>09</span>Radar diário</a><a href="#estudos"><span>10</span>Estudos pelo mundo</a><a href="#pesquisas"><span>11</span>Pesquisas marcantes</a><a href="#tratamentos"><span>12</span>Tratamentos</a><a href="#mundo"><span>13</span>Acesso no mundo</a></div></div><div class="mgroup"><h3>Histórias e mais</h3><div class="mlinks"><a href="#pessoas"><span>14</span>Pessoas</a><a href="#cultura"><span>15</span>Filmes e livros</a><a href="#sobre"><span>16</span>Sobre mim</a><a href="#privacidade"><span>17</span>Privacidade</a><a href="#fontes"><span>18</span>Fontes</a></div></div></div>
   </div>
 </nav>
 
@@ -380,7 +384,7 @@ footer{padding-bottom:6rem}
 </div>
 
 <h2 class="sub">Escolha por onde <b>começar</b></h2>
-<h3 class="idx-h">Para começar</h3><div class="idx"><a class="idx-card" href="#entender"><span class="n">01</span><span class="b"><strong>Entender</strong><small>O que é a EM, suas formas e causas</small></span></a><a class="idx-card" href="#primeiros"><span class="n">02</span><span class="b"><strong>Primeiros 30 dias</strong><small>Roteiro para quem acabou de receber o diagnóstico</small></span></a><a class="idx-card" href="#sintomas"><span class="n">03</span><span class="b"><strong>Sintomas</strong><small>Os sintomas mais comuns e quando procurar ajuda</small></span></a></div><h3 class="idx-h">No dia a dia</h3><div class="idx"><a class="idx-card" href="#ferramentas"><span class="n">04</span><span class="b"><strong>Ferramentas</strong><small>Diário de sintomas e preparador de consulta</small></span></a><a class="idx-card" href="#ajudar"><span class="n">05</span><span class="b"><strong>Como ajudar</strong><small>Para amigos, família e colegas</small></span></a><a class="idx-card" href="#direitos"><span class="n">06</span><span class="b"><strong>Direitos e acessibilidade</strong><small>SUS, INSS, isenções e adaptações</small></span></a><a class="idx-card" href="#glossario"><span class="n">07</span><span class="b"><strong>Glossário e mitos</strong><small>Termos dos laudos e dúvidas comuns</small></span></a></div><h3 class="idx-h">Ciência e tratamento</h3><div class="idx"><a class="idx-card" href="#noticias"><span class="n">08</span><span class="b"><strong>Notícias de 2026</strong><small>O que aconteceu neste ano, explicado</small></span></a><a class="idx-card" href="#radar"><span class="n">09</span><span class="b"><strong>Radar diário</strong><small>Novidades buscadas todo dia, automaticamente</small></span></a><a class="idx-card" href="#estudos"><span class="n">10</span><span class="b"><strong>Estudos pelo mundo</strong><small>Pesquisas recentes, traduzidas</small></span></a><a class="idx-card" href="#pesquisas"><span class="n">11</span><span class="b"><strong>Pesquisas marcantes</strong><small>Os estudos que mudaram a EM</small></span></a><a class="idx-card" href="#tratamentos"><span class="n">12</span><span class="b"><strong>Tratamentos</strong><small>Remédios aprovados e o que vem por aí</small></span></a><a class="idx-card" href="#mundo"><span class="n">13</span><span class="b"><strong>Acesso no mundo</strong><small>Como a EM é tratada em cada país</small></span></a></div><h3 class="idx-h">Histórias e mais</h3><div class="idx"><a class="idx-card" href="#pessoas"><span class="n">14</span><span class="b"><strong>Pessoas</strong><small>Famosos que falaram sobre a EM</small></span></a><a class="idx-card" href="#cultura"><span class="n">15</span><span class="b"><strong>Filmes e livros</strong><small>Indicações sobre EM</small></span></a><a class="idx-card" href="#sobre"><span class="n">16</span><span class="b"><strong>Sobre mim</strong><small>Quem fez este site</small></span></a><a class="idx-card" href="#fontes"><span class="n">17</span><span class="b"><strong>Fontes</strong><small>De onde vem cada informação</small></span></a></div>
+<h3 class="idx-h">Para começar</h3><div class="idx"><a class="idx-card" href="#entender"><span class="n">01</span><span class="b"><strong>Entender</strong><small>O que é a EM, suas formas e causas</small></span></a><a class="idx-card" href="#primeiros"><span class="n">02</span><span class="b"><strong>Primeiros 30 dias</strong><small>Roteiro para quem acabou de receber o diagnóstico</small></span></a><a class="idx-card" href="#sintomas"><span class="n">03</span><span class="b"><strong>Sintomas</strong><small>Os sintomas mais comuns e quando procurar ajuda</small></span></a></div><h3 class="idx-h">No dia a dia</h3><div class="idx"><a class="idx-card" href="#ferramentas"><span class="n">04</span><span class="b"><strong>Ferramentas</strong><small>Diário de sintomas e preparador de consulta</small></span></a><a class="idx-card" href="#ajudar"><span class="n">05</span><span class="b"><strong>Como ajudar</strong><small>Para amigos, família e colegas</small></span></a><a class="idx-card" href="#direitos"><span class="n">06</span><span class="b"><strong>Direitos e acessibilidade</strong><small>SUS, INSS, isenções e adaptações</small></span></a><a class="idx-card" href="#glossario"><span class="n">07</span><span class="b"><strong>Glossário e mitos</strong><small>Termos dos laudos e dúvidas comuns</small></span></a></div><h3 class="idx-h">Ciência e tratamento</h3><div class="idx"><a class="idx-card" href="#noticias"><span class="n">08</span><span class="b"><strong>Notícias de 2026</strong><small>O que aconteceu neste ano, explicado</small></span></a><a class="idx-card" href="#radar"><span class="n">09</span><span class="b"><strong>Radar diário</strong><small>Novidades buscadas todo dia, automaticamente</small></span></a><a class="idx-card" href="#estudos"><span class="n">10</span><span class="b"><strong>Estudos pelo mundo</strong><small>Pesquisas recentes, traduzidas</small></span></a><a class="idx-card" href="#pesquisas"><span class="n">11</span><span class="b"><strong>Pesquisas marcantes</strong><small>Os estudos que mudaram a EM</small></span></a><a class="idx-card" href="#tratamentos"><span class="n">12</span><span class="b"><strong>Tratamentos</strong><small>Remédios aprovados e o que vem por aí</small></span></a><a class="idx-card" href="#mundo"><span class="n">13</span><span class="b"><strong>Acesso no mundo</strong><small>Como a EM é tratada em cada país</small></span></a></div><h3 class="idx-h">Histórias e mais</h3><div class="idx"><a class="idx-card" href="#pessoas"><span class="n">14</span><span class="b"><strong>Pessoas</strong><small>Famosos que falaram sobre a EM</small></span></a><a class="idx-card" href="#cultura"><span class="n">15</span><span class="b"><strong>Filmes e livros</strong><small>Indicações sobre EM</small></span></a><a class="idx-card" href="#sobre"><span class="n">16</span><span class="b"><strong>Sobre mim</strong><small>Quem fez este site</small></span></a><a class="idx-card" href="#privacidade"><span class="n">17</span><span class="b"><strong>Privacidade</strong><small>Como cuidamos dos seus dados</small></span></a><a class="idx-card" href="#fontes"><span class="n">18</span><span class="b"><strong>Fontes</strong><small>De onde vem cada informação</small></span></a></div>
 </section>
 
 <!-- ENTENDER -->
@@ -480,7 +484,29 @@ footer{padding-bottom:6rem}
 <!-- FERRAMENTAS -->
 <section id="ferramentas">
   <h2><b>04</b> Ferramentas</h2>
-  <p class="kicker">Um diário para registrar como você se sente e um preparador de consulta. Seus dados ficam guardados só neste aparelho e navegador: nada é enviado para lugar nenhum. Se você limpar os dados do navegador, o diário é apagado, então exporte de vez em quando.</p>
+  <p class="kicker">Um diário para registrar como você se sente e um preparador de consulta. Você pode usar sem conta, e aí os registros ficam só neste aparelho, ou criar uma conta gratuita para acessar seu diário de qualquer celular ou computador.</p>
+
+  <h2 class="sub">Sua <b>conta</b></h2>
+  <div class="board" id="conta">
+    <div class="rh"><div class="num">☁</div><div class="ttl">Seu diário em qualquer aparelho</div><div class="tag" id="acModo">Usando só neste aparelho</div></div>
+    <div id="acAnon">
+      <div class="full"><p>Com uma conta gratuita, seus registros ficam guardados com segurança e aparecem em qualquer celular ou computador. Sem conta, tudo continua funcionando, mas os registros ficam só neste navegador.</p></div>
+      <div class="btns" style="padding-bottom:0"><div class="seg" role="group" aria-label="Escolha uma opção"><button type="button" id="acTabEntrar" aria-pressed="true">Entrar</button><button type="button" id="acTabCriar" aria-pressed="false">Criar conta</button></div></div>
+      <div class="fld"><label for="acEmail">E-mail</label><input type="text" inputmode="email" id="acEmail" autocomplete="email" placeholder="seu@email.com"></div>
+      <div class="fld"><label for="acSenha">Senha</label><input type="password" id="acSenha" autocomplete="current-password"><span id="acSenhaDica" class="hint" hidden>Use pelo menos 8 caracteres.</span></div>
+      <div class="fld" id="acConsentRow" hidden><label class="q" style="text-transform:none;font-family:var(--mono);font-weight:400;font-size:.95rem"><input type="checkbox" id="acConsent"><span>Li a <a href="#privacidade">política de privacidade</a> e autorizo que meus registros de saúde sejam guardados na minha conta.</span></label></div>
+      <div class="btns"><button class="btn pri" type="button" id="acEntrar">Entrar</button><button class="linkbtn" type="button" id="acEsqueci">Esqueci minha senha</button></div>
+    </div>
+    <div id="acLogado" hidden>
+      <div class="full"><p>Você está conectada como <strong id="acEmailLogado"></strong>. Os registros do diário são salvos na sua conta.</p></div>
+      <div class="btns"><button class="btn pri" type="button" id="acMigrar" hidden>Enviar registros deste aparelho</button><button class="btn" type="button" id="acSair">Sair</button><button class="btn" type="button" id="acExcluir">Excluir minha conta e meus dados</button></div>
+    </div>
+    <div id="acNova" hidden>
+      <div class="fld"><label for="acNovaSenha">Crie uma nova senha</label><input type="password" id="acNovaSenha" autocomplete="new-password"><span class="hint">Use pelo menos 8 caracteres.</span></div>
+      <div class="btns"><button class="btn pri" type="button" id="acSalvarSenha">Salvar nova senha</button></div>
+    </div>
+    <div class="msg" id="acMsg" role="status" hidden></div>
+  </div>
 
   <h2 class="sub">Diário de <b>sintomas</b></h2>
   <div class="board" id="diario">
@@ -939,9 +965,31 @@ footer{padding-bottom:6rem}
   </div></div>
 </section>
 
+<!-- PRIVACIDADE -->
+<section id="privacidade">
+  <h2><b>17</b> Política de privacidade</h2>
+  <p class="kicker">Versão 1.0, de outubro de 2026. Em linguagem simples, como o resto do site.</p>
+  <div class="board">
+    <div class="rh"><div class="num">1</div><div class="ttl">Sem conta, nada sai do seu aparelho</div><div class="tag">Uso sem cadastro</div></div>
+    <div class="rb"><div class="ico">1</div><div class="txt"><p>Se você usa o diário e o preparador de consulta sem criar conta, tudo fica guardado só no navegador do seu aparelho. Nenhuma informação é enviada para este site ou para qualquer outro lugar.</p><p>O site também não usa cookies de rastreamento nem ferramentas de publicidade. Ele guarda no seu aparelho apenas preferências, como tema e tamanho da letra.</p></div></div>
+    <div class="rh"><div class="num">2</div><div class="ttl">O que guardamos se você criar uma conta</div><div class="tag">Dados coletados</div></div>
+    <div class="rb"><div class="ico">2</div><div class="txt"><p>Seu e-mail, sua senha (guardada de forma criptografada, que ninguém consegue ler), a data em que você autorizou o uso dos dados e os registros que você faz no diário: data, nível de fadiga, sintomas, gatilhos e anotações.</p><p>Os registros do diário são <strong>dados de saúde</strong>, que a Lei Geral de Proteção de Dados (LGPD) considera sensíveis. Por isso só os guardamos com a sua autorização expressa, dada na hora de criar a conta.</p></div></div>
+    <div class="rh"><div class="num">3</div><div class="ttl">Para que usamos</div><div class="tag">Só para o seu diário</div></div>
+    <div class="rb"><div class="ico">3</div><div class="txt"><p>Exclusivamente para guardar o seu diário e mostrá-lo a você em qualquer aparelho. Não vendemos, não compartilhamos, não usamos para publicidade e não fazemos análises com os seus registros.</p></div></div>
+    <div class="rh"><div class="num">4</div><div class="ttl">Onde ficam e quem acessa</div><div class="tag">Servidor no Brasil</div></div>
+    <div class="rb"><div class="ico">4</div><div class="txt"><p>Os dados ficam no Supabase, um serviço de banco de dados, em servidores localizados em São Paulo. A conexão é criptografada, e regras de segurança garantem que cada conta veja apenas os próprios registros.</p><p>Por transparência: como responsável pelo site, a administradora tem acesso técnico ao banco de dados para manutenção. Ela se compromete a não consultar o conteúdo dos diários.</p></div></div>
+    <div class="rh"><div class="num">5</div><div class="ttl">Seus direitos</div><div class="tag">Você decide</div></div>
+    <div class="rb"><div class="ico">5</div><div class="txt"><p>Você pode, a qualquer momento: ver e baixar seus registros (botão "Baixar diário em PDF"), apagar registros, sair da conta e <strong>excluir sua conta e todos os seus dados</strong>, pelo botão na página Ferramentas. A exclusão é imediata e definitiva, e equivale a retirar a sua autorização.</p><p>Para dúvidas ou outros pedidos sobre seus dados, escreva para <a href="mailto:tudosobreesclerosemultipla@gmail.com"><strong>tudosobreesclerosemultipla@gmail.com</strong></a>.</p></div></div>
+    <div class="rh"><div class="num">6</div><div class="ttl">Por quanto tempo guardamos</div><div class="tag">Enquanto a conta existir</div></div>
+    <div class="rb"><div class="ico">6</div><div class="txt"><p>Os registros ficam guardados enquanto a sua conta existir. Quando você exclui a conta, eles são apagados junto.</p></div></div>
+    <div class="rh"><div class="num">7</div><div class="ttl">Segurança e mudanças</div><div class="tag">Compromisso</div></div>
+    <div class="rb"><div class="ico">7</div><div class="txt"><p>Nenhum sistema na internet é 100% seguro, mas adotamos cuidados para proteger seus dados. Se acontecer algum incidente que afete suas informações, você será avisada por e-mail. Se esta política mudar, a nova versão será publicada aqui com a data atualizada.</p><p>Responsável pelo site e pelos dados: Yasmin Romero Rodrigues.</p></div></div>
+  </div>
+</section>
+
 <!-- FONTES -->
 <section id="fontes">
-  <h2><b>17</b> Fontes</h2>
+  <h2><b>18</b> Fontes</h2>
   <div class="board">
     <ol class="sources">
       <li><a href="https://www.msif.org/about-us/advocacy/atlas">Atlas of MS, MSIF</a></li>
@@ -990,6 +1038,8 @@ footer{padding-bottom:6rem}
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.4/dist/umd/supabase.js"></script>
+<script>window.__emAuthHash=/access_token=|error_description=|type=recovery/.test(location.hash)?location.hash:"";window.__emAuthPending=!!window.__emAuthHash;</script>
 <script>
 (function(){
   var root=document.documentElement, btn=document.getElementById('themeBtn');
@@ -1133,7 +1183,7 @@ footer{padding-bottom:6rem}
     return 'Registros nos últimos 30 dias: '+r.length+'\nFadiga média: '+avg+'/10\nSintomas mais frequentes: '+top(cnt)+'\nGatilhos mais frequentes: '+top(tc)+'\nSintoma novo ou mais forte por mais de 24h: '+(flags.length?flags.join(', '):'nenhum');
   }
   function render(){
-    entries.sort(function(a,b){return b.date<a.date?-1:b.date>a.date?1:b.id-a.id;});
+    entries.sort(function(a,b){return b.date<a.date?-1:b.date>a.date?1:(String(b.id)<String(a.id)?-1:1);});
     var r=recent();
     $('dCount').textContent=r.length?(r.length+(r.length===1?' registro':' registros')):'Nenhum registro ainda';
     $('dResumo').innerHTML=r.length?'<p>'+esc(summaryText()).replace(/\n/g,'<br>')+'</p>':'<p>Quando você salvar registros, o resumo aparece aqui.</p>';
@@ -1153,19 +1203,29 @@ footer{padding-bottom:6rem}
   $('dLista').addEventListener('click',function(ev){
     var b=ev.target.closest('[data-del]'); if(!b) return;
     if(!confirm('Apagar este registro?')) return;
-    entries=entries.filter(function(e){return String(e.id)!==b.dataset.del;}); store(KEY,entries); render();
+    var id=b.dataset.del;
+    if(cloud){ b.disabled=true; cloud.sb.from('registros').delete().eq('id',id).then(function(r){ if(r.error){b.disabled=false;flash(dMsg,'Não foi possível apagar agora. Verifique sua conexão.');return;} entries=entries.filter(function(e){return String(e.id)!==id;}); render(); }); return; }
+    entries=entries.filter(function(e){return String(e.id)!==id;}); store(KEY,entries); render();
   });
   $('dSalvar').addEventListener('click',function(){
     if(!dData.value){flash(dMsg,'Escolha a data.');return;}
-    var e={id:Date.now(),date:dData.value,fad:+dFad.value,sym:checked($('dSym')),trg:checked($('dTrg')),long24:$('d24').checked,nota:$('dNota').value.trim()};
+    var e={id:Date.now(),date:dData.value,fad:+dFad.value,sym:checked($('dSym')),trg:checked($('dTrg')),long24:$('d24').checked,nota:$('dNota').value.trim().slice(0,2000)};
+    if(cloud){ var btn=$('dSalvar'); btn.disabled=true;
+      cloud.sb.from('registros').insert(toRow(e)).select().single().then(function(r){ btn.disabled=false;
+        if(r.error){ dMsg.className='msg alert'; flash(dMsg,'Não foi possível salvar na sua conta. Verifique a conexão e tente de novo.'); return; }
+        entries.push(fromRow(r.data)); afterSave(e); });
+      return; }
     entries.push(e);
     if(!store(KEY,entries)){flash(dMsg,'Não foi possível salvar neste navegador.');return;}
+    afterSave(e);
+  });
+  function afterSave(e){
     render();
     dMsg.className='msg'+(e.long24?' alert':'');
     flash(dMsg,e.long24?'Registro salvo. Sintoma novo ou mais forte por mais de 24 horas pode ser um surto: avise seu neurologista.':'Registro salvo.');
     [].forEach.call(document.querySelectorAll('#diario input[type=checkbox]'),function(i){i.checked=false;});
     $('dNota').value='';
-  });
+  }
   function diaryText(){
     var lines=['DIÁRIO DE SINTOMAS — esclerose múltipla','',summaryText(),'','REGISTROS'];
     entries.forEach(function(e){lines.push('','['+fmt(e.date)+'/'+e.date.slice(0,4)+'] Fadiga '+e.fad+'/10');
@@ -1176,8 +1236,134 @@ footer{padding-bottom:6rem}
     return lines.join('\n');
   }
   $('dExport').addEventListener('click',function(){ if(!entries.length){flash(dMsg,'Ainda não há registros para baixar.');return;} savePdf(diaryPdf,'diario-de-sintomas.pdf',dMsg,'diario-de-sintomas.txt',diaryText); });
-  $('dLimpar').addEventListener('click',function(){ if(!entries.length) return; if(!confirm('Apagar todos os registros do diário? Isso não pode ser desfeito.')) return; entries=[]; store(KEY,entries); render(); });
+  $('dLimpar').addEventListener('click',function(){ if(!entries.length) return; if(!confirm('Apagar todos os registros do diário? Isso não pode ser desfeito.')) return;
+    if(cloud){ cloud.sb.from('registros').delete().neq('id','00000000-0000-0000-0000-000000000000').then(function(r){ if(r.error){flash(dMsg,'Não foi possível apagar agora. Verifique sua conexão.');return;} entries=[]; render(); }); return; }
+    entries=[]; store(KEY,entries); render(); });
   render();
+
+  // ---------- Conta (Supabase)
+  var cloud=null;
+  function toRow(e){return {data:e.date,fadiga:e.fad,sintomas:e.sym,gatilhos:e.trg,mais_24h:!!e.long24,nota:e.nota||''};}
+  function fromRow(r){return {id:r.id,date:r.data,fad:r.fadiga,sym:r.sintomas||[],trg:r.gatilhos||[],long24:!!r.mais_24h,nota:r.nota||''};}
+  function localEntries(){return load(KEY,[]);}
+  var SB_URL='https://ycfatibtgphqdnjqiyiz.supabase.co', SB_KEY='sb_publishable_nGPmmUBdkJCnLQdcoTBilg_EH1S5mCq';
+  var SITE='https://yasminromerorodrigues.github.io/esclerose-multipla/';
+  var acMsg=$('acMsg'), modo='entrar', authHash=window.__emAuthHash||'';
+  function amsg(t,alert){ acMsg.className='msg'+(alert?' alert':''); acMsg.textContent=t; acMsg.hidden=false; }
+  function clearMsg(){ acMsg.hidden=true; }
+  var sb=null;
+  try{ if(window.supabase&&window.supabase.createClient) sb=window.supabase.createClient(SB_URL,SB_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true,storageKey:'em-auth'}}); }catch(err){ sb=null; }
+  function offline(){ amsg('Não foi possível conectar. Verifique sua internet. A conta funciona no site oficial: yasminromerorodrigues.github.io/esclerose-multipla',true); }
+  function errText(err){
+    var m=((err&&err.message)||'').toLowerCase();
+    if(m.indexOf('invalid login')>-1) return 'E-mail ou senha incorretos.';
+    if(m.indexOf('not confirmed')>-1) return 'Seu e-mail ainda não foi confirmado. Abra o link que enviamos (veja também o spam) e tente de novo.';
+    if(m.indexOf('rate limit')>-1||m.indexOf('too many')>-1||(err&&err.status===429)) return 'Muitas tentativas em pouco tempo. Espere alguns minutos e tente de novo.';
+    if(m.indexOf('password')>-1&&m.indexOf('least')>-1) return 'A senha precisa ter pelo menos 8 caracteres.';
+    if(m.indexOf('fetch')>-1||m.indexOf('network')>-1) return null;
+    return 'Algo deu errado. Tente de novo em instantes.';
+  }
+  function busy(b,on){ b.disabled=on; }
+  function setTab(m){ modo=m; clearMsg();
+    $('acTabEntrar').setAttribute('aria-pressed',String(m==='entrar')); $('acTabCriar').setAttribute('aria-pressed',String(m==='criar'));
+    $('acConsentRow').hidden=(m!=='criar'); $('acSenhaDica').hidden=(m!=='criar'); $('acEsqueci').hidden=(m==='criar');
+    $('acEntrar').textContent=(m==='criar'?'Criar conta':'Entrar');
+    $('acSenha').setAttribute('autocomplete',m==='criar'?'new-password':'current-password'); }
+  $('acTabEntrar').addEventListener('click',function(){setTab('entrar');});
+  $('acTabCriar').addEventListener('click',function(){setTab('criar');});
+  function updateMigrar(){ var n=localEntries().length, b=$('acMigrar'); b.hidden=!(cloud&&n); b.textContent='Enviar '+n+(n===1?' registro':' registros')+' deste aparelho para a conta'; }
+  function loadCloud(){
+    cloud.sb.from('registros').select('*').order('data',{ascending:false}).limit(3000).then(function(r){
+      if(r.error){ amsg('Não foi possível carregar seus registros agora. Tente atualizar a página.',true); return; }
+      entries=(r.data||[]).map(fromRow); render(); });
+  }
+  function showState(user){
+    cloud=user?{sb:sb,user:user}:null;
+    $('acAnon').hidden=!!user; $('acLogado').hidden=!user; $('acNova').hidden=true;
+    $('acModo').textContent=user?'Salvando na sua conta':'Usando só neste aparelho';
+    if(user){ $('acEmailLogado').textContent=user.email||''; loadCloud(); } else { entries=localEntries(); render(); }
+    updateMigrar();
+  }
+  $('acEntrar').addEventListener('click',function(){
+    var btn=this, email=$('acEmail').value.trim(), senha=$('acSenha').value;
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ amsg('Digite um e-mail válido.',true); return; }
+    if(!senha){ amsg('Digite sua senha.',true); return; }
+    if(!sb){ offline(); return; }
+    if(modo==='criar'){
+      if(senha.length<8){ amsg('A senha precisa ter pelo menos 8 caracteres.',true); return; }
+      if(!$('acConsent').checked){ amsg('Para criar a conta, marque a caixa de autorização.',true); return; }
+      busy(btn,true);
+      sb.auth.signUp({email:email,password:senha,options:{emailRedirectTo:SITE,data:{consentimento_em:new Date().toISOString(),politica_versao:'1.0'}}}).then(function(r){
+        busy(btn,false);
+        if(r.error){ var t=errText(r.error); if(t) amsg(t,true); else offline(); return; }
+        $('acSenha').value='';
+        if(r.data&&r.data.session) return;
+        amsg('Quase lá! Enviamos um e-mail de confirmação para '+email+'. Abra o link (pode estar no spam ou em "Promoções") e você entra automaticamente.');
+      }).catch(function(){ busy(btn,false); offline(); });
+    } else {
+      busy(btn,true);
+      sb.auth.signInWithPassword({email:email,password:senha}).then(function(r){
+        busy(btn,false);
+        if(r.error){ var t=errText(r.error); if(t) amsg(t,true); else offline(); return; }
+        $('acSenha').value=''; clearMsg();
+      }).catch(function(){ busy(btn,false); offline(); });
+    }
+  });
+  $('acEsqueci').addEventListener('click',function(){
+    var email=$('acEmail').value.trim();
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ amsg('Digite seu e-mail no campo acima e toque de novo em "Esqueci minha senha".',true); return; }
+    if(!sb){ offline(); return; }
+    sb.auth.resetPasswordForEmail(email,{redirectTo:SITE}).then(function(r){
+      if(r.error){ var t=errText(r.error); if(t) amsg(t,true); else offline(); return; }
+      amsg('Se existir uma conta com esse e-mail, enviamos um link para criar uma nova senha. Veja também o spam.');
+    }).catch(offline);
+  });
+  $('acSalvarSenha').addEventListener('click',function(){
+    var btn=this, senha=$('acNovaSenha').value;
+    if(senha.length<8){ amsg('A senha precisa ter pelo menos 8 caracteres.',true); return; }
+    busy(btn,true);
+    sb.auth.updateUser({password:senha}).then(function(r){ busy(btn,false);
+      if(r.error){ var t=errText(r.error); if(t) amsg(t,true); else offline(); return; }
+      $('acNovaSenha').value=''; amsg('Senha alterada. Você já está conectada.'); showState(r.data.user);
+    }).catch(function(){ busy(btn,false); offline(); });
+  });
+  $('acSair').addEventListener('click',function(){ if(!sb) return; sb.auth.signOut().then(function(){ amsg('Você saiu da sua conta. O diário voltou a mostrar só os registros deste aparelho.'); }); });
+  $('acMigrar').addEventListener('click',function(){
+    var btn=this, local=localEntries(); if(!cloud||!local.length) return;
+    busy(btn,true);
+    cloud.sb.from('registros').insert(local.map(toRow)).then(function(r){ busy(btn,false);
+      if(r.error){ amsg('Não foi possível enviar agora. Verifique sua conexão e tente de novo.',true); return; }
+      if(confirm('Pronto! '+local.length+' registros foram enviados para a sua conta. Quer apagar a cópia que ficou neste aparelho?')) store(KEY,[]);
+      loadCloud(); updateMigrar(); amsg('Registros enviados para a sua conta.');
+    });
+  });
+  $('acExcluir').addEventListener('click',function(){
+    if(!cloud) return;
+    var t=prompt('Isso apaga sua conta e todos os registros do diário guardados nela, para sempre. Para confirmar, digite EXCLUIR.');
+    if(!t||t.trim().toUpperCase()!=='EXCLUIR') return;
+    cloud.sb.rpc('excluir_minha_conta').then(function(r){
+      if(r.error){ amsg('Não foi possível excluir agora. Tente de novo em instantes.',true); return; }
+      sb.auth.signOut({scope:'local'}).catch(function(){}).then(function(){ showState(null); amsg('Sua conta e seus registros foram excluídos.'); });
+    });
+  });
+  if(sb){
+    sb.auth.onAuthStateChange(function(ev,session){
+      setTimeout(function(){
+        if(ev==='PASSWORD_RECOVERY'){ cloud={sb:sb,user:session&&session.user}; $('acAnon').hidden=true; $('acLogado').hidden=true; $('acNova').hidden=false; amsg('Digite sua nova senha abaixo.'); finishAuthHash(); return; }
+        if(ev==='INITIAL_SESSION'||ev==='SIGNED_IN'||ev==='SIGNED_OUT'||ev==='USER_UPDATED'){
+          var u=session&&session.user||null;
+          if(!cloud||!u||cloud.user.id!==u.id||ev==='SIGNED_OUT') showState(u);
+          if(ev==='SIGNED_IN'&&authHash&&/type=signup|type=email/.test(authHash)) amsg('E-mail confirmado! Sua conta está pronta e você já está conectada.');
+          if(u) finishAuthHash();
+        }
+      },0);
+    });
+  }
+  function finishAuthHash(){ if(!authHash) return; authHash=''; window.__emAuthPending=false; try{history.replaceState(null,'',location.pathname+location.search+'#ferramentas');}catch(e){} }
+  if(/error_description=/.test(authHash)){
+    amsg('O link do e-mail expirou ou já foi usado. Entre com seu e-mail e senha, ou peça um novo link em "Esqueci minha senha".',true);
+    authHash=''; window.__emAuthPending=false; try{history.replaceState(null,'',location.pathname+location.search+'#ferramentas');}catch(e){}
+  }
 
   // ---------- Preparador de consulta
   var CK='em-consulta', cs=load(CK,{q:[],minhas:'',rem:'',mud:''});
@@ -1380,6 +1566,7 @@ footer{padding-bottom:6rem}
   }
   function route(initial){
     var h=decodeURIComponent(location.hash.slice(1));
+    if(window.__emAuthPending&&(!h||/access_token=|error_description=|type=/.test(h))){ show('ferramentas',document.getElementById('conta'),initial); return; }
     if(!h){ show('inicio',null,initial); return; }
     if(ids.indexOf(h)>-1){ show(h,null,initial); return; }
     var el=document.getElementById(h);
