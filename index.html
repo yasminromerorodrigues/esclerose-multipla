@@ -321,6 +321,12 @@ body[data-page="inicio"] .homebtn{display:none}
 .pager a.prev{grid-column:1}
 .pager a:hover strong{text-decoration:underline}
 footer{padding-bottom:6rem}
+.rlist .ritem{padding:.8rem 1rem;border-top:var(--bw) solid var(--ink)}
+.rlist .ritem:first-child{border-top:0}
+.rlist{border-top:var(--bw) solid var(--ink)}
+.rlist .ritem a{font-weight:700;line-height:1.35}
+.rlist .ritem small{display:block;font-size:.88rem;margin-top:.25rem}
+.rlist .rempty{padding:.9rem 1rem;font-size:.95rem}
 </style>
 </head>
 <body>
@@ -342,7 +348,7 @@ footer{padding-bottom:6rem}
       <span class="cur" id="curSec" aria-live="polite">Início</span>
       <a class="homebtn" href="#inicio" aria-label="Voltar ao início">⌂ Início</a>
     </div>
-    <div class="menu" id="menuPanel" hidden><div class="mgroup"><div class="mlinks"><a href="#inicio"><span>00</span>Início</a></div></div><div class="mgroup"><h3>Para começar</h3><div class="mlinks"><a href="#entender"><span>01</span>Entender</a><a href="#primeiros"><span>02</span>Primeiros 30 dias</a><a href="#sintomas"><span>03</span>Sintomas</a></div></div><div class="mgroup"><h3>No dia a dia</h3><div class="mlinks"><a href="#ferramentas"><span>04</span>Ferramentas</a><a href="#ajudar"><span>05</span>Como ajudar</a><a href="#direitos"><span>06</span>Direitos e acessibilidade</a><a href="#glossario"><span>07</span>Glossário e mitos</a></div></div><div class="mgroup"><h3>Ciência e tratamento</h3><div class="mlinks"><a href="#noticias"><span>08</span>Notícias de 2026</a><a href="#estudos"><span>09</span>Estudos pelo mundo</a><a href="#pesquisas"><span>10</span>Pesquisas marcantes</a><a href="#tratamentos"><span>11</span>Tratamentos</a><a href="#mundo"><span>12</span>Acesso no mundo</a></div></div><div class="mgroup"><h3>Histórias e mais</h3><div class="mlinks"><a href="#pessoas"><span>13</span>Pessoas</a><a href="#cultura"><span>14</span>Filmes e livros</a><a href="#sobre"><span>15</span>Sobre mim</a><a href="#fontes"><span>16</span>Fontes</a></div></div></div>
+    <div class="menu" id="menuPanel" hidden><div class="mgroup"><div class="mlinks"><a href="#inicio"><span>00</span>Início</a></div></div><div class="mgroup"><h3>Para começar</h3><div class="mlinks"><a href="#entender"><span>01</span>Entender</a><a href="#primeiros"><span>02</span>Primeiros 30 dias</a><a href="#sintomas"><span>03</span>Sintomas</a></div></div><div class="mgroup"><h3>No dia a dia</h3><div class="mlinks"><a href="#ferramentas"><span>04</span>Ferramentas</a><a href="#ajudar"><span>05</span>Como ajudar</a><a href="#direitos"><span>06</span>Direitos e acessibilidade</a><a href="#glossario"><span>07</span>Glossário e mitos</a></div></div><div class="mgroup"><h3>Ciência e tratamento</h3><div class="mlinks"><a href="#noticias"><span>08</span>Notícias de 2026</a><a href="#radar"><span>09</span>Radar diário</a><a href="#estudos"><span>10</span>Estudos pelo mundo</a><a href="#pesquisas"><span>11</span>Pesquisas marcantes</a><a href="#tratamentos"><span>12</span>Tratamentos</a><a href="#mundo"><span>13</span>Acesso no mundo</a></div></div><div class="mgroup"><h3>Histórias e mais</h3><div class="mlinks"><a href="#pessoas"><span>14</span>Pessoas</a><a href="#cultura"><span>15</span>Filmes e livros</a><a href="#sobre"><span>16</span>Sobre mim</a><a href="#fontes"><span>17</span>Fontes</a></div></div></div>
   </div>
 </nav>
 
@@ -372,7 +378,7 @@ footer{padding-bottom:6rem}
 </div>
 
 <h2 class="sub">Escolha por onde <b>começar</b></h2>
-<h3 class="idx-h">Para começar</h3><div class="idx"><a class="idx-card" href="#entender"><span class="n">01</span><span class="b"><strong>Entender</strong><small>O que é a EM, suas formas e causas</small></span></a><a class="idx-card" href="#primeiros"><span class="n">02</span><span class="b"><strong>Primeiros 30 dias</strong><small>Roteiro para quem acabou de receber o diagnóstico</small></span></a><a class="idx-card" href="#sintomas"><span class="n">03</span><span class="b"><strong>Sintomas</strong><small>Os sintomas mais comuns e quando procurar ajuda</small></span></a></div><h3 class="idx-h">No dia a dia</h3><div class="idx"><a class="idx-card" href="#ferramentas"><span class="n">04</span><span class="b"><strong>Ferramentas</strong><small>Diário de sintomas e preparador de consulta</small></span></a><a class="idx-card" href="#ajudar"><span class="n">05</span><span class="b"><strong>Como ajudar</strong><small>Para amigos, família e colegas</small></span></a><a class="idx-card" href="#direitos"><span class="n">06</span><span class="b"><strong>Direitos e acessibilidade</strong><small>SUS, INSS, isenções e adaptações</small></span></a><a class="idx-card" href="#glossario"><span class="n">07</span><span class="b"><strong>Glossário e mitos</strong><small>Termos dos laudos e dúvidas comuns</small></span></a></div><h3 class="idx-h">Ciência e tratamento</h3><div class="idx"><a class="idx-card" href="#noticias"><span class="n">08</span><span class="b"><strong>Notícias de 2026</strong><small>O que aconteceu neste ano</small></span></a><a class="idx-card" href="#estudos"><span class="n">09</span><span class="b"><strong>Estudos pelo mundo</strong><small>Pesquisas recentes, traduzidas</small></span></a><a class="idx-card" href="#pesquisas"><span class="n">10</span><span class="b"><strong>Pesquisas marcantes</strong><small>Os estudos que mudaram a EM</small></span></a><a class="idx-card" href="#tratamentos"><span class="n">11</span><span class="b"><strong>Tratamentos</strong><small>Remédios aprovados e o que vem por aí</small></span></a><a class="idx-card" href="#mundo"><span class="n">12</span><span class="b"><strong>Acesso no mundo</strong><small>Como a EM é tratada em cada país</small></span></a></div><h3 class="idx-h">Histórias e mais</h3><div class="idx"><a class="idx-card" href="#pessoas"><span class="n">13</span><span class="b"><strong>Pessoas</strong><small>Famosos que falaram sobre a EM</small></span></a><a class="idx-card" href="#cultura"><span class="n">14</span><span class="b"><strong>Filmes e livros</strong><small>Indicações sobre EM</small></span></a><a class="idx-card" href="#sobre"><span class="n">15</span><span class="b"><strong>Sobre mim</strong><small>Quem fez este site</small></span></a><a class="idx-card" href="#fontes"><span class="n">16</span><span class="b"><strong>Fontes</strong><small>De onde vem cada informação</small></span></a></div>
+<h3 class="idx-h">Para começar</h3><div class="idx"><a class="idx-card" href="#entender"><span class="n">01</span><span class="b"><strong>Entender</strong><small>O que é a EM, suas formas e causas</small></span></a><a class="idx-card" href="#primeiros"><span class="n">02</span><span class="b"><strong>Primeiros 30 dias</strong><small>Roteiro para quem acabou de receber o diagnóstico</small></span></a><a class="idx-card" href="#sintomas"><span class="n">03</span><span class="b"><strong>Sintomas</strong><small>Os sintomas mais comuns e quando procurar ajuda</small></span></a></div><h3 class="idx-h">No dia a dia</h3><div class="idx"><a class="idx-card" href="#ferramentas"><span class="n">04</span><span class="b"><strong>Ferramentas</strong><small>Diário de sintomas e preparador de consulta</small></span></a><a class="idx-card" href="#ajudar"><span class="n">05</span><span class="b"><strong>Como ajudar</strong><small>Para amigos, família e colegas</small></span></a><a class="idx-card" href="#direitos"><span class="n">06</span><span class="b"><strong>Direitos e acessibilidade</strong><small>SUS, INSS, isenções e adaptações</small></span></a><a class="idx-card" href="#glossario"><span class="n">07</span><span class="b"><strong>Glossário e mitos</strong><small>Termos dos laudos e dúvidas comuns</small></span></a></div><h3 class="idx-h">Ciência e tratamento</h3><div class="idx"><a class="idx-card" href="#noticias"><span class="n">08</span><span class="b"><strong>Notícias de 2026</strong><small>O que aconteceu neste ano, explicado</small></span></a><a class="idx-card" href="#radar"><span class="n">09</span><span class="b"><strong>Radar diário</strong><small>Novidades buscadas todo dia, automaticamente</small></span></a><a class="idx-card" href="#estudos"><span class="n">10</span><span class="b"><strong>Estudos pelo mundo</strong><small>Pesquisas recentes, traduzidas</small></span></a><a class="idx-card" href="#pesquisas"><span class="n">11</span><span class="b"><strong>Pesquisas marcantes</strong><small>Os estudos que mudaram a EM</small></span></a><a class="idx-card" href="#tratamentos"><span class="n">12</span><span class="b"><strong>Tratamentos</strong><small>Remédios aprovados e o que vem por aí</small></span></a><a class="idx-card" href="#mundo"><span class="n">13</span><span class="b"><strong>Acesso no mundo</strong><small>Como a EM é tratada em cada país</small></span></a></div><h3 class="idx-h">Histórias e mais</h3><div class="idx"><a class="idx-card" href="#pessoas"><span class="n">14</span><span class="b"><strong>Pessoas</strong><small>Famosos que falaram sobre a EM</small></span></a><a class="idx-card" href="#cultura"><span class="n">15</span><span class="b"><strong>Filmes e livros</strong><small>Indicações sobre EM</small></span></a><a class="idx-card" href="#sobre"><span class="n">16</span><span class="b"><strong>Sobre mim</strong><small>Quem fez este site</small></span></a><a class="idx-card" href="#fontes"><span class="n">17</span><span class="b"><strong>Fontes</strong><small>De onde vem cada informação</small></span></a></div>
 </section>
 
 <!-- ENTENDER -->
@@ -630,9 +636,31 @@ footer{padding-bottom:6rem}
   </div>
 </section>
 
+<!-- RADAR -->
+<section id="radar">
+  <h2><b>09</b> Radar diário</h2>
+  <p class="kicker">Todos os dias, um robô busca novidades sobre esclerose múltipla em fontes confiáveis e atualiza esta página sozinho. Aqui aparecem só títulos e links, sem revisão. Para entender o que realmente importa, veja as páginas de Notícias e Pesquisas, revisadas todo mês.</p>
+  <p class="chips"><span class="chip wait" id="radarStamp">Carregando o radar…</span></p>
+  <div class="board">
+    <div class="rh"><div class="num">N</div><div class="ttl">Notícias em português</div><div class="tag">Google Notícias, últimos 30 dias</div></div>
+    <div class="rlist" id="radarNews"></div>
+  </div>
+  <div class="board">
+    <div class="rh"><div class="num">E</div><div class="ttl">Novos estudos científicos</div><div class="tag">PubMed, em inglês</div></div>
+    <div class="rlist" id="radarPapers"></div>
+    <div class="full" style="border-top:var(--bw) solid var(--ink);font-size:.92rem"><p>Só entram ensaios clínicos, revisões sistemáticas e metanálises publicados nos últimos 30 dias. Os títulos ficam no idioma original.</p></div>
+  </div>
+  <div class="board">
+    <div class="rh"><div class="num">BR</div><div class="ttl">Estudos recrutando no Brasil</div><div class="tag">ClinicalTrials.gov</div></div>
+    <div class="rlist" id="radarTrials"></div>
+    <div class="full" style="border-top:var(--bw) solid var(--ink);font-size:.92rem"><p>Pesquisas sobre EM que estão buscando participantes em cidades brasileiras. Antes de se inscrever, converse com seu neurologista.</p></div>
+  </div>
+  <div class="board"><div class="full" style="background:var(--orange);color:var(--on-orange)"><p><strong>Atenção:</strong> os links levam a sites externos, que não foram revisados por este site. Desconfie de qualquer promessa de cura e não mude seu tratamento sem falar com o médico.</p></div></div>
+</section>
+
 <!-- ESTUDOS -->
 <section id="estudos">
-  <h2><b>09</b> Estudos pelo mundo</h2>
+  <h2><b>10</b> Estudos pelo mundo</h2>
   <p class="kicker">Pesquisas em vários idiomas, com os achados traduzidos e resumidos. Filtre pelo idioma original.</p>
   <p class="chips" style="margin-top:-.4rem"><span class="chip wait">Última atualização: outubro de 2026</span></p>
   <div class="filters" role="group" aria-label="Filtrar por idioma" data-target="study">
@@ -678,7 +706,7 @@ footer{padding-bottom:6rem}
 
 <!-- PESQUISAS -->
 <section id="pesquisas">
-  <h2><b>10</b> Pesquisas que mudaram a EM</h2>
+  <h2><b>11</b> Pesquisas que mudaram a EM</h2>
   <p class="kicker">Os estudos que transformaram o que se sabe e como se trata a doença, em ordem cronológica, com os resultados explicados.</p>
 
   <div class="board">
@@ -712,7 +740,7 @@ footer{padding-bottom:6rem}
 
 <!-- TRATAMENTOS -->
 <section id="tratamentos">
-  <h2><b>11</b> Tratamentos</h2>
+  <h2><b>12</b> Tratamentos</h2>
   <p class="kicker">Mais de 25 remédios modificadores aprovados. Não curam, mas reduzem surtos, lesões e, em parte, a progressão.</p>
 
   <details open>
@@ -782,7 +810,7 @@ footer{padding-bottom:6rem}
 
 <!-- MUNDO -->
 <section id="mundo">
-  <h2><b>12</b> Acesso no mundo</h2>
+  <h2><b>13</b> Acesso no mundo</h2>
   <p class="kicker">Mais frequente na América do Norte e Europa, menos na África Subsaariana e Ásia Oriental, em parte por subdiagnóstico. 7 em cada 10 países de baixa renda não têm, ou quase não têm, remédios licenciados.</p>
 
   <div class="board bars" role="img" aria-label="Pessoas com EM no mundo: 2,3 milhões em 2013, 2,8 em 2020, 2,9 em 2023">
@@ -811,7 +839,7 @@ footer{padding-bottom:6rem}
 
 <!-- PESSOAS -->
 <section id="pessoas">
-  <h2><b>13</b> Pessoas que falaram</h2>
+  <h2><b>14</b> Pessoas que falaram</h2>
   <p class="kicker">Quando alguém conhecido conta o diagnóstico, mais gente procura um neurologista a tempo.</p>
   <div class="filters" role="group" aria-label="Filtrar pessoas" data-target="person">
     <button type="button" data-f="all" aria-pressed="true">Todas</button>
@@ -842,7 +870,7 @@ footer{padding-bottom:6rem}
 
 <!-- FILMES E LIVROS -->
 <section id="cultura">
-  <h2><b>14</b> Filmes e livros</h2>
+  <h2><b>15</b> Filmes e livros</h2>
   <p class="kicker">Filmes, documentários e livros sobre esclerose múltipla, dos relatos pessoais às obras técnicas. Títulos em português indicados quando existem.</p>
   <div class="filters" role="group" aria-label="Filtrar filmes e livros" data-target="media">
     <button type="button" data-f="all" aria-pressed="true">Todos</button>
@@ -870,7 +898,7 @@ footer{padding-bottom:6rem}
 
 <!-- SOBRE MIM -->
 <section id="sobre">
-  <h2><b>15</b> Sobre mim</h2>
+  <h2><b>16</b> Sobre mim</h2>
 
   <div class="board me">
     <div class="ph"><img src="yas.jpg" alt="Yas, autora do site, sorrindo de perfil" width="514" height="514"></div>
@@ -911,7 +939,7 @@ footer{padding-bottom:6rem}
 
 <!-- FONTES -->
 <section id="fontes">
-  <h2><b>16</b> Fontes</h2>
+  <h2><b>17</b> Fontes</h2>
   <div class="board">
     <ol class="sources">
       <li><a href="https://www.msif.org/about-us/advocacy/atlas">Atlas of MS, MSIF</a></li>
@@ -1360,6 +1388,34 @@ footer{padding-bottom:6rem}
   }
   window.addEventListener('hashchange',function(){route(false);});
   route(true);
+})();
+// ---------- Radar diário
+(function(){
+  var stamp=document.getElementById('radarStamp'); if(!stamp) return;
+  function fmt(d){ if(!d) return ''; var p=d.slice(0,10).split('-'); return p.length===3?p[2]+'/'+p[1]+'/'+p[0]:d; }
+  function safe(u){ return /^https:\/\//.test(u||'')?u:null; }
+  function fill(id,items,meta,empty){
+    var box=document.getElementById(id); box.textContent='';
+    if(!items||!items.length){ var e=document.createElement('div'); e.className='rempty'; e.textContent=empty; box.appendChild(e); return; }
+    items.forEach(function(it){
+      var row=document.createElement('div'); row.className='ritem';
+      var url=safe(it.url), a=document.createElement(url?'a':'span');
+      a.textContent=it.title||'Sem título'; if(url){a.href=url;a.target='_blank';a.rel='noopener noreferrer';}
+      var sm=document.createElement('small'); sm.textContent=meta(it);
+      row.appendChild(a); row.appendChild(sm); box.appendChild(row);
+    });
+  }
+  function msg(t){ ['radarNews','radarPapers','radarTrials'].forEach(function(id){ fill(id,[],null,t); }); }
+  fetch('radar.json',{cache:'no-store'}).then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(d){
+    if(!d.updated){ stamp.textContent='O robô ainda não fez a primeira busca'; msg('As novidades aparecem aqui depois da primeira busca do robô.'); return; }
+    stamp.textContent='Última busca: '+new Date(d.updated).toLocaleString('pt-BR',{dateStyle:'short',timeStyle:'short'});
+    fill('radarNews',d.news,function(it){return [it.source,fmt(it.date)].filter(Boolean).join(' · ');},'Nenhuma notícia nova nos últimos 30 dias.');
+    fill('radarPapers',d.papers,function(it){return [it.type,it.journal,fmt(it.date)].filter(Boolean).join(' · ');},'Nenhum estudo novo nos últimos 30 dias.');
+    fill('radarTrials',d.trials,function(it){return [it.phase,(it.cities||[]).join(', '),it.date?'atualizado em '+fmt(it.date):''].filter(Boolean).join(' · ');},'Nenhum estudo recrutando no Brasil no momento.');
+  }).catch(function(){
+    stamp.textContent='Radar indisponível nesta visualização';
+    msg('O radar funciona no site oficial, onde é atualizado todos os dias.');
+  });
 })();
 </script>
 </body>
