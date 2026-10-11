@@ -1,1 +1,1283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Guia em português sobre esclerose múltipla: sintomas, primeiros passos após o diagnóstico, tratamentos, direitos, pesquisas e histórias reais. Feito por quem convive com EM.">
+<meta name="theme-color" content="#F3EDE0">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Tudo sobre esclerose múltipla">
+<meta property="og:description" content="Sintomas, primeiros passos, tratamentos, direitos e histórias reais, em linguagem simples.">
+<meta property="og:image" content="https://yasminromerorodrigues.github.io/esclerose-multipla/og-image.png">
+<meta property="og:url" content="https://yasminromerorodrigues.github.io/esclerose-multipla/">
+<link rel="canonical" href="https://yasminromerorodrigues.github.io/esclerose-multipla/">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<title>Tudo sobre esclerose múltipla</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#C3B697; --ink:#0D2721; --teal:#6FD1C8; --orange:#E0603A; --sage:#8C9A86; --hl:#D8CDB2; --sun:#F2B33D;
+  --on-orange:#0D2721; --on-teal:#0D2721;
+  --bw:3px;
+  --display:"Antonio","Bebas Neue","Arial Narrow","Roboto Condensed",Impact,sans-serif;
+  --mono:"Space Mono","IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+:root[data-theme="dark"]{
+  --paper:#10231E; --ink:#E4D9BE; --teal:#5CC2B8; --orange:#E0603A; --sage:#2E4640; --hl:#1A322C;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px);scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--mono);font-size:.95rem;line-height:1.6;-webkit-text-size-adjust:100%}
+img,svg{max-width:100%}
+a{color:inherit;text-decoration-thickness:2px;text-underline-offset:3px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+.wrap{max-width:52rem;margin:0 auto;padding:0 1rem}
 
+/* ---------- Hero ---------- */
+.hero{position:relative;padding:2.2rem 0 1.4rem}
+.hero h1{font-family:var(--display);font-weight:400;font-size:clamp(2.7rem,11.5vw,5.4rem);line-height:1.22;letter-spacing:-.01em;margin:0;padding-right:4.5rem;text-transform:none}
+.hero h1 b{font-weight:700;text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:.1em;text-decoration-skip-ink:auto}
+.badge{position:absolute;top:2.2rem;right:0;width:3.6rem;height:3.6rem}
+.cursor{display:block;width:2.6rem;height:auto;margin:-.3rem 0 0 46%;position:relative;z-index:2}
+.cursor path{fill:var(--paper);stroke:var(--ink)}
+
+/* ---------- Board / rows (the core pattern) ---------- */
+.board{border:var(--bw) solid var(--ink);margin:0 0 1.5rem;background:var(--paper)}
+.board > * + *{border-top:var(--bw) solid var(--ink)}
+.rh{display:grid;grid-template-columns:4rem 1fr}
+.rh .num{background:var(--teal);color:var(--on-teal);font-family:var(--display);font-weight:700;font-size:2rem;line-height:1;display:grid;place-items:center;border-right:var(--bw) solid var(--ink);padding:.6rem 0}
+.rh .ttl{font-family:var(--display);font-weight:700;font-size:1.65rem;line-height:1.18;text-transform:uppercase;padding:.7rem .9rem;display:flex;align-items:center;letter-spacing:-.005em}
+.rh .tag{grid-column:1/-1;background:var(--orange);color:var(--on-orange);font-family:var(--mono);font-weight:700;font-size:.92rem;text-transform:uppercase;letter-spacing:.02em;padding:.6rem .9rem;border-top:var(--bw) solid var(--ink);display:flex;align-items:center}
+@media (min-width:640px){
+  .rh{grid-template-columns:4.6rem 1fr 1fr}
+  .rh .tag{grid-column:auto;border-top:0;border-left:var(--bw) solid var(--ink);font-size:1rem}
+  .rh .ttl{font-size:2rem}
+  .rh .num{font-size:2.3rem}
+}
+.rb{display:grid;grid-template-columns:4rem 1fr}
+@media (min-width:640px){.rb{grid-template-columns:6.5rem 1fr}}
+.rb .ico{background:var(--sage);border-right:var(--bw) solid var(--ink);display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:1.35rem;text-transform:uppercase;text-align:center;line-height:1;padding:.6rem .2rem;color:var(--ink)}
+@media (min-width:640px){.rb .ico{font-size:1.9rem}}
+.rb .ico svg{width:2.4rem;height:2.4rem}
+.rb .txt{padding:1rem 1rem 1.05rem}
+.rb .txt p{margin:0 0 .75rem}
+.rb .txt p:last-child{margin-bottom:0}
+.src{display:block;margin-top:.6rem;font-size:.78rem;opacity:.75}
+.full{padding:1rem}
+.full p{margin:0 0 .8rem}.full p:last-child{margin:0}
+
+/* Section headers */
+section{padding:1.8rem 0 .4rem}
+h2{font-family:var(--display);font-weight:400;font-size:clamp(2.2rem,9vw,3.6rem);line-height:1.2;margin:0 0 .4rem}
+h2 b{font-weight:700;text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:.12em}
+.kicker{margin:0 0 1.2rem;max-width:40rem}
+
+/* Nav */
+nav.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--paper);padding:.5rem 0}
+nav.tabs .strip{display:flex;overflow-x:auto;scrollbar-width:none;border:var(--bw) solid var(--ink)}
+nav.tabs .strip::-webkit-scrollbar{display:none}
+nav.tabs a{font-family:var(--display);font-weight:700;font-size:1.05rem;text-transform:uppercase;white-space:nowrap;text-decoration:none;padding:.45rem .85rem;border-right:var(--bw) solid var(--ink);display:flex;gap:.45rem;align-items:center}
+nav.tabs a:last-child{border-right:0}
+nav.tabs a span{font-family:var(--mono);font-size:.75rem;opacity:.7}
+nav.tabs a.on{background:var(--teal);color:var(--on-teal)}
+
+/* Facts */
+.facts{display:grid;grid-template-columns:1fr 1fr;border:var(--bw) solid var(--ink);margin:0 0 1.5rem}
+@media (min-width:640px){.facts{grid-template-columns:repeat(4,1fr)}}
+.facts div{padding:.8rem .9rem;border-right:var(--bw) solid var(--ink);border-bottom:var(--bw) solid var(--ink)}
+.facts div:nth-child(2n){border-right:0}
+.facts div:nth-child(n+3){border-bottom:0}
+@media (min-width:640px){.facts div{border-bottom:0}.facts div:nth-child(2n){border-right:var(--bw) solid var(--ink)}.facts div:last-child{border-right:0}}
+.facts b{display:block;font-family:var(--display);font-weight:700;font-size:2.5rem;line-height:1}
+.facts div:nth-child(odd) b{color:var(--orange)}
+.facts span{display:block;font-size:.8rem;line-height:1.4;margin-top:.35rem}
+
+/* Filters */
+.filters{display:flex;flex-wrap:wrap;margin:0 0 1rem;border:var(--bw) solid var(--ink);width:fit-content;max-width:100%}
+.filters button{font-family:var(--display);font-weight:700;font-size:1rem;text-transform:uppercase;border:0;border-right:var(--bw) solid var(--ink);background:transparent;color:var(--ink);padding:.4rem .75rem;cursor:pointer}
+.filters button:last-child{border-right:0}
+.filters button[aria-pressed="true"]{background:var(--orange);color:var(--on-orange)}
+@media (max-width:520px){.filters{width:100%}.filters button{flex:1 1 auto;border-bottom:var(--bw) solid var(--ink);margin-bottom:calc(var(--bw) * -1)}}
+[hidden]{display:none!important}
+
+/* Timeline variant */
+.tl .rb{grid-template-columns:5.2rem 1fr}
+@media (min-width:640px){.tl .rb{grid-template-columns:7.5rem 1fr}}
+.tl .ico{font-size:1.25rem}
+@media (min-width:640px){.tl .ico{font-size:1.7rem}}
+.tl .neg .ico{background:var(--orange);color:var(--on-orange)}
+.tl h4{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:1.3rem;line-height:1.2;margin:0 0 .4rem}
+
+/* Table */
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:32rem;font-size:.85rem}
+th,td{text-align:left;padding:.55rem .7rem;border-bottom:var(--bw) solid var(--ink);border-right:var(--bw) solid var(--ink);vertical-align:top}
+th:last-child,td:last-child{border-right:0}
+tr:last-child td{border-bottom:0}
+th{background:var(--teal);color:var(--on-teal);font-family:var(--display);font-weight:700;font-size:1.05rem;text-transform:uppercase}
+td:first-child{font-weight:700}
+
+/* Details */
+details{border:var(--bw) solid var(--ink);margin:0 0 1.5rem}
+summary{cursor:pointer;list-style:none;display:grid;grid-template-columns:1fr 3.4rem}
+summary::-webkit-details-marker{display:none}
+summary .ttl{font-family:var(--display);font-weight:700;font-size:1.5rem;text-transform:uppercase;padding:.6rem .9rem;line-height:1.2}
+summary .pm{background:var(--orange);color:var(--on-orange);border-left:var(--bw) solid var(--ink);display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:1.8rem}
+details[open] summary{border-bottom:var(--bw) solid var(--ink)}
+details[open] .pm::before{content:"–"}
+details:not([open]) .pm::before{content:"+"}
+
+/* Status chips */
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin:0 0 .7rem}
+.chip{font-family:var(--mono);font-weight:700;font-size:.72rem;text-transform:uppercase;border:2px solid var(--ink);padding:.12rem .45rem;line-height:1.4}
+.chip.ok{background:var(--teal);color:var(--on-teal)}
+.chip.no{background:var(--orange);color:var(--on-orange)}
+.chip.wait{background:var(--hl)}
+
+/* Bars */
+.bars .row{display:grid;grid-template-columns:3.6rem 1fr 4.2rem;align-items:center;gap:0;border-top:var(--bw) solid var(--ink)}
+.bars .row:first-child{border-top:0}
+.bars .yr{font-family:var(--display);font-weight:700;font-size:1.3rem;padding:.4rem .6rem;border-right:var(--bw) solid var(--ink);background:var(--teal);color:var(--on-teal);height:100%;display:flex;align-items:center}
+.bars .track{padding:.5rem .6rem}
+.bars .fill{height:1.3rem;background:var(--orange);border:2px solid var(--ink)}
+.bars .val{font-family:var(--display);font-weight:700;font-size:1.3rem;padding:0 .6rem;border-left:var(--bw) solid var(--ink);height:100%;display:flex;align-items:center}
+
+/* Nerve strip */
+.nerve{display:block;width:100%;height:auto}
+
+.cols{display:grid;grid-template-columns:1fr}
+@media (min-width:640px){.cols{grid-template-columns:1fr 1fr}.board.cols > * + *{border-top:0;border-left:var(--bw) solid var(--ink)}}
+.ch{font-family:var(--display);font-weight:700;font-size:1.6rem;line-height:1.1;text-transform:uppercase;padding:.55rem .9rem;border-bottom:var(--bw) solid var(--ink)}
+.ch.t{background:var(--teal);color:var(--on-teal)}
+.ch.o{background:var(--orange);color:var(--on-orange)}
+.ch.s{background:var(--sage)}
+.cb{padding:1rem}.cb p{margin:0 0 .7rem}.cb p:last-child{margin:0}
+.quotes{list-style:none;margin:0;padding:0}
+.quotes li{padding:.65rem 1rem;border-top:2px dashed var(--ink)}
+.quotes li:first-child{border-top:0}
+h2.sub{font-size:clamp(1.8rem,7vw,2.6rem);margin-top:.5rem}
+
+/* High contrast + readable font + a11y panel */
+:root[data-contrast="high"]{--paper:#FFFFFF;--ink:#000000;--teal:#8FE3DB;--orange:#FF9C78;--sage:#E3E3E3;--hl:#F1F1F1;--sun:#FFC94D;--on-orange:#000;--on-teal:#000}
+:root[data-font="easy"]{--mono:"Atkinson Hyperlegible",Verdana,"Segoe UI",system-ui,sans-serif}
+:root[data-font="easy"] body{font-size:1.02rem;line-height:1.7}
+.skip{position:absolute;left:-999px;top:0;background:var(--teal);color:var(--on-teal);padding:.6rem 1rem;border:var(--bw) solid var(--ink);z-index:50;font-family:var(--display);font-weight:700;text-transform:uppercase}
+.skip:focus{left:1rem;top:calc(env(safe-area-inset-top,0px) + .5rem)}
+.a11y-btn{position:fixed;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom,0px));z-index:30;font-family:var(--display);font-weight:700;font-size:1.05rem;text-transform:uppercase;background:var(--sun);color:#0D2721;border:var(--bw) solid var(--ink);padding:.55rem .9rem;cursor:pointer;box-shadow:4px 4px 0 var(--ink)}
+.a11y-panel{position:fixed;right:1rem;bottom:calc(4.6rem + env(safe-area-inset-bottom,0px));z-index:30;width:min(22rem,calc(100vw - 2rem));background:var(--paper);border:var(--bw) solid var(--ink);box-shadow:4px 4px 0 var(--ink)}
+.a11y-panel > * + *{border-top:var(--bw) solid var(--ink)}
+.a11y-panel .hd{background:var(--teal);color:var(--on-teal);font-family:var(--display);font-weight:700;font-size:1.4rem;text-transform:uppercase;padding:.45rem .8rem;display:flex;justify-content:space-between;align-items:center}
+.a11y-panel .hd button{font:inherit;font-size:1.2rem;background:none;border:0;color:inherit;cursor:pointer;padding:0 .2rem}
+.a11y-row{display:flex;align-items:center;justify-content:space-between;gap:.6rem;padding:.55rem .8rem;font-size:.88rem}
+.a11y-row .lbl{font-weight:700}
+.seg{display:flex;border:2px solid var(--ink)}
+.seg button,.tgl{font-family:var(--display);font-weight:700;font-size:1rem;background:var(--paper);color:var(--ink);border:0;padding:.3rem .65rem;cursor:pointer;min-width:2.4rem}
+.seg button + button{border-left:2px solid var(--ink)}
+.seg button[aria-pressed="true"],.tgl[aria-pressed="true"]{background:var(--orange);color:var(--on-orange)}
+.tgl{border:2px solid var(--ink);text-transform:uppercase}
+.a11y-row.wide .tgl{flex:1}
+
+.res .rh .num{font-size:1.4rem}
+@media (min-width:640px){.res .rh .num{font-size:1.9rem}}
+.res .rb{grid-template-columns:5.6rem 1fr}
+@media (min-width:640px){.res .rb{grid-template-columns:8rem 1fr}}
+.res .rb .ico{background:var(--teal);color:var(--on-teal);font-size:1.6rem;flex-direction:column;display:flex;justify-content:center;gap:.25rem}
+@media (min-width:640px){.res .rb .ico{font-size:2.4rem}}
+.res .rb .ico small{font-family:var(--mono);font-weight:700;font-size:.62rem;text-transform:none;line-height:1.2}
+.res .txt p b{font-family:var(--display);text-transform:uppercase;font-size:1.02rem;letter-spacing:.01em}
+
+/* Tools, glossary, myths */
+.fld{display:grid;gap:.35rem;padding:.8rem 1rem}
+.fld > label,.fld > .lbl{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:1.05rem}
+.fld input[type=date],.fld input[type=search],.fld textarea,.fld input[type=text]{font:inherit;font-size:1rem;color:var(--ink);background:var(--paper);border:2px solid var(--ink);padding:.5rem .6rem;width:100%;border-radius:0}
+.fld textarea{min-height:5.5rem;resize:vertical}
+.fld input[type=range]{width:100%;accent-color:var(--orange)}
+.rangeval{font-family:var(--display);font-weight:700;font-size:1.6rem}
+.picks{display:flex;flex-wrap:wrap;gap:.4rem}
+.pick{position:relative}
+.pick input{position:absolute;opacity:0;width:1px;height:1px}
+.pick span{display:inline-block;border:2px solid var(--ink);padding:.3rem .6rem;font-size:.85rem;font-weight:700;cursor:pointer;background:var(--paper)}
+.pick input:checked + span{background:var(--teal);color:var(--on-teal)}
+.pick input:focus-visible + span{outline:3px solid var(--orange);outline-offset:2px}
+.pick.alt input:checked + span{background:var(--orange);color:var(--on-orange)}
+.btns{display:flex;flex-wrap:wrap;gap:.5rem;padding:.8rem 1rem}
+.btn{font-family:var(--display);font-weight:700;font-size:1.05rem;text-transform:uppercase;border:var(--bw) solid var(--ink);background:var(--paper);color:var(--ink);padding:.45rem .9rem;cursor:pointer}
+.btn.pri{background:var(--orange);color:var(--on-orange)}
+.btn.sm{font-size:.85rem;padding:.2rem .5rem;border-width:2px}
+.msg{padding:.6rem 1rem;font-weight:700;font-size:.88rem;background:var(--hl)}
+.alert{background:var(--orange);color:var(--on-orange)}
+.entry{display:grid;grid-template-columns:5.2rem 1fr;border-top:var(--bw) solid var(--ink)}
+.entry:first-child{border-top:0}
+.entry .d{background:var(--sage);border-right:var(--bw) solid var(--ink);font-family:var(--display);font-weight:700;font-size:1.15rem;display:grid;place-items:center;text-align:center;line-height:1.1;padding:.5rem .2rem}
+.entry .b{padding:.6rem .8rem;font-size:.86rem}
+.entry .b p{margin:0 0 .3rem}
+.spark{display:flex;align-items:flex-end;gap:3px;height:4.5rem;padding:.8rem 1rem .4rem}
+.spark i{flex:1;background:var(--orange);border:2px solid var(--ink);min-height:4px}
+.spark-l{display:flex;justify-content:space-between;font-size:.72rem;padding:0 1rem .7rem}
+.out{font-family:var(--mono);font-size:.82rem;white-space:pre-wrap;padding:1rem;margin:0;max-height:22rem;overflow:auto;background:var(--hl)}
+.qgroup{padding:.4rem 1rem .8rem}
+.qgroup h4{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:1.15rem;margin:.4rem 0}
+.q{display:flex;gap:.6rem;align-items:flex-start;padding:.35rem 0;font-size:.9rem;cursor:pointer}
+.q input{width:1.2rem;height:1.2rem;margin-top:.15rem;accent-color:var(--orange);flex:none}
+.gl-row{padding:.75rem 1rem;border-top:var(--bw) solid var(--ink)}
+.gl-row:first-child{border-top:0}
+.gl-row dt{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:1.25rem;line-height:1.15}
+.gl-row dd{margin:.25rem 0 0;font-size:.9rem}
+.gl{margin:0}
+.myth{margin-bottom:.6rem}
+.myth summary .ttl{font-size:1.25rem;text-transform:none}
+.myth .body{padding:.9rem 1rem}
+.myth .body p{margin:.5rem 0 0}
+.week .rh .num{font-size:1.25rem}
+@media (min-width:640px){.week .rh .num{font-size:1.6rem}}
+.week ul{margin:.3rem 0 0;padding-left:1.1rem}
+.week li{margin-bottom:.35rem}
+
+.me{display:grid;grid-template-columns:1fr}
+@media (min-width:640px){.me{grid-template-columns:minmax(14rem,40%) 1fr}}
+.me .ph{border-bottom:var(--bw) solid var(--ink);background:var(--teal)}
+@media (min-width:640px){.me .ph{border-bottom:0;border-right:var(--bw) solid var(--ink)}}
+.me .ph img{display:block;width:100%;height:100%;aspect-ratio:1/1;object-fit:cover}
+.me .hi{padding:1.1rem 1.1rem 1.2rem;display:flex;flex-direction:column;justify-content:center;gap:.8rem}
+.me .hi h3{font-family:var(--display);font-weight:700;font-size:clamp(2.2rem,8vw,3.2rem);line-height:1.15;margin:0}
+.me .hi h3 u{text-decoration-thickness:3px;text-underline-offset:.1em}
+.me .hi p{margin:0}
+.quote{font-family:var(--display);font-weight:700;font-size:clamp(1.4rem,5vw,1.9rem);line-height:1.25;padding:1.1rem 1rem;margin:0;background:var(--teal);color:var(--on-teal)}
+.themebtn{font-family:var(--display);font-weight:700;font-size:.95rem;text-transform:uppercase;border:var(--bw) solid var(--ink);background:var(--paper);color:var(--ink);padding:.3rem .7rem;cursor:pointer}
+.sources{margin:0;padding:1rem 1rem 1rem 2.2rem;font-size:.82rem}
+.sources li{margin-bottom:.35rem}
+footer{padding:1rem 0 3rem;font-size:.82rem}
+.dots{display:flex;justify-content:center;gap:.5rem;margin:1rem 0 0}
+.dots i{width:.6rem;height:.6rem;border-radius:50%;background:var(--ink);opacity:.25}
+.dots i:nth-child(2){opacity:1;background:var(--paper);outline:2px solid var(--ink)}
+/* ===== Legibilidade e estrutura (revisão) ===== */
+:root{--paper:#F3EDE0;--hl:#E6DCC6;--orange:#EE8A62;--sage:#A8B5A2;--card:#F3EDE0;--mono:"Atkinson Hyperlegible",Verdana,"Segoe UI",system-ui,sans-serif}
+:root[data-theme="dark"]{--card:#10231E;--sage:#3C5650}
+:root[data-contrast="high"]{--card:#FFFFFF;--paper:#FFFFFF;--sage:#E3E3E3;--orange:#FF9C78}
+:root[data-font="easy"]{--mono:"Atkinson Hyperlegible",Verdana,"Segoe UI",system-ui,sans-serif}
+:root[data-font="easy"] body{letter-spacing:.03em;word-spacing:.14em;line-height:1.95}
+body{font-size:1.0625rem;line-height:1.65}
+.board,.facts,details,.filters,.a11y-panel{background:var(--card)}
+.txt,.full,.cb,.kicker{max-width:68ch}
+.src{opacity:1;font-size:.85rem}
+.rh .ttl,summary .ttl,.tl h4,.ch,.myth summary .ttl{text-transform:none;letter-spacing:0}
+.rh .tag{font-family:var(--mono);text-transform:none;letter-spacing:0;font-size:.95rem}
+@media (max-width:639px){.rh .tag{padding:.4rem .9rem;font-size:.9rem}}
+.chip{font-family:var(--mono);text-transform:none;font-size:.82rem}
+.facts span{font-size:.9rem}
+/* sem coluna de ícones decorativos */
+.board:not(.tl):not(.res) .rb:not(.k){grid-template-columns:1fr}
+.board:not(.tl):not(.res) .rb:not(.k) > .ico{display:none}
+@media (max-width:639px){
+  .tl .rb,.res .rb,.rb.k{grid-template-columns:1fr}
+  .tl .rb .ico,.res .rb .ico,.rb.k .ico{border-right:0;border-bottom:var(--bw) solid var(--ink);display:flex;flex-direction:row;align-items:center;justify-content:flex-start;gap:.5rem;padding:.5rem 1rem;text-align:left}
+  .tl .rb .ico br{display:none}
+  .res .rb .ico small{font-size:.8rem}
+}
+/* menu de seções */
+nav.tabs .bar{display:flex;align-items:stretch;border:var(--bw) solid var(--ink);background:var(--card)}
+#menuBtn{font-family:var(--display);font-weight:700;font-size:1.1rem;text-transform:uppercase;background:var(--teal);color:var(--on-teal);border:0;border-right:var(--bw) solid var(--ink);padding:.45rem .9rem;cursor:pointer;white-space:nowrap}
+nav.tabs .cur{flex:1;font-family:var(--display);font-weight:700;font-size:1.1rem;padding:.45rem .9rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;align-self:center}
+nav.tabs .menu{border:var(--bw) solid var(--ink);border-top:0;background:var(--card);max-height:min(70vh,34rem);overflow:auto;box-shadow:4px 4px 0 var(--ink)}
+.mgroup{padding:.6rem 1rem .8rem}
+.mgroup + .mgroup{border-top:var(--bw) solid var(--ink)}
+.mgroup h3{font-family:var(--display);font-weight:700;font-size:1rem;margin:0 0 .4rem;text-transform:uppercase}
+.mlinks{display:grid;grid-template-columns:1fr;gap:.35rem}
+@media (min-width:560px){.mlinks{grid-template-columns:1fr 1fr}}
+nav.tabs .mlinks a{text-transform:none;display:flex;gap:.6rem;align-items:center;text-decoration:none;font-weight:700;font-size:1rem;padding:.45rem .6rem;border:2px solid var(--ink);background:var(--paper)}
+nav.tabs .mlinks a span{font-family:var(--display);font-size:1.05rem;opacity:1}
+nav.tabs .mlinks a.on{background:var(--teal);color:var(--on-teal)}
+</style>
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="wrap hero">
+  <h1><b>Tudo sobre esclerose</b> <b>múltipla</b><br>ciência, notícias e <b>pessoas</b></h1>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="sunflower" viewBox="0 0 64 64"><g transform="translate(32 32)" stroke="currentColor" stroke-width="2"><g fill="var(--orange)"><ellipse cx="0" cy="-17" rx="4.5" ry="8.5" transform="rotate(15)"/><ellipse cx="0" cy="-17" rx="4.5" ry="8.5" transform="rotate(45)"/><ellipse cx="0" cy="-17" rx="4.5" ry="8.5" transform="rotate(75)"/><ellipse cx="0" cy="-17" rx="4.5" ry="8.5" transform="rotate(105)"/><ellipse cx="0" cy="-17" rx="4.5" ry="8.5" transform="rotate(135)"/><ellipse cx="0" cy="-17" rx="4.5" ry="8.5" transform="rotate(165)"/><ellipse cx="0" cy="-17" rx="4.5" ry="8.5" transform="rotate(195)"/><ellipse cx="0" cy="-17" rx="4.5" ry="8.5" transform="rotate(225)"/><ellipse cx="0" cy="-17" rx="4.5" ry="8.5" transform="rotate(255)"/><ellipse cx="0" cy="-17" rx="4.5" ry="8.5" transform="rotate(285)"/><ellipse cx="0" cy="-17" rx="4.5" ry="8.5" transform="rotate(315)"/><ellipse cx="0" cy="-17" rx="4.5" ry="8.5" transform="rotate(345)"/></g><g fill="var(--sun)"><ellipse cx="0" cy="-20" rx="5.5" ry="10.5" transform="rotate(0)"/><ellipse cx="0" cy="-20" rx="5.5" ry="10.5" transform="rotate(30)"/><ellipse cx="0" cy="-20" rx="5.5" ry="10.5" transform="rotate(60)"/><ellipse cx="0" cy="-20" rx="5.5" ry="10.5" transform="rotate(90)"/><ellipse cx="0" cy="-20" rx="5.5" ry="10.5" transform="rotate(120)"/><ellipse cx="0" cy="-20" rx="5.5" ry="10.5" transform="rotate(150)"/><ellipse cx="0" cy="-20" rx="5.5" ry="10.5" transform="rotate(180)"/><ellipse cx="0" cy="-20" rx="5.5" ry="10.5" transform="rotate(210)"/><ellipse cx="0" cy="-20" rx="5.5" ry="10.5" transform="rotate(240)"/><ellipse cx="0" cy="-20" rx="5.5" ry="10.5" transform="rotate(270)"/><ellipse cx="0" cy="-20" rx="5.5" ry="10.5" transform="rotate(300)"/><ellipse cx="0" cy="-20" rx="5.5" ry="10.5" transform="rotate(330)"/></g><circle r="11.5" fill="currentColor"/><g fill="var(--sun)" stroke="none"><circle cx="-4" cy="-4" r="1.4"/><circle cx="3" cy="-5.5" r="1.4"/><circle cx="6" cy="1" r="1.4"/><circle cx="1" cy="6" r="1.4"/><circle cx="-5.5" cy="3" r="1.4"/><circle cx="0.5" cy="0" r="1.4"/></g></g></symbol></defs></svg>
+  <svg class="badge" viewBox="0 0 64 64" role="img" aria-label="Girassol, símbolo das deficiências ocultas"><use href="#sunflower"/></svg>
+  <svg class="cursor" viewBox="0 0 13 20" aria-hidden="true" shape-rendering="crispEdges">
+    <path d="M1 1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h-4v1h1v1h1v2h1v2h-2v1h-1v-2h-1v-2h-1v-1h-1v1h-1v1h-1v1h-2z" stroke-width=".9"/>
+  </svg>
+</header>
+
+<nav class="tabs" aria-label="Seções">
+  <div class="wrap">
+    <div class="bar">
+      <button type="button" id="menuBtn" aria-expanded="false" aria-controls="menuPanel"><span aria-hidden="true">☰</span> Menu</button>
+      <span class="cur" id="curSec" aria-live="polite">01 Entender</span>
+    </div>
+    <div class="menu" id="menuPanel" hidden><div class="mgroup"><h3>Para começar</h3><div class="mlinks"><a href="#entender"><span>01</span>Entender</a><a href="#primeiros"><span>02</span>Primeiros 30 dias</a><a href="#sintomas"><span>03</span>Sintomas</a></div></div><div class="mgroup"><h3>No dia a dia</h3><div class="mlinks"><a href="#ferramentas"><span>04</span>Ferramentas</a><a href="#ajudar"><span>05</span>Como ajudar</a><a href="#direitos"><span>06</span>Direitos e acessibilidade</a><a href="#glossario"><span>07</span>Glossário e mitos</a></div></div><div class="mgroup"><h3>Ciência e tratamento</h3><div class="mlinks"><a href="#noticias"><span>08</span>Notícias de 2026</a><a href="#estudos"><span>09</span>Estudos pelo mundo</a><a href="#pesquisas"><span>10</span>Pesquisas marcantes</a><a href="#tratamentos"><span>11</span>Tratamentos</a><a href="#mundo"><span>12</span>Acesso no mundo</a></div></div><div class="mgroup"><h3>Histórias e mais</h3><div class="mlinks"><a href="#pessoas"><span>13</span>Pessoas</a><a href="#cultura"><span>14</span>Filmes e livros</a><a href="#sobre"><span>15</span>Sobre mim</a><a href="#fontes"><span>16</span>Fontes</a></div></div></div>
+  </div>
+</nav>
+
+<main class="wrap" id="conteudo" tabindex="-1">
+
+<div class="board" style="margin-top:1rem">
+  <div class="rh"><div class="num">00</div><div class="ttl">O guia</div><div class="tag">Atualizado 11.10.2026</div></div>
+  <div class="rb">
+    <div class="ico"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M8 32 L22 8 M18 32 L32 8" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></div>
+    <div class="txt"><p>A ciência, as notícias de 2026, os tratamentos em cada canto do mundo e quem fala abertamente sobre conviver com a doença. Estudos em vários idiomas, traduzidos para o português.</p>
+    <button class="themebtn" id="themeBtn" type="button">Alternar tema</button></div>
+  </div>
+  <div class="full" style="padding:.8rem 1rem">
+    <svg class="nerve" viewBox="0 0 640 70" role="img" aria-label="Fibra nervosa com segmentos de mielina; dois estão danificados, representando lesões">
+      <line x1="0" y1="35" x2="640" y2="35" stroke="currentColor" stroke-width="5"/>
+      <g fill="var(--orange)" stroke="currentColor" stroke-width="3">
+        <rect x="6" y="16" width="80" height="38" rx="6"/><rect x="96" y="16" width="80" height="38" rx="6"/><rect x="186" y="16" width="80" height="38" rx="6"/>
+        <rect x="456" y="16" width="80" height="38" rx="6"/><rect x="546" y="16" width="80" height="38" rx="6"/>
+      </g>
+      <g fill="none" stroke="currentColor" stroke-width="3" stroke-dasharray="6 6">
+        <rect x="276" y="16" width="80" height="38" rx="6"/><rect x="366" y="16" width="80" height="38" rx="6"/>
+      </g>
+    </svg>
+    <p style="font-size:.8rem;margin:.5rem 0 0">A mielina (laranja) isola o nervo. Na EM, o sistema imune a destrói e o sinal falha onde ela some.</p>
+  </div>
+</div>
+
+<!-- ENTENDER -->
+<section id="entender">
+  <h2><b>01</b> Entender a doença</h2>
+  <p class="kicker">Doença crônica, autoimune e inflamatória do sistema nervoso central. As defesas atravessam a barreira do cérebro e atacam a mielina, deixando lesões no cérebro, na medula e nos nervos ópticos. Com o tempo o dano chega aos próprios neurônios, e é isso que acumula incapacidade.</p>
+
+  <div class="facts">
+    <div><b>2,9 mi</b><span>pessoas com EM no mundo em 2023 (2,3 mi em 2013)</span></div>
+    <div><b>~40 mil</b><span>brasileiros com a doença, segundo a ABEM</span></div>
+    <div><b>2–3×</b><span>mais comum em mulheres</span></div>
+    <div><b>20–40</b><span>anos: idade típica do diagnóstico</span></div>
+  </div>
+
+  <div class="board">
+    <div class="rh"><div class="num">A</div><div class="ttl">Remitente-recorrente</div><div class="tag">EMRR · ~85% dos casos</div></div>
+    <div class="rb"><div class="ico">RR</div><div class="txt"><p>Surtos seguidos de recuperação parcial ou total. É onde os remédios atuais funcionam melhor.</p></div></div>
+    <div class="rh"><div class="num">B</div><div class="ttl">Secundariamente progressiva</div><div class="tag">EMSP</div></div>
+    <div class="rb"><div class="ico">SP</div><div class="txt"><p>Anos depois, parte das pessoas com EMRR passa a piorar de forma contínua, com ou sem surtos.</p></div></div>
+    <div class="rh"><div class="num">C</div><div class="ttl">Primariamente progressiva</div><div class="tag">EMPP · 10–15%</div></div>
+    <div class="rb"><div class="ico">PP</div><div class="txt"><p>Piora gradual desde o início, sem surtos claros. Poucas opções de tratamento.</p></div></div>
+    <div class="rh"><div class="num">D</div><div class="ttl">Síndromes iniciais</div><div class="tag">CIS · RIS</div></div>
+    <div class="rb"><div class="ico">CIS</div><div class="txt"><p>Primeiro episódio neurológico (CIS) ou lesões típicas achadas por acaso na ressonância (RIS). Pelos critérios de 2024, o RIS pode, em certas condições, já ser diagnosticado como EM.</p></div></div>
+  </div>
+
+  <div class="board">
+    
+    
+    <div class="rh"><div class="num">!</div><div class="ttl">Causas</div><div class="tag">Vírus + genes + ambiente</div></div>
+    <div class="rb"><div class="ico">EBV</div><div class="txt"><p>O fator mais forte é o vírus Epstein-Barr, da mononucleose: uma revisão de 2026 na Lancet Neurology concluiu que a infecção é, na maioria dos casos, necessária para a doença surgir. Somam-se genética (mais de 200 variantes, com destaque para o HLA-DRB1*15:01), vitamina D baixa, tabagismo, obesidade e sono ruim na adolescência.</p></div></div>
+    <div class="rh"><div class="num">+</div><div class="ttl">Diagnóstico</div><div class="tag">McDonald 2024</div></div>
+    <div class="rb"><div class="ico">RM</div><div class="txt"><p>Exame neurológico, ressonância do cérebro e da medula e, muitas vezes, análise do líquor. Os critérios de 2024 incluíram o nervo óptico como quinta região típica e sinais como a veia central na lesão e a borda paramagnética. No sangue, o neurofilamento leve (NfL) mede dano neuronal.</p></div></div>
+    <div class="full" style="background:var(--teal);color:var(--on-teal)"><p><strong>Ainda não há cura,</strong> mas com diagnóstico precoce e tratamento adequado, grande parte das pessoas com a forma remitente passa décadas sem incapacidade importante. Na EM, tempo é cérebro, medula e visão.</p></div>
+  </div>
+</section>
+
+<!-- PRIMEIROS 30 DIAS -->
+<section id="primeiros">
+  <h2><b>02</b> Primeiros 30 dias</h2>
+  <p class="kicker">Receber o diagnóstico assusta. Este roteiro organiza o primeiro mês, um passo de cada vez. Não é preciso fazer tudo de uma vez, e cada pessoa tem seu ritmo.</p>
+  <div class="board week">
+    <div class="rh"><div class="num">S1</div><div class="ttl">Respire e entenda</div><div class="tag">Semana 1</div></div>
+    <div class="rb"><div class="ico">♡</div><div class="txt"><ul><li>Medo, raiva, tristeza e até alívio por finalmente ter um nome para os sintomas são reações normais.</li><li>Guarde isto: com os tratamentos atuais, a maioria das pessoas com a forma remitente-recorrente leva uma vida ativa por décadas.</li><li>Evite pesquisar em fóruns de madrugada. Prefira fontes confiáveis e anote as dúvidas para a consulta.</li><li>Peça cópia de todos os laudos: ressonâncias, exame do líquor e exames de sangue.</li></ul></div></div>
+
+    <div class="rh"><div class="num">S2</div><div class="ttl">Monte seu time</div><div class="tag">Semana 2</div></div>
+    <div class="rb"><div class="ico">+</div><div class="txt"><ul><li>Procure um neurologista com experiência em EM, pelo SUS ou pelo convênio. No SUS, o caminho começa na unidade básica de saúde, com encaminhamento para um centro de referência. No convênio, procure na lista do plano neurologistas que atendem EM (às vezes chamados de neuroimunologistas) e confirme isso ao marcar a consulta.</li><li>Na primeira consulta, leve os laudos, a lista de sintomas e de remédios em uso e, se possível, alguém de confiança.</li><li>Pergunte: qual é a forma da minha EM? Ela está ativa? Quais são as opções de tratamento para o meu caso e por quê?</li><li>Use o preparador de consulta da aba "Ferramentas" para não esquecer nada.</li></ul></div></div>
+
+    <div class="rh"><div class="num">S3</div><div class="ttl">Decida o tratamento</div><div class="tag">Semana 3</div></div>
+    <div class="rb"><div class="ico">RX</div><div class="txt"><ul><li>Começar cedo protege o cérebro. Converse sobre eficácia, riscos, forma de uso e exames de acompanhamento de cada opção.</li><li>Se você pensa em engravidar, diga isso ao médico agora: muda a escolha do remédio.</li><li>Antes de alguns tratamentos são feitos exames de sangue e atualização de vacinas. O médico orienta quais.</li><li>Comece logo a papelada do SUS (laudo LME e farmácia de alto custo), que pode levar algumas semanas. Quem tem convênio também pode retirar os remédios pelo SUS: o laudo pode ser preenchido pelo médico particular ou do plano.</li></ul></div></div>
+
+    <div class="rh"><div class="num">S4</div><div class="ttl">Cuide do resto</div><div class="tag">Semana 4</div></div>
+    <div class="rb"><div class="ico">✓</div><div class="txt"><ul><li>Sono regular, atividade física orientada e alimentação equilibrada ajudam a lidar com a fadiga.</li><li>Se você fuma, este é o melhor momento para parar: o cigarro está ligado a uma EM mais agressiva.</li><li>Considere apoio psicológico. Ansiedade e depressão são comuns e tratáveis.</li><li>Contar ou não sobre o diagnóstico, no trabalho e para amigos, é decisão sua, no seu tempo.</li></ul></div></div>
+
+    <div class="rh"><div class="num">30+</div><div class="ttl">Depois do primeiro mês</div><div class="tag">O caminho segue</div></div>
+    <div class="rb"><div class="ico">→</div><div class="txt"><ul><li>Consultas regulares e ressonâncias de controle mostram se o tratamento está funcionando, mesmo quando você se sente bem.</li><li>Registre como você se sente no diário de sintomas. Isso deixa as consultas muito mais produtivas.</li><li>Associações como ABEM e AME oferecem acolhimento, informação e grupos com outras pessoas que vivem com EM.</li><li>Sintoma novo que dura mais de 24 horas? Avise o neurologista.</li></ul></div></div>
+  </div>
+</section>
+
+<!-- SINTOMAS -->
+<section id="sintomas">
+  <h2><b>03</b> Sintomas</h2>
+  <p class="kicker">Variam de pessoa para pessoa, conforme a região do sistema nervoso atingida. Muitos são invisíveis para quem olha de fora, e é isso que torna a EM tão mal compreendida.</p>
+  <div class="board">
+    <div class="rh"><div class="num">01</div><div class="ttl">Visão</div><div class="tag">Muitas vezes o 1º sinal</div></div>
+    <div class="rb"><div class="ico">VIS</div><div class="txt"><p>Neurite óptica: visão embaçada ou escurecida em um olho, dor ao mover o olho e cores que parecem desbotadas. Também pode haver visão dupla e movimentos involuntários dos olhos.</p></div></div>
+    <div class="rh"><div class="num">02</div><div class="ttl">Sensibilidade</div><div class="tag">Formigamento e dor</div></div>
+    <div class="rb"><div class="ico">SEN</div><div class="txt"><p>Formigamento, dormência ou queimação em braços, pernas, tronco ou rosto. Um choque que desce pela coluna ao dobrar o pescoço (sinal de Lhermitte). Um aperto em faixa ao redor do tórax, o "abraço da EM". Dor neuropática.</p></div></div>
+    <div class="rh"><div class="num">03</div><div class="ttl">Força e movimento</div><div class="tag">Fraqueza e rigidez</div></div>
+    <div class="rb"><div class="ico">MOV</div><div class="txt"><p>Fraqueza em um lado do corpo ou nas pernas, músculos rígidos ou com espasmos (espasticidade), tremor, pé que "arrasta", mais tropeços e quedas.</p></div></div>
+    <div class="rh"><div class="num">04</div><div class="ttl">Equilíbrio</div><div class="tag">Tontura e coordenação</div></div>
+    <div class="rb"><div class="ico">EQU</div><div class="txt"><p>Tontura, vertigem, falta de coordenação e dificuldade para andar em linha reta ou fazer movimentos finos, como abotoar uma camisa.</p></div></div>
+    <div class="rh"><div class="num">05</div><div class="ttl">Fadiga</div><div class="tag">O sintoma mais comum</div></div>
+    <div class="rb"><div class="ico">FAD</div><div class="txt"><p>Atinge a grande maioria das pessoas com EM. Não é cansaço comum: pode vir sem esforço, não passa com uma noite de sono e piora com o calor e no fim do dia. É uma das principais causas de afastamento do trabalho.</p></div></div>
+    <div class="rh"><div class="num">06</div><div class="ttl">Bexiga e intestino</div><div class="tag">Fale sem vergonha</div></div>
+    <div class="rb"><div class="ico">WC</div><div class="txt"><p>Urgência para urinar, idas frequentes ao banheiro, escapes, dificuldade de esvaziar a bexiga e intestino preso. Infecções urinárias podem piorar os outros sintomas.</p></div></div>
+    <div class="rh"><div class="num">07</div><div class="ttl">Cognição</div><div class="tag">A "névoa mental"</div></div>
+    <div class="rb"><div class="ico">COG</div><div class="txt"><p>Lentidão para processar informações, falhas de memória recente, dificuldade de atenção e de encontrar palavras. Atinge cerca de metade das pessoas e nem sempre aparece numa consulta de rotina.</p></div></div>
+    <div class="rh"><div class="num">08</div><div class="ttl">Emoções</div><div class="tag">Também é a doença</div></div>
+    <div class="rb"><div class="ico">EMO</div><div class="txt"><p>Depressão e ansiedade são bem mais frequentes do que na população geral, em parte pelas próprias lesões no cérebro. Algumas pessoas têm choro ou riso involuntário, fora de proporção com o que sentem.</p></div></div>
+    <div class="rh"><div class="num">09</div><div class="ttl">Fala e deglutição</div><div class="tag">Menos comum</div></div>
+    <div class="rb"><div class="ico">FAL</div><div class="txt"><p>Fala arrastada ou pausada e engasgos ao comer ou beber, mais frequentes em fases avançadas.</p></div></div>
+    <div class="rh"><div class="num">10</div><div class="ttl">Sexualidade</div><div class="tag">Pouco falado</div></div>
+    <div class="rb"><div class="ico">SEX</div><div class="txt"><p>Menos desejo e sensibilidade, alterações de ereção ou lubrificação, por efeito direto nos nervos, pela fadiga ou por remédios. Tem tratamento, vale levar ao médico.</p></div></div>
+    <div class="rh"><div class="num">11</div><div class="ttl">Calor</div><div class="tag">Fenômeno de Uhthoff</div></div>
+    <div class="rb"><div class="ico">°C</div><div class="txt"><p>Banho quente, febre, sol ou exercício podem trazer de volta sintomas antigos por algumas horas. Não é dano novo: melhora quando o corpo esfria.</p></div></div>
+  </div>
+
+  <h2 class="sub">Surto ou <b>pseudo-surto?</b></h2>
+  <div class="board cols">
+    <div><div class="ch t">Surto</div><div class="cb"><p>Sintoma novo, ou piora clara de um antigo, que dura mais de 24 horas, sem febre ou infecção, pelo menos 30 dias depois do anterior.</p><p>É sinal de inflamação ativa. Avise o neurologista: pode ser preciso tratar o surto e rever o remédio de base.</p></div></div>
+    <div><div class="ch s">Pseudo-surto</div><div class="cb"><p>Piora passageira de sintomas já conhecidos, causada por calor, febre, infecção (principalmente urinária), estresse ou noites mal dormidas.</p><p>Não há lesão nova. Melhora quando a causa é resolvida.</p></div></div>
+  </div>
+
+  <div class="board"><div class="full" style="background:var(--orange);color:var(--on-orange)"><p><strong>Procure atendimento imediato</strong> diante de perda súbita de visão, fraqueza forte e repentina, dificuldade para engolir ou respirar, ou febre com piora importante, principalmente em quem usa remédios que reduzem a imunidade.</p></div></div>
+</section>
+
+<!-- FERRAMENTAS -->
+<section id="ferramentas">
+  <h2><b>04</b> Ferramentas</h2>
+  <p class="kicker">Um diário para registrar como você se sente e um preparador de consulta. Seus dados ficam guardados só neste aparelho e navegador: nada é enviado para lugar nenhum. Se você limpar os dados do navegador, o diário é apagado, então exporte de vez em quando.</p>
+
+  <h2 class="sub">Diário de <b>sintomas</b></h2>
+  <div class="board" id="diario">
+    <div class="fld"><label for="dData">Data</label><input type="date" id="dData"></div>
+    <div class="fld"><label for="dFad">Fadiga hoje: <span class="rangeval" id="dFadV">5</span>/10</label><input type="range" id="dFad" min="0" max="10" value="5"></div>
+    <div class="fld"><span class="lbl">Sintomas</span><div class="picks" id="dSym"><label class="pick"><input type="checkbox" name="sym" value="Visão"><span>Visão</span></label><label class="pick"><input type="checkbox" name="sym" value="Formigamento"><span>Formigamento</span></label><label class="pick"><input type="checkbox" name="sym" value="Fraqueza"><span>Fraqueza</span></label><label class="pick"><input type="checkbox" name="sym" value="Equilíbrio"><span>Equilíbrio</span></label><label class="pick"><input type="checkbox" name="sym" value="Fadiga"><span>Fadiga</span></label><label class="pick"><input type="checkbox" name="sym" value="Bexiga/intestino"><span>Bexiga/intestino</span></label><label class="pick"><input type="checkbox" name="sym" value="Dor"><span>Dor</span></label><label class="pick"><input type="checkbox" name="sym" value="Memória/atenção"><span>Memória/atenção</span></label><label class="pick"><input type="checkbox" name="sym" value="Humor"><span>Humor</span></label><label class="pick"><input type="checkbox" name="sym" value="Espasmos"><span>Espasmos</span></label><label class="pick"><input type="checkbox" name="sym" value="Outro"><span>Outro</span></label></div></div>
+    <div class="fld"><span class="lbl">Possíveis gatilhos</span><div class="picks" id="dTrg"><label class="pick alt"><input type="checkbox" name="trg" value="Calor"><span>Calor</span></label><label class="pick alt"><input type="checkbox" name="trg" value="Febre/infecção"><span>Febre/infecção</span></label><label class="pick alt"><input type="checkbox" name="trg" value="Estresse"><span>Estresse</span></label><label class="pick alt"><input type="checkbox" name="trg" value="Sono ruim"><span>Sono ruim</span></label><label class="pick alt"><input type="checkbox" name="trg" value="Muito esforço"><span>Muito esforço</span></label><label class="pick alt"><input type="checkbox" name="trg" value="Ciclo menstrual"><span>Ciclo menstrual</span></label></div></div>
+    <div class="fld"><span class="lbl">Algum sintoma novo ou mais forte que já dura mais de 24 horas?</span><div class="picks"><label class="pick alt"><input type="checkbox" id="d24"><span>Sim</span></label></div></div>
+    <div class="fld"><label for="dNota">Anotações</label><textarea id="dNota" placeholder="Como foi o dia, remédios, o que ajudou ou piorou..."></textarea></div>
+    <div class="btns"><button class="btn pri" type="button" id="dSalvar">Salvar registro</button></div>
+    <div class="msg" id="dMsg" hidden></div>
+  </div>
+
+  <div class="board">
+    <div class="rh"><div class="num">30</div><div class="ttl">Seus últimos 30 dias</div><div class="tag" id="dCount">Nenhum registro ainda</div></div>
+    <div id="dResumo" class="full"><p>Quando você salvar registros, o resumo aparece aqui.</p></div>
+    <div><div class="spark" id="dSpark" aria-hidden="true"></div><div class="spark-l"><span>Fadiga nos últimos registros</span><span>0 a 10</span></div></div>
+    <div id="dLista"></div>
+    <div class="btns"><button class="btn" type="button" id="dExport">Baixar diário em PDF</button><button class="btn" type="button" id="dLimpar">Apagar tudo</button></div>
+  </div>
+
+  <h2 class="sub">Preparador de <b>consulta</b></h2>
+  <div class="board" id="consulta">
+    <div class="rh"><div class="num">?</div><div class="ttl">Escolha as perguntas</div><div class="tag">Marque as que quer fazer</div></div>
+    <div class="qgroup"><h4>Sobre a minha doença</h4><label class="q"><input type="checkbox" data-q="0" value="Qual é a forma da minha EM e ela está ativa agora?"><span>Qual é a forma da minha EM e ela está ativa agora?</span></label><label class="q"><input type="checkbox" data-q="1" value="O que a última ressonância mostrou em comparação com a anterior?"><span>O que a última ressonância mostrou em comparação com a anterior?</span></label><label class="q"><input type="checkbox" data-q="2" value="Os sintomas que tenho tido são da EM ou podem ser outra coisa?"><span>Os sintomas que tenho tido são da EM ou podem ser outra coisa?</span></label><label class="q"><input type="checkbox" data-q="3" value="Como vou saber se estou tendo um surto e o que devo fazer?"><span>Como vou saber se estou tendo um surto e o que devo fazer?</span></label></div><div class="qgroup"><h4>Sobre o tratamento</h4><label class="q"><input type="checkbox" data-q="4" value="O tratamento atual está funcionando? Como medimos isso?"><span>O tratamento atual está funcionando? Como medimos isso?</span></label><label class="q"><input type="checkbox" data-q="5" value="Quais efeitos colaterais devo observar e quando devo ligar?"><span>Quais efeitos colaterais devo observar e quando devo ligar?</span></label><label class="q"><input type="checkbox" data-q="6" value="Quais exames preciso fazer e com que frequência?"><span>Quais exames preciso fazer e com que frequência?</span></label><label class="q"><input type="checkbox" data-q="7" value="Existe outra opção mais adequada ao meu caso ou aos meus planos (como gravidez)?"><span>Existe outra opção mais adequada ao meu caso ou aos meus planos (como gravidez)?</span></label><label class="q"><input type="checkbox" data-q="8" value="Preciso atualizar alguma vacina?"><span>Preciso atualizar alguma vacina?</span></label></div><div class="qgroup"><h4>Sobre o dia a dia</h4><label class="q"><input type="checkbox" data-q="9" value="O que posso fazer para lidar com a fadiga?"><span>O que posso fazer para lidar com a fadiga?</span></label><label class="q"><input type="checkbox" data-q="10" value="Que tipo de exercício é indicado para mim?"><span>Que tipo de exercício é indicado para mim?</span></label><label class="q"><input type="checkbox" data-q="11" value="Devo fazer fisioterapia, terapia ocupacional ou acompanhamento psicológico?"><span>Devo fazer fisioterapia, terapia ocupacional ou acompanhamento psicológico?</span></label><label class="q"><input type="checkbox" data-q="12" value="Posso pedir relatório para o trabalho, INSS ou outros direitos?"><span>Posso pedir relatório para o trabalho, INSS ou outros direitos?</span></label></div>
+    <div class="fld"><label for="cMinhas">Minhas perguntas</label><textarea id="cMinhas" placeholder="Uma pergunta por linha"></textarea></div>
+    <div class="fld"><label for="cRem">Remédios e suplementos que uso</label><textarea id="cRem" placeholder="Nome, dose e horário"></textarea></div>
+    <div class="fld"><label for="cMud">O que mudou desde a última consulta</label><textarea id="cMud"></textarea></div>
+    <div class="btns"><button class="btn" type="button" id="cDiario">Incluir resumo do diário</button><button class="btn pri" type="button" id="cGerar">Gerar roteiro</button><button class="btn" type="button" id="cPdfDireto">Baixar PDF</button></div>
+    <pre class="out" id="cOut" hidden></pre>
+    <div class="btns" id="cAcoes" hidden><button class="btn" type="button" id="cCopiar">Copiar</button><button class="btn" type="button" id="cBaixar">Baixar PDF</button></div>
+    <div class="msg" id="cMsg" hidden></div>
+  </div>
+</section>
+
+<!-- COMO AJUDAR -->
+<section id="ajudar">
+  <h2><b>05</b> Como ajudar alguém com EM</h2>
+  <p class="kicker">Amigo, parceiro, familiar ou colega: o que mais ajuda é acreditar no que a pessoa sente, oferecer ajuda concreta e respeitar a autonomia dela.</p>
+
+  <div class="board">
+    <div class="rh"><div class="num" style="background:var(--sun)">✿</div><div class="ttl">O cordão de girassol</div><div class="tag">Lei 14.624/2023</div></div>
+    <div class="rb k"><div class="ico keep" style="background:var(--sun)"><svg viewBox="0 0 64 64" aria-hidden="true" style="width:3.2rem;height:3.2rem"><use href="#sunflower"/></svg></div><div class="txt">
+      <p>O girassol é o símbolo internacional das deficiências ocultas, aquelas que não se veem de imediato. Surgiu no Reino Unido em 2016 e, no Brasil, virou símbolo nacional pela Lei 14.624, de julho de 2023.</p>
+      <p>Para quem tem EM, faz todo sentido: fadiga, dor, tontura, urgência para ir ao banheiro e falhas de memória não aparecem por fora. Quando a doença causa limitações assim, o cordão sinaliza que a pessoa pode precisar de mais tempo, de um lugar para sentar ou de atendimento prioritário.</p>
+      <p>O uso é opcional e não dispensa documento que comprove a deficiência, se for pedido. Algumas prefeituras distribuem o cordão de graça.</p>
+      <p><strong>Viu alguém com o cordão?</strong> Ofereça ajuda com naturalidade, tenha paciência e não peça explicações sobre a condição.</p>
+    </div></div>
+  </div>
+
+  <div class="board cols">
+    <div><div class="ch t">Diga</div><ul class="quotes"><li>"Acredito em você."</li><li>"Do que você precisa hoje?"</li><li>"Tudo bem cancelar, a gente remarca."</li><li>"Quer que eu vá junto à consulta?"</li><li>"Como você está, de verdade?"</li></ul></div>
+    <div><div class="ch o">Evite</div><ul class="quotes"><li>"Mas você parece tão bem."</li><li>"Eu também vivo cansado."</li><li>"Minha tia tinha e foi parar na cadeira de rodas."</li><li>"Já tentou aquela dieta que cura?"</li><li>"Isso é psicológico."</li></ul></div>
+  </div>
+
+  <div class="board">
+    <div class="rh"><div class="num">01</div><div class="ttl">Aprenda sobre a doença</div><div class="tag">O primeiro passo</div></div>
+    <div class="rb"><div class="ico">?</div><div class="txt"><p>Saber que a EM varia muito de pessoa para pessoa e que a maioria não fica incapacitada evita medo e comentários que machucam.</p></div></div>
+    <div class="rh"><div class="num">02</div><div class="ttl">Ofereça ajuda específica</div><div class="tag">Não "qualquer coisa, me avisa"</div></div>
+    <div class="rb"><div class="ico">✓</div><div class="txt"><p>"Posso fazer o mercado na quinta?" funciona melhor que uma oferta genérica. Carona para a infusão, buscar remédio na farmácia de alto custo, cozinhar porções para congelar, ficar com as crianças num dia ruim.</p></div></div>
+    <div class="rh"><div class="num">03</div><div class="ttl">Respeite a energia</div><div class="tag">A fadiga é real</div></div>
+    <div class="rb"><div class="ico">⚡</div><div class="txt"><p>Planeje programas curtos, flexíveis e com pausas, e aceite cancelamentos sem culpa. A "teoria das colheres" ajuda a entender: cada atividade gasta energia, e o estoque do dia é limitado.</p></div></div>
+    <div class="rh"><div class="num">04</div><div class="ttl">Pense no ambiente</div><div class="tag">Calor, distância, banheiro</div></div>
+    <div class="rb"><div class="ico">°C</div><div class="txt"><p>Prefira lugares frescos, com onde sentar, banheiro por perto e pouca caminhada. No verão, deixe água gelada à mão.</p></div></div>
+    <div class="rh"><div class="num">05</div><div class="ttl">Apoie o tratamento</div><div class="tag">Sem vigiar</div></div>
+    <div class="rb"><div class="ico">RX</div><div class="txt"><p>Lembre das consultas se a pessoa pedir, ajude a anotar sintomas e dúvidas antes, vá junto quando for convidado. A decisão sobre o tratamento é dela e do médico.</p></div></div>
+    <div class="rh"><div class="num">06</div><div class="ttl">Cuide do emocional</div><div class="tag">Escute mais, aconselhe menos</div></div>
+    <div class="rb"><div class="ico">♡</div><div class="txt"><p>Fique atento a sinais de depressão: isolamento, perda de interesse, desesperança. Incentive terapia e grupos de apoio, como os da ABEM e da AME. Se a pessoa falar em não querer viver, busque ajuda: no Brasil, o CVV atende pelo 188, 24 horas por dia.</p></div></div>
+    <div class="rh"><div class="num">07</div><div class="ttl">No trabalho e na escola</div><div class="tag">Adaptações simples</div></div>
+    <div class="rb"><div class="ico">⌂</div><div class="txt"><p>Horário flexível, home office nos dias difíceis, pausas, mesa perto do banheiro, controle da temperatura e prazos ajustados mantêm muita gente produtiva. Contar ou não o diagnóstico é decisão da pessoa.</p></div></div>
+    <div class="rh"><div class="num">08</div><div class="ttl">Direitos</div><div class="tag">Informe-se</div></div>
+    <div class="rb"><div class="ico">§</div><div class="txt"><p>Pessoas com EM podem ter acesso a remédios de alto custo pelo SUS e, em algumas situações, a benefícios previdenciários e isenção de imposto de renda sobre a aposentadoria. As associações de pacientes orientam caso a caso.</p></div></div>
+    <div class="rh"><div class="num">09</div><div class="ttl">Cuide de quem cuida</div><div class="tag">Você também importa</div></div>
+    <div class="rb"><div class="ico">↺</div><div class="txt"><p>Cuidadores e parceiros também se cansam. Divida tarefas, procure grupos de cuidadores e reserve tempo para você.</p></div></div>
+  </div>
+</section>
+
+<!-- DIREITOS E ACESSIBILIDADE -->
+<section id="direitos">
+  <h2><b>06</b> Direitos e acessibilidade</h2>
+  <p class="kicker">O que a lei brasileira garante a quem tem EM e como deixar o dia a dia, e esta página, mais fáceis de usar.</p>
+  <h2 class="sub">Seus <b>direitos</b></h2>
+  <div class="board">
+    <div class="rh"><div class="num">01</div><div class="ttl">Remédios pelo SUS</div><div class="tag">Farmácia de alto custo</div></div>
+    <div class="rb"><div class="ico">SUS</div><div class="txt"><p>Os remédios da EM saem pelo Componente Especializado da Assistência Farmacêutica, a chamada farmácia de alto custo do seu estado. Leve receita, o laudo de solicitação (LME) preenchido pelo neurologista, exames e documentos pessoais.</p><p>Se o remédio está no protocolo do SUS e foi negado, registre reclamação na Ouvidoria do SUS pelo 136. Para remédios fora do protocolo, o caminho costuma ser judicial, e a Defensoria Pública atende de graça.</p></div></div>
+    <div class="rh"><div class="num">02</div><div class="ttl">Isenção de imposto de renda</div><div class="tag">Lei 7.713/1988</div></div>
+    <div class="rb"><div class="ico">IR</div><div class="txt"><p>Quem tem EM e recebe aposentadoria, pensão ou reforma não paga imposto de renda sobre esses valores. O salário continua sendo tributado.</p><p>Peça pelo Meu INSS ou pelo telefone 135, com laudo médico que traga o diagnóstico, o CID e a data em que a doença começou. Pode ser possível recuperar valores pagos depois do diagnóstico, dentro do prazo legal.</p></div></div>
+    <div class="rh"><div class="num">03</div><div class="ttl">Benefícios do INSS</div><div class="tag">Sem carência</div></div>
+    <div class="rb"><div class="ico">INSS</div><div class="txt"><p>Desde 2022, a EM está na lista de doenças que dispensam o tempo mínimo de contribuição (carência) para o auxílio por incapacidade temporária e a aposentadoria por incapacidade permanente.</p><p>Atenção: o diagnóstico sozinho não garante o benefício. É preciso ser segurado do INSS e a perícia precisa reconhecer a incapacidade para o trabalho. Quem se aposenta por incapacidade e precisa de ajuda permanente de outra pessoa pode pedir um acréscimo de 25%.</p></div></div>
+    <div class="rh"><div class="num">04</div><div class="ttl">BPC/LOAS</div><div class="tag">Sem contribuição</div></div>
+    <div class="rb"><div class="ico">BPC</div><div class="txt"><p>Benefício de um salário mínimo por mês para pessoa com deficiência de baixa renda, mesmo sem nunca ter contribuído. Exige renda familiar baixa por pessoa, inscrição no CadÚnico e avaliação médica e social do INSS.</p></div></div>
+    <div class="rh"><div class="num">05</div><div class="ttl">Direitos da pessoa com deficiência</div><div class="tag">Lei Brasileira de Inclusão</div></div>
+    <div class="rb"><div class="ico">PcD</div><div class="txt"><p>Quando a EM causa limitações de longo prazo, a pessoa pode ser reconhecida como pessoa com deficiência. Isso abre direitos como atendimento prioritário, vagas reservadas em empresas e concursos, isenção de impostos na compra de carro (com laudo), credencial de estacionamento, passe livre interestadual para quem tem baixa renda e prioridade para vagas de teletrabalho.</p></div></div>
+    <div class="rh"><div class="num">06</div><div class="ttl">Cordão de girassol</div><div class="tag">Opcional</div></div>
+    <div class="rb"><div class="ico">✿</div><div class="txt"><p>Sinaliza deficiências que não aparecem e ajuda a garantir atendimento prioritário e mais paciência no atendimento. Veja os detalhes na aba "Como ajudar".</p></div></div>
+    <div class="rh"><div class="num">07</div><div class="ttl">Onde buscar ajuda</div><div class="tag">Gratuito</div></div>
+    <div class="rb"><div class="ico">?</div><div class="txt"><p>Defensoria Pública do seu estado, para questões judiciais. Meu INSS ou 135, para benefícios. Ouvidoria do SUS, 136. Associações de pacientes, como ABEM e AME, que orientam caso a caso.</p></div></div>
+  </div>
+  <div class="board"><div class="full" style="background:var(--orange);color:var(--on-orange)"><p><strong>Importante:</strong> as regras mudam e cada caso é avaliado individualmente. Este resumo é informativo e não substitui orientação de advogado, da Defensoria Pública ou de uma associação de pacientes.</p></div></div>
+  <h2 class="sub"><b>Acessibilidade</b></h2>
+  <div class="board">
+    <div class="rh"><div class="num">A</div><div class="ttl">Ferramentas desta página</div><div class="tag">Botão amarelo</div></div>
+    <div class="rb"><div class="ico">Aa</div><div class="txt"><p>O botão amarelo no canto da tela deixa a letra maior, ativa o alto contraste, troca para uma fonte feita para quem tem baixa visão (Atkinson Hyperlegible) e lê em voz alta a seção que está na tela. As escolhas ficam salvas no seu aparelho.</p></div></div>
+    <div class="rh"><div class="num">B</div><div class="ttl">No celular</div><div class="tag">Recursos nativos</div></div>
+    <div class="rb"><div class="ico">📱</div><div class="txt"><p>iPhone e Android permitem aumentar o texto de todos os apps, ler a tela em voz alta (VoiceOver e TalkBack), ditar mensagens em vez de digitar e criar alarmes para os remédios. Para quem tem tremor ou fraqueza nas mãos, comandos de voz poupam energia.</p></div></div>
+    <div class="rh"><div class="num">C</div><div class="ttl">Em casa</div><div class="tag">Menos esforço, menos quedas</div></div>
+    <div class="rb"><div class="ico">⌂</div><div class="txt"><p>Barras de apoio no banheiro, boa iluminação, menos tapetes soltos, cadeira no banho e objetos de uso diário ao alcance. Ventilador ou ar-condicionado ajudam muito nos dias quentes. Um terapeuta ocupacional pode avaliar a casa e sugerir adaptações.</p></div></div>
+    <div class="rh"><div class="num">D</div><div class="ttl">No trabalho e nos estudos</div><div class="tag">Adaptação razoável</div></div>
+    <div class="rb"><div class="ico">✓</div><div class="txt"><p>A lei garante à pessoa com deficiência adaptações razoáveis: horário flexível, pausas, teletrabalho, mais tempo em provas, mesa perto do banheiro, controle de temperatura. Converse com o RH ou a coordenação, de preferência com um relatório médico.</p></div></div>
+  </div>
+</section>
+
+<!-- GLOSSÁRIO E MITOS -->
+<section id="glossario">
+  <h2><b>07</b> Glossário e mitos</h2>
+  <p class="kicker">As palavras que aparecem nos laudos e nas consultas, explicadas de forma simples, e as dúvidas mais comuns respondidas.</p>
+  <h2 class="sub"><b>Glossário</b></h2>
+  <div class="board">
+    <div class="fld"><label for="glBusca">Buscar termo</label><input type="search" id="glBusca" placeholder="Ex.: gadolínio, EDSS, surto"></div>
+    <dl class="gl" id="glLista" style="border-top:var(--bw) solid var(--ink)"><div class="gl-row"><dt>Surto</dt><dd>Sintoma novo ou piora clara de um antigo, que dura mais de 24 horas, sem febre ou infecção. Também chamado de recaída ou exacerbação.</dd></div><div class="gl-row"><dt>Pseudo-surto</dt><dd>Piora passageira de sintomas antigos por calor, febre, infecção ou estresse. Não indica lesão nova.</dd></div><div class="gl-row"><dt>Mielina</dt><dd>Capa de gordura e proteína que envolve os nervos e faz o sinal elétrico correr rápido.</dd></div><div class="gl-row"><dt>Desmielinização</dt><dd>Perda da mielina. É o dano típico da EM.</dd></div><div class="gl-row"><dt>Lesão ou placa</dt><dd>Área do cérebro, da medula ou do nervo óptico onde houve inflamação e perda de mielina. Aparece na ressonância.</dd></div><div class="gl-row"><dt>Gadolínio</dt><dd>Contraste usado na ressonância. Uma lesão que "capta contraste" está inflamada agora, ou seja, é ativa.</dd></div><div class="gl-row"><dt>T2 e FLAIR</dt><dd>Tipos de imagem da ressonância em que as lesões aparecem como manchas brancas. Mostram as lesões antigas e as novas.</dd></div><div class="gl-row"><dt>Buraco negro</dt><dd>Lesão que aparece escura em outra sequência da ressonância (T1). Indica dano mais permanente.</dd></div><div class="gl-row"><dt>Líquor e punção lombar</dt><dd>O líquor é o líquido que banha o cérebro e a medula. A punção lombar coleta uma pequena amostra, pelas costas, para exame.</dd></div><div class="gl-row"><dt>Bandas oligoclonais</dt><dd>Anticorpos encontrados no líquor que mostram inflamação dentro do sistema nervoso. Presentes na grande maioria das pessoas com EM.</dd></div><div class="gl-row"><dt>Disseminação no tempo e no espaço</dt><dd>Base do diagnóstico: lesões em mais de um lugar do sistema nervoso e surgidas em momentos diferentes.</dd></div><div class="gl-row"><dt>EDSS</dt><dd>Escala de 0 a 10 que mede a incapacidade na EM. Zero é exame normal; números maiores indicam mais dificuldade, principalmente para andar.</dd></div><div class="gl-row"><dt>NEDA</dt><dd>Sigla em inglês para "sem evidência de atividade da doença": sem surtos, sem lesões novas e sem piora da incapacidade. É uma meta do tratamento.</dd></div><div class="gl-row"><dt>PIRA</dt><dd>Progressão independente de surtos: piora lenta da incapacidade que acontece mesmo sem surtos.</dd></div><div class="gl-row"><dt>Remédio modificador (DMT)</dt><dd>Tratamento de uso contínuo que reduz surtos e lesões e muda o curso da doença. Diferente dos remédios para sintomas.</dd></div><div class="gl-row"><dt>Pulsoterapia</dt><dd>Corticoide em dose alta, geralmente por três a cinco dias, para tratar um surto.</dd></div><div class="gl-row"><dt>Neurite óptica</dt><dd>Inflamação do nervo óptico: visão embaçada em um olho e dor ao movê-lo. Muitas vezes é o primeiro sinal da EM.</dd></div><div class="gl-row"><dt>Sinal de Lhermitte</dt><dd>Sensação de choque que desce pela coluna ao dobrar o pescoço para a frente.</dd></div><div class="gl-row"><dt>Fenômeno de Uhthoff</dt><dd>Piora temporária dos sintomas com o calor, que passa quando o corpo esfria.</dd></div><div class="gl-row"><dt>CIS e RIS</dt><dd>CIS é o primeiro episódio neurológico sugestivo de EM. RIS são lesões típicas achadas por acaso, sem sintomas.</dd></div><div class="gl-row"><dt>Neurofilamento leve (NfL)</dt><dd>Proteína dos neurônios que aparece no sangue quando há dano. Usada para acompanhar a atividade da doença.</dd></div><div class="gl-row"><dt>Anti-CD20</dt><dd>Classe de remédios que eliminam células B do sistema imune, como ocrelizumabe, ofatumumabe e ublituximabe.</dd></div><div class="gl-row"><dt>Vírus JC e LEMP</dt><dd>O vírus JC é comum e inofensivo para a maioria. Em quem usa alguns remédios, como o natalizumabe, pode causar uma infecção cerebral rara e grave (LEMP), por isso é monitorado.</dd></div><div class="gl-row"><dt>LME</dt><dd>Laudo para Solicitação, Avaliação e Autorização de Medicamentos. Formulário que o médico preenche para pedir remédios na farmácia de alto custo do SUS.</dd></div></dl>
+    <div class="msg" id="glVazio" hidden>Nenhum termo encontrado. Tente outra palavra.</div>
+  </div>
+  <h2 class="sub">Mitos e <b>verdades</b></h2>
+  <p class="kicker">Toque em cada frase para ver a resposta.</p>
+  <details class="myth"><summary><span class="ttl">"EM é a mesma coisa que ELA."</span><span class="pm"></span></summary><div class="body"><span class="chip no">Mito</span><p>São doenças diferentes. A EM é autoimune, ataca a mielina e tem vários tratamentos eficazes. A ELA afeta os neurônios motores e tem evolução bem diferente.</p></div></details>
+  <details class="myth"><summary><span class="ttl">"Toda pessoa com EM acaba em cadeira de rodas."</span><span class="pm"></span></summary><div class="body"><span class="chip no">Mito</span><p>Esse medo vem de uma época sem tratamento. Hoje, com diagnóstico precoce e tratamento, a maioria das pessoas segue andando e trabalhando por décadas.</p></div></details>
+  <details class="myth"><summary><span class="ttl">"EM é contagiosa."</span><span class="pm"></span></summary><div class="body"><span class="chip no">Mito</span><p>Não se pega EM de ninguém, de nenhuma forma.</p></div></details>
+  <details class="myth"><summary><span class="ttl">"EM passa de pai para filho."</span><span class="pm"></span></summary><div class="body"><span class="chip wait">Em parte</span><p>Os genes aumentam um pouco o risco, mas a EM não é hereditária no sentido clássico. A grande maioria dos filhos de pessoas com EM não terá a doença.</p></div></details>
+  <details class="myth"><summary><span class="ttl">"Mulher com EM não pode engravidar."</span><span class="pm"></span></summary><div class="body"><span class="chip no">Mito</span><p>Pode, sim. Os surtos costumam diminuir no fim da gestação. O ideal é planejar com o neurologista, porque alguns remédios precisam ser trocados ou suspensos antes.</p></div></details>
+  <details class="myth"><summary><span class="ttl">"Exercício piora a EM."</span><span class="pm"></span></summary><div class="body"><span class="chip no">Mito</span><p>O calor do exercício pode trazer sintomas passageiros, mas a atividade física melhora força, equilíbrio, fadiga e humor. A orientação de um fisioterapeuta ajuda.</p></div></details>
+  <details class="myth"><summary><span class="ttl">"Existe uma dieta que cura a EM."</span><span class="pm"></span></summary><div class="body"><span class="chip no">Mito</span><p>Nenhuma dieta cura a EM. Comer bem faz bem à saúde geral, mas não substitui o tratamento. Desconfie de quem promete cura.</p></div></details>
+  <details class="myth"><summary><span class="ttl">"A EM só afeta o corpo."</span><span class="pm"></span></summary><div class="body"><span class="chip no">Mito</span><p>Pode afetar memória, atenção e humor. Isso faz parte da doença e tem tratamento.</p></div></details>
+  <details class="myth"><summary><span class="ttl">"Se estou bem, posso parar o remédio."</span><span class="pm"></span></summary><div class="body"><span class="chip no">Mito</span><p>A doença pode estar ativa sem sintomas, só visível na ressonância. Nunca pare o tratamento sem conversar com o neurologista.</p></div></details>
+  <details class="myth"><summary><span class="ttl">"Calor faz mal para quem tem EM."</span><span class="pm"></span></summary><div class="body"><span class="chip wait">Em parte</span><p>O calor pode piorar os sintomas por algumas horas, mas não causa lesão nova. Ambientes frescos e roupas leves ajudam.</p></div></details>
+  <details class="myth"><summary><span class="ttl">"Fumar piora a EM."</span><span class="pm"></span></summary><div class="body"><span class="chip ok">Verdade</span><p>O cigarro está associado a maior risco de ter EM e a uma evolução mais rápida. Parar de fumar faz diferença.</p></div></details>
+  <details class="myth"><summary><span class="ttl">"Vacina causa surto."</span><span class="pm"></span></summary><div class="body"><span class="chip no">Mito</span><p>As vacinas inativadas são seguras na EM e importantes, principalmente para quem usa remédios que reduzem a imunidade. Algumas vacinas de vírus vivo não podem ser tomadas com certos tratamentos: o médico orienta.</p></div></details>
+  <details class="myth"><summary><span class="ttl">"Quem tem EM vive muito menos."</span><span class="pm"></span></summary><div class="body"><span class="chip no">Mito</span><p>A expectativa de vida hoje é próxima à da população geral, e melhora com tratamento, exercício e cuidado com outras doenças, como pressão alta e diabetes.</p></div></details>
+</section>
+
+<!-- NOTÍCIAS -->
+<section id="noticias">
+  <h2><b>08</b> O que aconteceu em 2026</h2>
+  <p class="kicker">O ano foi dominado pelos inibidores de BTK, remédios orais que agem dentro do cérebro. Datas em laranja são reveses.</p>
+  <div class="board tl">
+    <div class="rb neg"><div class="ico">Dez 2025</div><div class="txt"><h4>FDA recusa o tolebrutinibe</h4><p>Carta de recusa nos EUA para a EMSP sem surtos, apesar do estudo HERCULES positivo. O estudo PERSEUS mostrou que ele não funcionou na EMPP.</p></div></div>
+    <div class="rb"><div class="ico">Fev</div><div class="txt"><h4>Congresso ACTRIMS</h4><p>Dados do fenebrutinibe na EMPP e o relato de CAR-T em seis pacientes de Stanford: as células modificadas chegaram ao líquor de todos até o 14º dia.</p></div></div>
+    <div class="rb"><div class="ico">23 Abr</div><div class="txt"><h4>Europa recomenda o tolebrutinibe</h4><p>Parecer favorável da EMA ao Cenrifki para EMSP sem surtos nos dois anos anteriores, com monitoramento obrigatório do fígado.</p></div></div>
+    <div class="rb"><div class="ico">Mai</div><div class="txt"><h4>Frexalimabe firme por 3 anos</h4><p>No congresso CMSC, a extensão da fase 2 mostrou supressão de lesões novas e poucos surtos com esse anticorpo anti-CD40L, já em fase 3.</p></div></div>
+    <div class="rb"><div class="ico">Jul</div><div class="txt"><h4>O mecanismo do Epstein-Barr</h4><p>Harvard mostrou na Science Translational Medicine como o vírus dispara a resposta imune que lesa o sistema nervoso. A Lancet Neurology catalogou vacinas, antivirais e terapias celulares em teste.</p></div></div>
+    <div class="rb"><div class="ico">1º Set</div><div class="txt"><h4>Remibrutinibe vence a teriflunomida</h4><p>Dois estudos de fase 3 com ~2.000 pacientes: menos surtos e lesões, sem sinal de toxicidade hepática. A Novartis vai pedir aprovação global.</p></div></div>
+    <div class="rb"><div class="ico">Set</div><div class="txt"><h4>CAR-T biespecífico liberado</h4><p>A FDA autorizou a AbelZeta a testar o C-CAR168 em EM progressiva refratária.</p></div></div>
+    <div class="rb"><div class="ico">30 Set</div><div class="txt"><h4>Fenebrutinibe em revisão prioritária</h4><p>A FDA aceitou o pedido da Roche para EM recorrente e primariamente progressiva ao mesmo tempo, algo inédito na classe. Surtos 51% e 58% menores que com teriflunomida; não inferior ao ocrelizumabe na EMPP. Decisão em cerca de seis meses.</p></div></div>
+    <div class="full" style="font-size:.85rem"><p>No radar: ublituximabe atingiu o objetivo no estudo ENHANCE; o remielinizante PTD802 foi liberado para testes em humanos; dados do foralumabe nasal são esperados para o fim de 2026.</p></div>
+  </div>
+</section>
+
+<!-- ESTUDOS -->
+<section id="estudos">
+  <h2><b>09</b> Estudos pelo mundo</h2>
+  <p class="kicker">Pesquisas em vários idiomas, com os achados traduzidos e resumidos. Filtre pelo idioma original.</p>
+  <div class="filters" role="group" aria-label="Filtrar por idioma" data-target="study">
+    <button type="button" data-f="all" aria-pressed="true">Todos</button>
+    <button type="button" data-f="en" aria-pressed="false">EN</button>
+    <button type="button" data-f="de" aria-pressed="false">DE</button>
+    <button type="button" data-f="es" aria-pressed="false">ES</button>
+    <button type="button" data-f="pt" aria-pressed="false">PT</button>
+    <button type="button" data-f="ja" aria-pressed="false">JA</button>
+    <button type="button" data-f="fr" aria-pressed="false">FR/NL</button>
+  </div>
+
+  <div id="studies">
+  <div class="board study" data-lang="de"><div class="rh"><div class="num">01</div><div class="ttl">O "bairro" de cada lesão</div><div class="tag">Alemão · Alemanha</div></div><div class="rb"><div class="ico">DE</div><div class="txt"><p>Um mapeamento celular de lesões subcorticais mostrou que o ambiente muda conforme a lesão envelhece, de inflamatória para crônica, e descreveu um subtipo de astrócito com cílios, possível alvo para frear a progressão.</p><span class="src">idw · "Cell type mapping reveals tissue niches…"</span></div></div></div>
+
+  <div class="board study" data-lang="de"><div class="rh"><div class="num">02</div><div class="ttl">Borda larga, piora rápida</div><div class="tag">Alemão · Münster</div></div><div class="rb"><div class="ico">DE</div><div class="txt"><p>Em 186 cérebros doados, confirmados por PET em 114 pessoas, lesões cercadas por uma borda larga de células imunes marcaram quem progride mais depressa. Publicado na Nature Medicine.</p><span class="src">Univ. de Münster, "Paper of the Month"</span></div></div></div>
+
+  <div class="board study" data-lang="es"><div class="rh"><div class="num">03</div><div class="ttl">Musculação protege nervos</div><div class="tag">Espanhol · Valladolid</div></div><div class="rb"><div class="ico">ES</div><div class="txt"><p>Treino de força de alta intensidade melhorou a função e reduziu os neurofilamentos no sangue, marcador de dano neuronal. Venceu o prêmio nacional de medicina esportiva da Fundação Cajastur.</p><span class="src">Psiquiatria.com · Univ. de Oviedo</span></div></div></div>
+
+  <div class="board study" data-lang="es"><div class="rh"><div class="num">04</div><div class="ttl">Mitocôndrias e ferro</div><div class="tag">Espanhol · Sevilha</div></div><div class="rb"><div class="ico">ES</div><div class="txt"><p>Células de pacientes mostraram falhas nas mitocôndrias, no metabolismo do ferro e ativação do inflamassoma. Sinal de que a EM vai além do modelo puramente autoimune.</p><span class="src">Universidad Pablo de Olavide (CABD)</span></div></div></div>
+
+  <div class="board study" data-lang="es"><div class="rh"><div class="num">05</div><div class="ttl">Sono na adolescência</div><div class="tag">Espanhol · estudo sueco</div></div><div class="rb"><div class="ico">ES</div><div class="txt"><p>Jovens que dormiam pouco ou mal tiveram risco cerca de 40% maior de desenvolver EM mais tarde (Journal of Neurology, Neurosurgery and Psychiatry).</p><span class="src">Science Media Centre España</span></div></div></div>
+
+  <div class="board study" data-lang="en"><div class="rh"><div class="num">06</div><div class="ttl">Como o vírus acende a EM</div><div class="tag">Inglês · Harvard</div></div><div class="rb"><div class="ico">EN</div><div class="txt"><p>Alvos específicos do Epstein-Barr disparam a resposta imune ligada ao dano nervoso, abrindo caminho para vacinas e antivirais contra a raiz da doença.</p><span class="src">STAT · BioWorld · Sci. Transl. Med., jul/2026</span></div></div></div>
+
+  <div class="board study" data-lang="en"><div class="rh"><div class="num">07</div><div class="ttl">Anticorpos anos antes</div><div class="tag">Inglês · EUA</div></div><div class="rb"><div class="ico">EN</div><div class="txt"><p>Em amostras de mais de 10 milhões de militares, um grupo de anticorpos apareceu em 10% das 250 pessoas que depois tiveram EM, muito antes dos sintomas. Nature Medicine.</p><span class="src">Science Media Centre España</span></div></div></div>
+
+  <div class="board study" data-lang="en"><div class="rh"><div class="num">08</div><div class="ttl">CAR-T: 32 pacientes</div><div class="tag">Inglês · revisão</div></div><div class="rb"><div class="ico">EN</div><div class="txt"><p>Até março de 2026, 32 pessoas tratadas no mundo, todas em relatos de caso ou fase 1. Síndrome de liberação de citocinas em 62,5% dos casos com dados. Alvos: CD19 e BCMA.</p><span class="src">Malepati et al., Clin. Exp. Neuroimmunology</span></div></div></div>
+
+  <div class="board study" data-lang="pt"><div class="rh"><div class="num">09</div><div class="ttl">Revisão brasileira de CAR-T</div><div class="tag">Português · AAN 2026</div></div><div class="rb"><div class="ico">PT</div><div class="txt"><p>Pesquisadores da Paraíba e da UC San Diego revisaram os casos até out/2025: depleção de células B universal, sinais de remissão prolongada em casos refratários e toxicidade controlável. Faltam estudos controlados.</p><span class="src">Lima et al., Academia Americana de Neurologia</span></div></div></div>
+
+  <div class="board study" data-lang="pt"><div class="rh"><div class="num">10</div><div class="ttl">EM e trabalho</div><div class="tag">Português · Brasil</div></div><div class="rb"><div class="ico">PT</div><div class="txt"><p>4 em cada 10 pessoas com EM estão fora do mercado de trabalho; a idade média de aposentadoria por invalidez é de 45 anos.</p><span class="src">Firjan · ABEM</span></div></div></div>
+
+  <div class="board study" data-lang="ja"><div class="rh"><div class="num">11</div><div class="ttl">Rara, mas crescendo</div><div class="tag">Japonês · Tóquio</div></div><div class="rb"><div class="ico">JA</div><div class="txt"><p>No Japão, a EM é doença intratável designada desde 1973, com alta acentuada entre mulheres nascidas após 1980. A Univ. de Tóquio viu em modelo animal que bloquear a prostaglandina E2 e a enzima mPGES-1 alivia a doença (PNAS).</p><span class="src">Universidade de Tóquio</span></div></div></div>
+
+  <div class="board study" data-lang="ja"><div class="rh"><div class="num">12</div><div class="ttl">Intestino e cérebro</div><div class="tag">Japonês · NCNP</div></div><div class="rb"><div class="ico">JA</div><div class="txt"><p>O Centro Nacional de Neurologia do Japão, com Takashi Yamamura, investigou a ligação entre bactérias intestinais, imunidade do intestino e EM, linha hoje seguida no mundo todo.</p><span class="src">Base KAKEN</span></div></div></div>
+
+  <div class="board study" data-lang="fr"><div class="rh"><div class="num">13</div><div class="ttl">CAR-T na Bélgica</div><div class="tag">Gante</div></div><div class="rb"><div class="ico">NL</div><div class="txt"><p>Primeiro paciente belga tratado: surtos controlados na forma remitente. Um segundo, com forma progressiva, entraria em seguida.</p><span class="src">The Brussels Times</span></div></div></div>
+
+  <div class="board study" data-lang="fr"><div class="rh"><div class="num">14</div><div class="ttl">Gravidez e EM</div><div class="tag">Francês · Lyon</div></div><div class="rb"><div class="ico">FR</div><div class="txt"><p>A neurologista de Lyon premiada com o Rachel Horne Prize 2026 destacou aconselhamento na gravidez, inércia terapêutica e saúde feminina negligenciada na EM.</p><span class="src">NeurologyLive</span></div></div></div>
+  </div>
+</section>
+
+<!-- PESQUISAS -->
+<section id="pesquisas">
+  <h2><b>10</b> Pesquisas que mudaram a EM</h2>
+  <p class="kicker">Os estudos que transformaram o que se sabe e como se trata a doença, em ordem cronológica, com os resultados explicados.</p>
+
+  <div class="board">
+    <div class="rh"><div class="num">?</div><div class="ttl">Como ler os números</div><div class="tag">Antes de começar</div></div>
+    <div class="rb"><div class="ico">%</div><div class="txt">
+      <p><b>Redução relativa.</b> "−68% de surtos" quer dizer que, para cada 100 surtos no grupo de comparação, o grupo tratado teve 32.</p>
+      <p><b>Placebo e comparador.</b> Alguns estudos comparam o remédio com uma substância sem efeito; outros, com um remédio já aprovado. Vencer outro remédio vale mais.</p>
+      <p><b>Não compare estudos entre si.</b> Cada um teve pacientes, durações e critérios diferentes. Qual tratamento é melhor para você é uma conversa com o neurologista.</p>
+    </div></div>
+  </div>
+
+  <div class="filters" role="group" aria-label="Filtrar pesquisas" data-target="res">
+    <button type="button" data-f="all" aria-pressed="true">Todas</button>
+    <button type="button" data-f="rem" aria-pressed="false">Tratamentos</button>
+    <button type="button" data-f="cau" aria-pressed="false">Causas</button>
+    <button type="button" data-f="vida" aria-pressed="false">Vida e prevenção</button>
+  </div>
+  <div class="board res" data-g="rem"><div class="rh"><div class="num">1993</div><div class="ttl">Interferon beta-1b</div><div class="tag">Primeiro tratamento</div></div><div class="rb"><div class="ico">~⅓<small>menos surtos</small></div><div class="txt"><p><b>O que testou.</b> O interferon beta-1b, injetável, contra placebo em pessoas com EM remitente-recorrente.</p><p><b>Resultado.</b> Cerca de um terço menos surtos e menos lesões novas na ressonância.</p><p><b>Por que importa.</b> Foi o primeiro remédio aprovado que mudou o curso da EM. Até então, só se tratavam os surtos.</p><span class="src">IFNB Multiple Sclerosis Study Group, Neurology, 1993</span></div></div></div>
+  <div class="board res" data-g="vida"><div class="rh"><div class="num">1998</div><div class="ttl">PRIMS: gravidez e EM</div><div class="tag">Gestação</div></div><div class="rb"><div class="ico">−70%<small>surtos no 3º trimestre</small></div><div class="txt"><p><b>O que testou.</b> Acompanhou centenas de mulheres com EM durante a gravidez e depois do parto.</p><p><b>Resultado.</b> Os surtos caíram cerca de 70% no terceiro trimestre, aumentaram nos três primeiros meses após o parto e depois voltaram ao nível de antes da gestação.</p><p><b>Por que importa.</b> Derrubou o mito de que mulheres com EM não deveriam engravidar e orienta até hoje o planejamento da gestação.</p><span class="src">Confavreux et al., New England Journal of Medicine, 1998</span></div></div></div>
+  <div class="board res" data-g="rem"><div class="rh"><div class="num">2006</div><div class="ttl">AFFIRM: natalizumabe</div><div class="tag">Alta eficácia</div></div><div class="rb"><div class="ico">−68%<small>surtos</small></div><div class="txt"><p><b>O que testou.</b> O natalizumabe, infusão mensal, contra placebo na EM remitente-recorrente.</p><p><b>Resultado.</b> 68% menos surtos e 42% menos progressão sustentada de incapacidade em dois anos.</p><p><b>Por que importa.</b> Inaugurou a era dos remédios de alta eficácia para formas mais ativas da doença.</p><span class="src">Polman et al., New England Journal of Medicine, 2006</span></div></div></div>
+  <div class="board res" data-g="rem"><div class="rh"><div class="num">2010</div><div class="ttl">FREEDOMS: fingolimode</div><div class="tag">Primeiro oral</div></div><div class="rb"><div class="ico">−54%<small>surtos</small></div><div class="txt"><p><b>O que testou.</b> O fingolimode, primeiro comprimido para EM, contra placebo.</p><p><b>Resultado.</b> Cerca de 54% menos surtos e menor risco de progressão da incapacidade.</p><p><b>Por que importa.</b> Trocou injeções por um comprimido diário e abriu caminho para vários remédios orais.</p><span class="src">Kappos et al., New England Journal of Medicine, 2010</span></div></div></div>
+  <div class="board res" data-g="rem"><div class="rh"><div class="num">2017</div><div class="ttl">ORATORIO: ocrelizumabe</div><div class="tag">Forma progressiva</div></div><div class="rb"><div class="ico">−24%<small>progressão</small></div><div class="txt"><p><b>O que testou.</b> O ocrelizumabe, infusão semestral, contra placebo na EM primariamente progressiva.</p><p><b>Resultado.</b> 24% menos progressão confirmada da incapacidade.</p><p><b>Por que importa.</b> Primeiro remédio a mostrar benefício na forma primariamente progressiva, até então sem nenhuma opção.</p><span class="src">Montalban et al., New England Journal of Medicine, 2017</span></div></div></div>
+  <div class="board res" data-g="rem"><div class="rh"><div class="num">2019</div><div class="ttl">MIST: transplante de células-tronco</div><div class="tag">Casos muito ativos</div></div><div class="rb"><div class="ico">3 vs 34<small>pessoas que pioraram</small></div><div class="txt"><p><b>O que testou.</b> Transplante autólogo de células-tronco contra troca para outro remédio, em pessoas com EM muito ativa apesar do tratamento.</p><p><b>Resultado.</b> No primeiro ano, 3 de 52 pessoas transplantadas tiveram piora da incapacidade, contra 34 de 51 no grupo dos remédios.</p><p><b>Por que importa.</b> Mostrou que "reiniciar" o sistema imune pode quase frear a doença em casos agressivos. O procedimento tem riscos e não serve para todos.</p><span class="src">Burt et al., JAMA, 2019</span></div></div></div>
+  <div class="board res" data-g="cau"><div class="rh"><div class="num">2019</div><div class="ttl">Mapa genético da EM</div><div class="tag">Genética</div></div><div class="rb"><div class="ico">233<small>variantes</small></div><div class="txt"><p><b>O que testou.</b> Um consórcio internacional analisou o DNA de dezenas de milhares de pessoas com e sem EM.</p><p><b>Resultado.</b> Identificou 233 variações genéticas associadas ao risco, a maioria ligada ao sistema imune.</p><p><b>Por que importa.</b> Confirmou que a EM é uma doença de base imunológica e que não existe "um gene da EM": o risco vem da soma de muitas variações pequenas.</p><span class="src">International MS Genetics Consortium, Science, 2019</span></div></div></div>
+  <div class="board res" data-g="cau"><div class="rh"><div class="num">2022</div><div class="ttl">Epstein-Barr como gatilho</div><div class="tag">Causa</div></div><div class="rb"><div class="ico">32×<small>mais risco</small></div><div class="txt"><p><b>O que testou.</b> Pesquisadores de Harvard acompanharam amostras de sangue de mais de 10 milhões de militares americanos ao longo de 20 anos.</p><p><b>Resultado.</b> A infecção pelo vírus Epstein-Barr aumentou em 32 vezes o risco de desenvolver EM.</p><p><b>Por que importa.</b> É a evidência mais forte até hoje de uma causa para a doença e motivou as vacinas e antivirais em teste agora.</p><span class="src">Bjornevik et al., Science, 2022</span></div></div></div>
+  <div class="board res" data-g="rem"><div class="rh"><div class="num">2023</div><div class="ttl">ARISE: tratar antes do 1º surto</div><div class="tag">Prevenção</div></div><div class="rb"><div class="ico">−82%<small>risco de 1º surto</small></div><div class="txt"><p><b>O que testou.</b> O fumarato de dimetila contra placebo em pessoas com lesões típicas de EM achadas por acaso na ressonância, ainda sem sintomas (RIS).</p><p><b>Resultado.</b> Redução de cerca de 82% no risco do primeiro evento clínico.</p><p><b>Por que importa.</b> Sugere que tratar muito cedo pode adiar o início dos sintomas, e ajudou a mudar os critérios de diagnóstico em 2024.</p><span class="src">Okuda et al., Annals of Neurology, 2023</span></div></div></div>
+  <div class="board res" data-g="vida"><div class="rh"><div class="num">2025</div><div class="ttl">D-Lay MS: vitamina D</div><div class="tag">Estudo francês</div></div><div class="rb"><div class="ico">−34%<small>risco de atividade</small></div><div class="txt"><p><b>O que testou.</b> Vitamina D3 em dose alta contra placebo, por dois anos, em 316 pessoas logo após o primeiro episódio da doença.</p><p><b>Resultado.</b> Atividade da doença (surto ou lesão nova) em 60,3% do grupo vitamina D contra 74,1% no placebo. O tempo até a atividade quase dobrou: 432 contra 224 dias.</p><p><b>Por que importa.</b> Um tratamento barato com efeito real. Atenção: a dose usada é muito alta e só deve ser tomada com prescrição e acompanhamento médico.</p><span class="src">Thouvenot et al., JAMA, 2025</span></div></div></div>
+  <div class="board res" data-g="rem"><div class="rh"><div class="num">2025</div><div class="ttl">HERCULES: tolebrutinibe</div><div class="tag">Progressão sem surtos</div></div><div class="rb"><div class="ico">−31%<small>progressão</small></div><div class="txt"><p><b>O que testou.</b> O tolebrutinibe, comprimido que age dentro do cérebro, contra placebo na EM secundariamente progressiva sem surtos.</p><p><b>Resultado.</b> 31% menos progressão confirmada da incapacidade em seis meses.</p><p><b>Por que importa.</b> Primeira vez que um remédio funcionou contra a "inflamação silenciosa" que piora a doença mesmo sem surtos.</p><span class="src">Fox et al., New England Journal of Medicine, 2025</span></div></div></div>
+  <div class="board res" data-g="rem"><div class="rh"><div class="num">2026</div><div class="ttl">FENhance e FENtrepid</div><div class="tag">Fenebrutinibe</div></div><div class="rb"><div class="ico">−58%<small>surtos</small></div><div class="txt"><p><b>O que testou.</b> O fenebrutinibe, comprimido, contra teriflunomida na EM recorrente e contra ocrelizumabe na primariamente progressiva.</p><p><b>Resultado.</b> Surtos 51% e 58% menores do que com teriflunomida; na forma progressiva, eficácia não inferior à do ocrelizumabe.</p><p><b>Por que importa.</b> Pode virar o primeiro comprimido de alta eficácia para as formas recorrente e progressiva ao mesmo tempo. Está em análise pela FDA.</p><span class="src">Roche, setembro de 2026</span></div></div></div>
+</section>
+
+<!-- TRATAMENTOS -->
+<section id="tratamentos">
+  <h2><b>11</b> Tratamentos</h2>
+  <p class="kicker">Mais de 25 remédios modificadores aprovados. Não curam, mas reduzem surtos, lesões e, em parte, a progressão.</p>
+
+  <details open>
+    <summary><span class="ttl">Remédios aprovados</span><span class="pm"></span></summary>
+    <div class="tbl"><table>
+      <thead><tr><th>Remédio</th><th>Como</th><th>Para quem</th></tr></thead>
+      <tbody>
+        <tr><td>Interferons beta</td><td>Injeção</td><td>1ª linha, EMRR</td></tr>
+        <tr><td>Glatirâmer</td><td>Injeção</td><td>1ª linha, EMRR; útil no planejamento de gravidez</td></tr>
+        <tr><td>Teriflunomida</td><td>Comprimido</td><td>EMRR</td></tr>
+        <tr><td>Fumarato de dimetila / diroximel</td><td>Cápsula</td><td>EMRR</td></tr>
+        <tr><td>Fingolimode, siponimode, ozanimode, ponesimode</td><td>Comprimido</td><td>EMRR; siponimode também EMSP ativa</td></tr>
+        <tr><td>Cladribina</td><td>Comprimido em ciclos</td><td>EMRR muito ativa</td></tr>
+        <tr><td>Natalizumabe</td><td>Infusão ou injeção</td><td>EMRR altamente ativa; vigiar vírus JC</td></tr>
+        <tr><td>Ocrelizumabe</td><td>Infusão semestral ou injeção</td><td>EMRR e primeiro aprovado para EMPP</td></tr>
+        <tr><td>Ofatumumabe</td><td>Injeção mensal</td><td>EMRR</td></tr>
+        <tr><td>Ublituximabe</td><td>Infusão</td><td>EM recorrente</td></tr>
+        <tr><td>Alentuzumabe</td><td>Infusão, 2 ciclos</td><td>EMRR muito ativa</td></tr>
+        <tr><td>Tolebrutinibe</td><td>Comprimido</td><td>EMSP sem surtos; UE sim, EUA não</td></tr>
+      </tbody>
+    </table></div>
+  </details>
+
+  <details>
+    <summary><span class="ttl">Transplante de células-tronco</span><span class="pm"></span></summary>
+    <div class="full"><p>O transplante autólogo (TACTH) "reinicia" o sistema imune com quimioterapia e as próprias células do paciente. É reservado a casos inflamatórios muito agressivos. O Brasil tem tradição na área, com o grupo pioneiro da USP de Ribeirão Preto.</p></div>
+  </details>
+
+  <details>
+    <summary><span class="ttl">Surtos, sintomas e reabilitação</span><span class="pm"></span></summary>
+    <div class="full"><p>Surtos: corticoide em dose alta por poucos dias e, em casos graves, plasmaférese. Sintomas: fampridina para a marcha, relaxantes para espasticidade, remédios para bexiga, dor e fadiga. Fisioterapia, exercício, terapia ocupacional, fonoaudiologia e apoio psicológico fazem parte do tratamento. Em 2026, a vacina contra herpes-zóster mostrou boa eficácia em pessoas com EM.</p></div>
+  </details>
+
+  <h2 style="font-size:clamp(1.8rem,7vw,2.6rem);margin-top:.5rem">O que vem <b>por aí</b></h2>
+  <div class="board">
+    <div class="rh"><div class="num">01</div><div class="ttl">Fenebrutinibe</div><div class="tag">Roche · BTK oral</div></div>
+    <div class="rb"><div class="ico">BTK</div><div class="txt"><div class="chips"><span class="chip wait">EUA: revisão prioritária</span><span class="chip ok">Fase 3 positiva</span></div><p>Primeiro pedido da classe para EM recorrente e EMPP juntas. Enzimas do fígado subiram mais que com ocrelizumabe.</p></div></div>
+    <div class="rh"><div class="num">02</div><div class="ttl">Remibrutinibe</div><div class="tag">Novartis · BTK oral</div></div>
+    <div class="rb"><div class="ico">BTK</div><div class="txt"><div class="chips"><span class="chip ok">Fase 3 positiva</span></div><p>Superior à teriflunomida em surtos e lesões, sem sinal hepático. Pedidos de aprovação previstos.</p></div></div>
+    <div class="rh"><div class="num">03</div><div class="ttl">Tolebrutinibe</div><div class="tag">Sanofi · BTK oral</div></div>
+    <div class="rb"><div class="ico">BTK</div><div class="txt"><div class="chips"><span class="chip ok">UE: favorável</span><span class="chip no">EUA: recusado</span><span class="chip no">EMPP: falhou</span></div><p>Retardou em 31% a progressão na EMSP sem surtos; o risco hepático pesou nos EUA.</p></div></div>
+    <div class="rh"><div class="num">04</div><div class="ttl">Frexalimabe</div><div class="tag">Sanofi · anti-CD40L</div></div>
+    <div class="rb"><div class="ico">CD40L</div><div class="txt"><div class="chips"><span class="chip wait">Fase 3 em curso</span></div><p>Estudos FREXALT (EM recorrente) e FREVIVA (EMSP sem surtos), além de teste de aplicação subcutânea.</p></div></div>
+    <div class="rh"><div class="num">05</div><div class="ttl">CAR-T</div><div class="tag">Células T reprogramadas</div></div>
+    <div class="rb"><div class="ico">CAR</div><div class="txt"><div class="chips"><span class="chip wait">Fases 1 e 2</span></div><p>Stanford, Gante, China e outros testam em formas progressivas e refratárias. Parar dano novo não é o mesmo que reverter o antigo.</p></div></div>
+    <div class="rh"><div class="num">06</div><div class="ttl">Contra o Epstein-Barr</div><div class="tag">Vacinas · antivirais</div></div>
+    <div class="rb"><div class="ico">EBV</div><div class="txt"><div class="chips"><span class="chip wait">Fase 2</span></div><p>Vacina experimental em 180 adultos com EM recente (EUA, Reino Unido, Austrália) e teste do antiviral tenofovir/entricitabina.</p></div></div>
+    <div class="rh"><div class="num">07</div><div class="ttl">Remielinização</div><div class="tag">PTD802 · foralumabe</div></div>
+    <div class="rb"><div class="ico">MIE</div><div class="txt"><div class="chips"><span class="chip wait">Fases iniciais</span></div><p>O objetivo ainda não alcançado: reconstruir a mielina perdida.</p></div></div>
+  </div>
+</section>
+
+<!-- MUNDO -->
+<section id="mundo">
+  <h2><b>12</b> Acesso no mundo</h2>
+  <p class="kicker">Mais frequente na América do Norte e Europa, menos na África Subsaariana e Ásia Oriental, em parte por subdiagnóstico. 7 em cada 10 países de baixa renda não têm, ou quase não têm, remédios licenciados.</p>
+
+  <div class="board bars" role="img" aria-label="Pessoas com EM no mundo: 2,3 milhões em 2013, 2,8 em 2020, 2,9 em 2023">
+    <div class="row"><span class="yr">2013</span><div class="track"><div class="fill" style="width:79%"></div></div><span class="val">2,3</span></div>
+    <div class="row"><span class="yr">2020</span><div class="track"><div class="fill" style="width:96%"></div></div><span class="val">2,8</span></div>
+    <div class="row"><span class="yr">2023</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="val">2,9</span></div>
+  </div>
+
+  <div class="board">
+    <div class="rh"><div class="num">BR</div><div class="ttl">Brasil</div><div class="tag">SUS · PCDT set/2024</div></div>
+    <div class="rb"><div class="ico">SUS</div><div class="txt"><p>Tratamento em linhas conforme a atividade da doença, incluindo natalizumabe. Lacunas: a Conitec não incorporou o ocrelizumabe para a EMPP, que segue sem remédio padronizado, nem o ofatumumabe em 1ª linha; a fampridina foi rejeitada por custo. Muitos recorrem à Justiça. Agosto Laranja e 30 de agosto marcam a conscientização.</p></div></div>
+    <div class="rh"><div class="num">US</div><div class="ttl">Estados Unidos</div><div class="tag">FDA · ~1 milhão</div></div>
+    <div class="rb"><div class="ico">FDA</div><div class="txt"><p>Maior número de remédios aprovados, mas custo alto e dependência de planos. A FDA tem sido mais rígida com os inibidores de BTK.</p></div></div>
+    <div class="rh"><div class="num">UE</div><div class="ttl">União Europeia</div><div class="tag">EMA</div></div>
+    <div class="rb"><div class="ico">EMA</div><div class="txt"><p>Saiu na frente com o tolebrutinibe. O reembolso varia muito entre os países.</p></div></div>
+    <div class="rh"><div class="num">ES</div><div class="ttl">Espanha</div><div class="tag">80–180 / 100 mil</div></div>
+    <div class="rb"><div class="ico">ES</div><div class="txt"><p>A prevalência dobrou nos últimos anos. Só a Andaluzia tem 64 estudos clínicos ativos.</p></div></div>
+    <div class="rh"><div class="num">DE</div><div class="ttl">Alemanha e Suíça</div><div class="tag">Diretrizes atualizadas</div></div>
+    <div class="rb"><div class="ico">DE</div><div class="txt"><p>Novas diretrizes em alemão para diagnóstico e tratamento da EM; Basileia e Dresden lideram biomarcadores e cuidado digital.</p></div></div>
+    <div class="rh"><div class="num">JP</div><div class="ttl">Japão</div><div class="tag">Doença intratável</div></div>
+    <div class="rb"><div class="ico">JP</div><div class="txt"><p>Rara e com apoio do governo ao custo do tratamento. O diagnóstico exige atenção redobrada, porque a doença é menos conhecida por lá.</p></div></div>
+    <div class="rh"><div class="num">◎</div><div class="ttl">OMS</div><div class="tag">Medicamentos essenciais</div></div>
+    <div class="rb"><div class="ico">OMS</div><div class="txt"><p>Em 2023 incluiu cladribina, glatirâmer e rituximabe na lista de medicamentos essenciais, um passo para países de renda média e baixa.</p></div></div>
+  </div>
+</section>
+
+<!-- PESSOAS -->
+<section id="pessoas">
+  <h2><b>13</b> Pessoas que falaram</h2>
+  <p class="kicker">Quando alguém conhecido conta o diagnóstico, mais gente procura um neurologista a tempo.</p>
+  <div class="filters" role="group" aria-label="Filtrar pessoas" data-target="person">
+    <button type="button" data-f="all" aria-pressed="true">Todas</button>
+    <button type="button" data-f="br" aria-pressed="false">Brasil</button>
+    <button type="button" data-f="int" aria-pressed="false">Mundo</button>
+    <button type="button" data-f="memo" aria-pressed="false">In memoriam</button>
+  </div>
+
+  <div class="board person" data-g="br"><div class="rh"><div class="num">CR</div><div class="ttl">Claudia Rodrigues</div><div class="tag">Brasil · desde 2000</div></div><div class="rb"><div class="ico">BR</div><div class="txt"><p>A estrela de "A Diarista" convive com a EM há mais de duas décadas e fala com franqueza sobre as dificuldades e o apoio de quem está perto.</p></div></div></div>
+  <div class="board person" data-g="br"><div class="rh"><div class="num">AN</div><div class="ttl">Ana Beatriz Nogueira</div><div class="tag">Brasil · atriz</div></div><div class="rb"><div class="ico">BR</div><div class="txt"><p>Diagnosticada há mais de uma década, acolheu colegas recém-diagnosticadas, como Guta Stresser.</p></div></div></div>
+  <div class="board person" data-g="br"><div class="rh"><div class="num">GS</div><div class="ttl">Guta Stresser</div><div class="tag">Brasil · revelou em 2022</div></div><div class="rb"><div class="ico">BR</div><div class="txt"><p>A Bebel de "A Grande Família" contou o diagnóstico à Veja um ano depois de recebê-lo e descreveu o susto de ouvir que não há cura.</p></div></div></div>
+  <div class="board person" data-g="br"><div class="rh"><div class="num">CR</div><div class="ttl">Carol Ribeiro</div><div class="tag">Brasil · revelou em 2025</div></div><div class="rb"><div class="ico">BR</div><div class="txt"><p>Sintomas desde agosto de 2023: passos em falso nas passarelas, calorões, fala embolada e 17 dias sem dormir. Achou que era menopausa ou pânico. Com tratamento, diz que a doença está estável.</p></div></div></div>
+
+  <div class="board person" data-g="int"><div class="rh"><div class="num">CA</div><div class="ttl">Christina Applegate</div><div class="tag">EUA · desde 2021</div></div><div class="rb"><div class="ico">US</div><div class="txt"><p>Deixou a atuação após "Dead to Me". Em 2026 lançou a autobiografia "You with the Sad Eyes", contou passar a maior parte do dia acamada e ficou internada de março a agosto. Apresenta o podcast MeSsy.</p></div></div></div>
+  <div class="board person" data-g="int"><div class="rh"><div class="num">JS</div><div class="ttl">Jamie-Lynn Sigler</div><div class="tag">EUA · aos 20 anos</div></div><div class="rb"><div class="ico">US</div><div class="txt"><p>A Meadow de "Família Soprano" escondeu a doença por anos. No CMSC 2026 falou de informação, adesão ao tratamento e autodefesa do paciente.</p></div></div></div>
+  <div class="board person" data-g="int"><div class="rh"><div class="num">SB</div><div class="ttl">Selma Blair</div><div class="tag">EUA · desde 2018</div></div><div class="rb"><div class="ico">US</div><div class="txt"><p>Mostrou a rotina e o transplante de células-tronco no documentário "Introducing, Selma Blair".</p></div></div></div>
+  <div class="board person" data-g="int"><div class="rh"><div class="num">JO</div><div class="ttl">Jack Osbourne</div><div class="tag">Reino Unido · 2012</div></div><div class="rb"><div class="ico">UK</div><div class="txt"><p>Recebeu o diagnóstico logo após o nascimento da primeira filha e criou campanhas de conscientização.</p></div></div></div>
+  <div class="board person" data-g="int"><div class="rh"><div class="num">MW</div><div class="ttl">Montel Williams</div><div class="tag">EUA · 1999</div></div><div class="rb"><div class="ico">US</div><div class="txt"><p>Um dos primeiros rostos famosos a falar da EM na TV; criou uma fundação de pesquisa.</p></div></div></div>
+  <div class="board person" data-g="int"><div class="rh"><div class="num">T</div><div class="ttl">Tamia</div><div class="tag">Canadá · 2003</div></div><div class="rb"><div class="ico">CA</div><div class="txt"><p>A cantora seguiu gravando e fazendo turnês com a doença controlada.</p></div></div></div>
+  <div class="board person" data-g="int"><div class="rh"><div class="num">CW</div><div class="ttl">Clay Walker</div><div class="tag">EUA · 1996</div></div><div class="rb"><div class="ico">US</div><div class="txt"><p>Diagnosticado aos 26 anos, no auge da carreira country; mantém uma fundação para pacientes.</p></div></div></div>
+  <div class="board person" data-g="int"><div class="rh"><div class="num">JD</div><div class="ttl">Jason DaSilva</div><div class="tag">Canadá · 2006</div></div><div class="rb"><div class="ico">CA</div><div class="txt"><p>Registrou a própria progressão no documentário "When I Walk" e criou um app de acessibilidade.</p></div></div></div>
+
+  <div class="board person" data-g="memo int"><div class="rh"><div class="num">TG</div><div class="ttl">Teri Garr</div><div class="tag">1944–2024</div></div><div class="rb"><div class="ico">†</div><div class="txt"><p>Atriz de "O Jovem Frankenstein" e "Tootsie", revelou a EM em 2002 e virou porta-voz de pacientes.</p></div></div></div>
+  <div class="board person" data-g="memo int"><div class="rh"><div class="num">RP</div><div class="ttl">Richard Pryor</div><div class="tag">1940–2005</div></div><div class="rb"><div class="ico">†</div><div class="txt"><p>Diagnosticado em 1986, seguiu se apresentando e falando da doença no palco.</p></div></div></div>
+  <div class="board person" data-g="memo int"><div class="rh"><div class="num">AF</div><div class="ttl">Annette Funicello</div><div class="tag">1942–2013</div></div><div class="rb"><div class="ico">†</div><div class="txt"><p>Ex-estrela da Disney, revelou o diagnóstico em 1992 e criou um fundo de pesquisa.</p></div></div></div>
+  <div class="board person" data-g="memo int"><div class="rh"><div class="num">JP</div><div class="ttl">Jacqueline du Pré</div><div class="tag">1945–1987</div></div><div class="rb"><div class="ico">†</div><div class="txt"><p>Uma das maiores violoncelistas do século 20, parou de tocar aos 28 anos por causa da EM.</p></div></div></div>
+</section>
+
+<!-- FILMES E LIVROS -->
+<section id="cultura">
+  <h2><b>14</b> Filmes e livros</h2>
+  <p class="kicker">Filmes, documentários e livros sobre esclerose múltipla, dos relatos pessoais às obras técnicas. Títulos em português indicados quando existem.</p>
+  <div class="filters" role="group" aria-label="Filtrar filmes e livros" data-target="media">
+    <button type="button" data-f="all" aria-pressed="true">Todos</button>
+    <button type="button" data-f="fil" aria-pressed="false">Filmes</button>
+    <button type="button" data-f="doc" aria-pressed="false">Docs</button>
+    <button type="button" data-f="liv" aria-pressed="false">Livros</button>
+    <button type="button" data-f="tec" aria-pressed="false">Técnicos</button>
+  </div>
+  <div class="board media" data-g="fil"><div class="rh"><div class="num">01</div><div class="ttl">Hilary and Jackie</div><div class="tag">Filme · 1998 · EM</div></div><div class="rb"><div class="ico">EM</div><div class="txt"><p><em>(Hilary e Jackie)</em> A vida da violoncelista Jacqueline du Pré, cuja carreira foi interrompida pela EM aos 28 anos. Emily Watson foi indicada ao Oscar pelo papel. Retrata uma época sem tratamentos.</p></div></div></div>
+  <div class="board media" data-g="fil"><div class="rh"><div class="num">02</div><div class="ttl">Duet for One</div><div class="tag">Filme · 1986 · EM</div></div><div class="rb"><div class="ico">EM</div><div class="txt"><p>Julie Andrews vive uma violinista consagrada que recebe o diagnóstico de EM e precisa reinventar a vida longe dos palcos.</p></div></div></div>
+  <div class="board media" data-g="doc"><div class="rh"><div class="num">03</div><div class="ttl">When I Walk</div><div class="tag">Documentário · 2013 · EM</div></div><div class="rb"><div class="ico">EM</div><div class="txt"><p>O cineasta Jason DaSilva filma a própria progressão da EM ao longo de sete anos, com honestidade e humor. Premiado em festivais.</p></div></div></div>
+  <div class="board media" data-g="doc"><div class="rh"><div class="num">04</div><div class="ttl">Introducing, Selma Blair</div><div class="tag">Documentário · 2021 · EM</div></div><div class="rb"><div class="ico">EM</div><div class="txt"><p>A atriz registra a rotina com a doença e o transplante de células-tronco, sem filtros.</p></div></div></div>
+  <div class="board media" data-g="liv"><div class="rh"><div class="num">05</div><div class="ttl">EM: + de 100 Respostas, Sem Mais Perguntas</div><div class="tag">Livro · Português · EM</div></div><div class="rb"><div class="ico">PT</div><div class="txt"><p>Feito pela AME (Amigos Múltiplos pela Esclerose) com neurologistas das cinco regiões do Brasil. Perguntas diretas e respostas claras para quem acaba de receber o diagnóstico e para a família.</p></div></div></div>
+  <div class="board media" data-g="liv"><div class="rh"><div class="num">06</div><div class="ttl">You with the Sad Eyes</div><div class="tag">Memória · 2026 · EM</div></div><div class="rb"><div class="ico">EM</div><div class="txt"><p>Christina Applegate escreve sobre a infância, a carreira e a vida atual com EM, sem romantizar.</p></div></div></div>
+  <div class="board media" data-g="liv"><div class="rh"><div class="num">07</div><div class="ttl">Mean Baby</div><div class="tag">Memória · 2022 · EM</div></div><div class="rb"><div class="ico">EM</div><div class="txt"><p>Selma Blair conta sua trajetória até o diagnóstico de EM e o que mudou depois dele.</p></div></div></div>
+  <div class="board media" data-g="liv"><div class="rh"><div class="num">08</div><div class="ttl">Climbing Higher</div><div class="tag">Memória · 2004 · EM</div></div><div class="rb"><div class="ico">EM</div><div class="txt"><p>O apresentador Montel Williams conta como recebeu o diagnóstico em 1999, a depressão que veio depois e como reorganizou a vida e a carreira.</p></div></div></div>
+  <div class="board media" data-g="liv"><div class="rh"><div class="num">09</div><div class="ttl">Multiple Sclerosis: The Questions You Have, The Answers You Need</div><div class="tag">Livro · Rosalind Kalb</div></div><div class="rb"><div class="ico">EM</div><div class="txt"><p>Organizado em perguntas e respostas por especialistas, cobre sintomas, tratamentos, emoções, família, trabalho e finanças. Muito usado por associações de pacientes.</p></div></div></div>
+  <div class="board media" data-g="liv"><div class="rh"><div class="num">10</div><div class="ttl">Multiple Sclerosis For Dummies</div><div class="tag">Livro · Kalb, Holland, Giesser</div></div><div class="rb"><div class="ico">EM</div><div class="txt"><p>Escrito por especialistas americanos, faz a ponte entre o leigo e o técnico: diagnóstico, tratamentos, sintomas e vida prática.</p></div></div></div>
+  <div class="board media" data-g="tec"><div class="rh"><div class="num">11</div><div class="ttl">McAlpine's Multiple Sclerosis</div><div class="tag">Referência · Neurologia</div></div><div class="rb"><div class="ico">REF</div><div class="txt"><p>Obra de referência clássica sobre EM para neurologistas e pesquisadores: epidemiologia, patologia, imagem, clínica e tratamento.</p></div></div></div>
+  <div class="board media" data-g="tec"><div class="rh"><div class="num">12</div><div class="ttl">Multiple Sclerosis: A Comprehensive Text</div><div class="tag">Referência · Raine, McFarland, Hohlfeld</div></div><div class="rb"><div class="ico">REF</div><div class="txt"><p>Texto acadêmico que integra imunologia, patologia e clínica. Indicado para quem estuda a doença a fundo.</p></div></div></div>
+  <div class="board media" data-g="tec"><div class="rh"><div class="num">13</div><div class="ttl">Critérios de McDonald 2024</div><div class="tag">Artigo · Diagnóstico</div></div><div class="rb"><div class="ico">RM</div><div class="txt"><p>A revisão mais recente dos critérios diagnósticos da EM, apresentada no ECTRIMS 2024. Leitura essencial para profissionais de saúde.</p></div></div></div>
+  <div class="board media" data-g="tec"><div class="rh"><div class="num">14</div><div class="ttl">PCDT de Esclerose Múltipla</div><div class="tag">Documento gratuito · Ministério da Saúde</div></div><div class="rb"><div class="ico">SUS</div><div class="txt"><p>O protocolo oficial do SUS, atualizado em 2024. Mostra quais remédios estão disponíveis, em que ordem e para quem. Disponível no site da Conitec.</p></div></div></div>
+  <div class="board"><div class="full" style="background:var(--teal);color:var(--on-teal)"><p><strong>Vale lembrar:</strong> os filmes mais antigos mostram a EM de antes dos tratamentos modernos. Hoje, com diagnóstico precoce e tratamento, o prognóstico da maioria das pessoas é bem melhor do que aparece nessas histórias.</p></div></div>
+</section>
+
+<!-- SOBRE MIM -->
+<section id="sobre">
+  <h2><b>15</b> Sobre mim</h2>
+
+  <div class="board me">
+    <div class="ph"><img src="yas.jpg" alt="Yas, autora do site, sorrindo de perfil" width="514" height="514"></div>
+    <div class="hi">
+      <h3>Prazer, eu sou a <u>Yas</u>.</h3>
+      <p>Paulistana, apaixonada por música, fluente em espanhol, leitora de quadrinhos no idioma e alguém que já saltou de paraquedas.</p>
+      <p>Desde maio de 2026, também sou uma pessoa que convive com esclerose múltipla.</p>
+      <div class="chips"><span class="chip wait">Música</span><span class="chip wait">Paraquedas</span><span class="chip wait">Espanhol</span><span class="chip wait">Quadrinhos</span></div>
+    </div>
+  </div>
+
+  <div class="board">
+    <div class="rh"><div class="num">♡</div><div class="ttl">Minha história com a EM</div><div class="tag">Diagnóstico em maio</div></div>
+    <div class="rb k"><div class="ico keep" style="background:var(--sun)"><svg viewBox="0 0 64 64" aria-hidden="true" style="width:3rem;height:3rem"><use href="#sunflower"/></svg></div><div class="txt">
+      <p>Existe um tipo de descoberta que não chega de uma vez. Ela vai se anunciando aos poucos, em pequenos sinais que aprendemos a normalizar.</p>
+      <p>No meu caso, foram anos de um cansaço que parecia "só rotina": uma fadiga difícil de explicar, lapsos de memória, palavras que sumiam no meio da frase, um corpo pedindo pausa enquanto a vida insistia em acelerar. Eu jamais imaginei que fosse esclerose múltipla.</p>
+      <p>O diagnóstico veio justamente em maio, o mês do Dia Mundial da Esclerose Múltipla, celebrado em 30 de maio para falar de conscientização, diagnóstico precoce e apoio. A data ganhou outro significado para mim.</p>
+      <p>Hoje entendo que uma das partes mais difíceis das doenças invisíveis é essa: por fora, parece que está tudo bem; por dentro, uma batalha silenciosa acontece há anos. Olhando para trás, vejo quantas vezes minimizei sintomas, me culpei pelo cansaço e achei que estava exagerando ou "não dando conta".</p>
+      <p>Ainda estou aprendendo sobre essa nova realidade. Existem medos e dúvidas, mas também informação, acolhimento, compaixão e a chance de me olhar com mais gentileza e me reinventar.</p>
+    </div></div>
+    <p class="quote">Nem todo sintoma é "normal", nem todo cansaço é só excesso de atividades. Ouvir o próprio corpo pode mudar tudo.</p>
+  </div>
+
+  <div class="board">
+    <div class="rh"><div class="num">★</div><div class="ttl">Quem sou eu</div><div class="tag">Pessoas, dados e tecnologia</div></div>
+    <div class="rb"><div class="ico">Yas</div><div class="txt">
+      <p>Sou movida pela curiosidade, principalmente quando o assunto envolve comportamento humano e tecnologia, não necessariamente nessa ordem. Segundo o Gallup, meus principais talentos são:</p>
+      <div class="chips"><span class="chip ok">Intelecção</span><span class="chip ok">Responsabilidade</span><span class="chip ok">Prudência</span><span class="chip ok">Relacionamento</span><span class="chip ok">Estudo</span></div>
+      <p>Sou formada em Gestão de Recursos Humanos e tenho MBA em Inteligência de Mercado. Minha trajetória tem um fio condutor: desenvolvimento de projetos e tecnologia. Trabalho lado a lado com times de negócios, tecnologia e dados para criar produtos e tirar ideias inovadoras do papel.</p>
+      <p>Já liderei projetos que deram muito certo e outros que trouxeram aprendizados igualmente valiosos.</p>
+    </div></div>
+  </div>
+
+  <div class="board"><div class="full" style="background:var(--orange);color:var(--on-orange)">
+    <p><strong>Por que este site existe.</strong> Se compartilhar minha história ajudar pelo menos uma pessoa a investigar sintomas, procurar ajuda ou se sentir menos sozinha, já terá valido a pena. Por isso juntei minha curiosidade e meu jeito de pesquisar e organizar informação para reunir aqui, em linguagem simples, o que eu gostaria de ter encontrado quando tudo começou. 🩵</p>
+  </div></div>
+</section>
+
+<!-- FONTES -->
+<section id="fontes">
+  <h2><b>16</b> Fontes</h2>
+  <div class="board">
+    <ol class="sources">
+      <li><a href="https://www.msif.org/about-us/advocacy/atlas">Atlas of MS, MSIF</a></li>
+      <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13439982/">Multiple sclerosis: 2026 update</a></li>
+      <li><a href="https://www.roche.com/investors/updates/inv-update-2026-09-30">Roche: fenebrutinibe (30/09/2026)</a></li>
+      <li><a href="https://www.novartis.com/news/media-releases/novartis-remibrutinib-high-efficacy-oral-btk-inhibitor-significantly-reduces-relapse-rates-and-shows-favorable-safety-profile-phase-iii-rms-trials">Novartis: REMODEL (01/09/2026)</a></li>
+      <li><a href="https://www.ema.europa.eu/en/documents/smop-initial/chmp-summary-positive-opinion-cenrifki_en.pdf">EMA: Cenrifki (23/04/2026)</a></li>
+      <li><a href="https://www.sanofi.com/en/media-room/press-releases/2025/2025-12-24-06-00-00-3210238">Sanofi: decisão da FDA</a></li>
+      <li><a href="https://www.ajmc.com/view/epstein-barr-virus-link-to-ms-spurs-new-vaccine-t-cell-trials">AJMC: Epstein-Barr e novas terapias</a></li>
+      <li><a href="https://www.neurologylive.com/view/fda-clears-c-car168-trial-refractory-progressive-multiple-sclerosis">NeurologyLive: C-CAR168</a></li>
+      <li><a href="https://opmed.doximity.com/articles/the-emergence-of-chimeric-antigen-receptor-t-car-t-immunotherapy-for-multiple-sclerosis-review-from-actrims-2026">CAR-T no ACTRIMS 2026</a></li>
+      <li><a href="https://index.mirasmart.com/AAN2026/PDFfiles/AAN2026-005295.html">Lima et al., AAN 2026</a></li>
+      <li><a href="https://idw-online.de/de/news842412">idw (alemão)</a></li>
+      <li><a href="https://www.uni-muenster.de/MediBib/aktuelles/tag/klinische-studien">Univ. Münster (alemão)</a></li>
+      <li><a href="https://psiquiatria.com/esclerosis-multiple/un-estudio-sobre-el-ejercicio-en-pacientes-con-esclerosis-multiple-se-impone-en-los-premios-de-fundacion-cajastur">Treino de força (espanhol)</a></li>
+      <li><a href="https://www.upo.es/diario/?p=30885334">UPO/CABD (espanhol)</a></li>
+      <li><a href="https://sciencemediacentre.es/tag/esclerosis-multiple">Science Media Centre España</a></li>
+      <li><a href="https://www.u-tokyo.ac.jp/focus/ja/press/p01_211208.html">Universidade de Tóquio (japonês)</a></li>
+      <li><a href="https://www.brusselstimes.com/1817107/patient-with-multiple-sclerosis-treated-with-innovative-cell-therapy">The Brussels Times</a></li>
+      <li><a href="https://static.trf2.jus.br/nas-internet/documento/comite-estadual-saude/pareceres/2026/parecer-0029-2026.pdf">NATJUS/TRF2: EM no SUS</a></li>
+      <li><a href="https://www.msif.org/news/2019/02/26/stem-cell-trial-results-published/">MSIF: resultados do estudo MIST</a></li>
+      <li><a href="https://practicalneurology.com/news/high-dose-vitamin-d-monotherapy-reduced-disease-activity-in-cis-and-early-relapsing-remitting-ms/2473817/">Practical Neurology: estudo D-Lay MS</a></li>
+      <li><a href="https://www.cnnbrasil.com.br/pop/carol-ribeiro-fala-sobre-diagnostico-de-esclerose-17-dias-sem-dormir/">CNN Brasil: Carol Ribeiro</a></li>
+      <li><a href="https://hollywoodlife.com/feature/christina-applegate-health-ms-5077015/">HollywoodLife: Christina Applegate</a></li>
+      <li><a href="https://legis.senado.leg.br/norma/37400898">Lei nº 14.624/2023 (cordão de girassol)</a></li>
+      <li><a href="https://previdenciarista.com/blog/quais-doencas-geram-direito-a-isencao-do-imposto-de-renda/">Previdenciarista: isenção de IR por doença grave</a></li>
+      <li><a href="https://www.bemparana.com.br/publicacao/blogs/blog-questao-de-direito/pacientes-com-15-doencas-graves-podem-ter-isencao-do-imposto-de-renda-sobre-aposentadoria-saiba-quais/">Bem Paraná: como pedir a isenção de IR</a></li>
+    </ol>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <div class="board"><div class="full" style="background:var(--orange);color:var(--on-orange)"><p>Conteúdo informativo, não substitui consulta médica. Com sintomas ou dúvidas sobre o tratamento, procure um neurologista. No Brasil, a ABEM e a AME (Amigos Múltiplos pela Esclerose) oferecem acolhimento e informação.</p></div></div>
+</footer>
+
+<button class="a11y-btn" id="a11yBtn" type="button" aria-expanded="false" aria-controls="a11yPanel">Aa Acessibilidade</button>
+<div class="a11y-panel" id="a11yPanel" role="region" aria-label="Opções de acessibilidade" hidden>
+  <div class="hd"><span>Acessibilidade</span><button type="button" id="a11yClose" aria-label="Fechar">✕</button></div>
+  <div class="a11y-row"><span class="lbl">Tamanho do texto</span><div class="seg" role="group" aria-label="Tamanho do texto"><button type="button" data-size="100" aria-label="Texto padrão">A</button><button type="button" data-size="115" aria-label="Texto grande">A+</button><button type="button" data-size="130" aria-label="Texto maior">A++</button><button type="button" data-size="145" aria-label="Texto muito grande">A+++</button></div></div>
+  <div class="a11y-row"><span class="lbl">Alto contraste</span><button type="button" class="tgl" id="tContrast" aria-pressed="false">Desligado</button></div>
+  <div class="a11y-row"><span class="lbl">Espaçamento maior</span><button type="button" class="tgl" id="tFont" aria-pressed="false">Desligado</button></div>
+  <div class="a11y-row wide" id="speakRow"><button type="button" class="tgl" id="tSpeak" aria-pressed="false">▶ Ouvir esta seção</button></div>
+  <div class="a11y-row wide"><button type="button" class="tgl" id="tReset">Restaurar padrão</button></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  try{var t=localStorage.getItem('em-theme'); if(t) root.setAttribute('data-theme',t);}catch(e){}
+  btn.addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme');
+    if(!cur){cur='light';}
+    var next=cur==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('em-theme',next);}catch(e){}
+  });
+  document.querySelectorAll('.filters').forEach(function(group){
+    var kind=group.getAttribute('data-target');
+    var items=document.querySelectorAll('.'+kind);
+    group.addEventListener('click',function(ev){
+      var b=ev.target.closest('button'); if(!b) return;
+      group.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
+      var f=b.getAttribute('data-f');
+      items.forEach(function(it){
+        var tags=(it.getAttribute(kind==='study'?'data-lang':'data-g')||'').split(' ');
+        it.hidden=!(f==='all'||tags.indexOf(f)>-1);
+      });
+    });
+  });
+  var mBtn=document.getElementById('menuBtn'), mPanel=document.getElementById('menuPanel'), cur=document.getElementById('curSec');
+  var links=[].slice.call(mPanel.querySelectorAll('a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));});
+  function openMenu(o){mPanel.hidden=!o;mBtn.setAttribute('aria-expanded',String(o));mBtn.innerHTML=o?'<span aria-hidden="true">✕</span> Fechar':'<span aria-hidden="true">☰</span> Menu'; if(o&&links[0]) (mPanel.querySelector('a.on')||links[0]).focus();}
+  mBtn.addEventListener('click',function(){openMenu(mPanel.hidden);});
+  links.forEach(function(a){a.addEventListener('click',function(){openMenu(false);});});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!mPanel.hidden){openMenu(false);mBtn.focus();}});
+  document.addEventListener('click',function(e){if(!mPanel.hidden&&!e.target.closest('nav.tabs'))openMenu(false);});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          var i=secs.indexOf(en.target);
+          links.forEach(function(l,j){l.classList.toggle('on',i===j); if(i===j) l.setAttribute('aria-current','location'); else l.removeAttribute('aria-current');});
+          if(links[i]) cur.textContent=links[i].textContent.replace(/^(\d\d)/,'$1 ');
+        }
+      });
+    },{rootMargin:'-40% 0px -55% 0px'});
+    secs.forEach(function(s){if(s) io.observe(s);});
+  }
+})();
+(function(){
+  var root=document.documentElement, KEY='em-a11y';
+  var st={size:100,contrast:false,font:false};
+  try{var v=JSON.parse(localStorage.getItem(KEY)||'null'); if(v) st=Object.assign(st,v);}catch(e){}
+  var btn=document.getElementById('a11yBtn'), panel=document.getElementById('a11yPanel');
+  var tC=document.getElementById('tContrast'), tF=document.getElementById('tFont'), tS=document.getElementById('tSpeak');
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(st));}catch(e){}}
+  function apply(){
+    root.style.fontSize=st.size+'%';
+    if(st.contrast) root.setAttribute('data-contrast','high'); else root.removeAttribute('data-contrast');
+    if(st.font) root.setAttribute('data-font','easy'); else root.removeAttribute('data-font');
+    panel.querySelectorAll('[data-size]').forEach(function(b){b.setAttribute('aria-pressed',String(+b.dataset.size===st.size));});
+    tC.setAttribute('aria-pressed',String(st.contrast)); tC.textContent=st.contrast?'Ligado':'Desligado';
+    tF.setAttribute('aria-pressed',String(st.font)); tF.textContent=st.font?'Ligado':'Desligado';
+  }
+  apply();
+  function toggle(open){panel.hidden=!open; btn.setAttribute('aria-expanded',String(open)); if(open) tC.focus();}
+  btn.addEventListener('click',function(){toggle(panel.hidden);});
+  document.getElementById('a11yClose').addEventListener('click',function(){toggle(false);btn.focus();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!panel.hidden){toggle(false);btn.focus();}});
+  panel.querySelectorAll('[data-size]').forEach(function(b){b.addEventListener('click',function(){st.size=+b.dataset.size;apply();save();});});
+  tC.addEventListener('click',function(){st.contrast=!st.contrast;apply();save();});
+  tF.addEventListener('click',function(){st.font=!st.font;apply();save();});
+  document.getElementById('tReset').addEventListener('click',function(){st={size:100,contrast:false,font:false};apply();save();stop();});
+
+  // Read aloud
+  var synth=window.speechSynthesis;
+  if(!synth||typeof SpeechSynthesisUtterance==='undefined'){document.getElementById('speakRow').hidden=true;return;}
+  var speaking=false;
+  function stop(){try{synth.cancel();}catch(e){} speaking=false; tS.setAttribute('aria-pressed','false'); tS.textContent='▶ Ouvir esta seção';}
+  function currentSection(){
+    var secs=[].slice.call(document.querySelectorAll('main section'));
+    var mid=window.innerHeight*0.35, best=secs[0];
+    secs.forEach(function(s){var r=s.getBoundingClientRect(); if(r.top<=mid) best=s;});
+    return best;
+  }
+  function textOf(sec){
+    var parts=[];
+    sec.querySelectorAll('h2, .kicker, .rh .ttl, .rh .tag, .txt h4, .txt p, .txt li, .full p, .ch, .quotes li, .form strong, .form p, summary .ttl, details[open] .body .chip, details[open] .body p, dt, dd, td, th').forEach(function(el){
+      if(el.closest('[hidden]')||el.closest('.filters')) return;
+      var t=el.textContent.replace(/\s+/g,' ').trim(); if(t) parts.push(t.replace(/[.!?:]?$/,'.'));
+    });
+    return parts.join(' ');
+  }
+  function chunks(t){
+    var out=[], s=t.replace(/([.!?])\s+/g,'$1\u0001').split('\u0001'), cur='';
+    s.forEach(function(x){ if((cur+' '+x).length>220){ if(cur) out.push(cur); cur=x; } else cur=cur?cur+' '+x:x; });
+    if(cur) out.push(cur); return out;
+  }
+  function voice(){var vs=synth.getVoices(); return vs.find(function(v){return /pt[-_]BR/i.test(v.lang);})||vs.find(function(v){return /^pt/i.test(v.lang);})||null;}
+  tS.addEventListener('click',function(){
+    if(speaking){stop();return;}
+    var parts=chunks(textOf(currentSection())); if(!parts.length) return;
+    synth.cancel(); speaking=true; tS.setAttribute('aria-pressed','true'); tS.textContent='■ Parar leitura';
+    var vc=voice();
+    parts.forEach(function(p,i){
+      var u=new SpeechSynthesisUtterance(p); u.lang='pt-BR'; u.rate=0.95; if(vc) u.voice=vc;
+      if(i===parts.length-1) u.onend=function(){ if(speaking) stop(); };
+      synth.speak(u);
+    });
+  });
+  window.addEventListener('pagehide',stop);
+})();
+// ---------- Ferramentas, glossário
+(function(){
+  function $(id){return document.getElementById(id);}
+  function load(k,d){try{var v=JSON.parse(localStorage.getItem(k)||'null');return v==null?d:v;}catch(e){return d;}}
+  function store(k,v){try{localStorage.setItem(k,JSON.stringify(v));return true;}catch(e){return false;}}
+  function flash(el,txt){el.textContent=txt;el.hidden=false;clearTimeout(el._t);el._t=setTimeout(function(){el.hidden=true;},4000);}
+  function fmt(d){var p=d.split('-');return p[2]+'/'+p[1];}
+  function today(){var d=new Date();d.setMinutes(d.getMinutes()-d.getTimezoneOffset());return d.toISOString().slice(0,10);}
+  function esc(t){var d=document.createElement('div');d.textContent=t;return d.innerHTML;}
+
+  // Save a text file: Claude viewer capability first, plain download link elsewhere
+  var dlP=null;
+  function getDownloads(){
+    if(dlP) return dlP;
+    dlP=(window.claude&&typeof window.claude.use==='function')?window.claude.use('downloads').catch(function(){return null;}):Promise.resolve(null);
+    return dlP;
+  }
+  function saveFile(name,text,msgEl){
+    getDownloads().then(function(dl){
+      if(dl){ dl.save({filename:name,data:text}).catch(function(e){ if(e&&e.code!=='declined') flash(msgEl,'Não foi possível baixar aqui. Use o botão Copiar.'); }); return; }
+      if(window.claude){ flash(msgEl,'Baixar não está disponível nesta visualização. Use o botão Copiar.'); return; }
+      var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type:'text/plain;charset=utf-8'}));a.download=name;document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(a.href);a.remove();},500);
+    });
+  }
+
+  // ---------- Diário
+  var KEY='em-diario', entries=load(KEY,[]);
+  var dData=$('dData'), dFad=$('dFad'), dFadV=$('dFadV'), dMsg=$('dMsg');
+  dData.value=today();
+  dFad.addEventListener('input',function(){dFadV.textContent=dFad.value;});
+  function checked(box){return [].slice.call(box.querySelectorAll('input:checked')).map(function(i){return i.value;});}
+  function recent(){var lim=new Date();lim.setDate(lim.getDate()-30);var l=lim.toISOString().slice(0,10);return entries.filter(function(e){return e.date>=l;});}
+  function summaryText(){
+    var r=recent(); if(!r.length) return 'Sem registros nos últimos 30 dias.';
+    var avg=(r.reduce(function(a,e){return a+e.fad;},0)/r.length).toFixed(1);
+    var cnt={},tc={}; r.forEach(function(e){e.sym.forEach(function(x){cnt[x]=(cnt[x]||0)+1;});e.trg.forEach(function(x){tc[x]=(tc[x]||0)+1;});});
+    function top(o){return Object.keys(o).sort(function(a,b){return o[b]-o[a];}).slice(0,4).map(function(k){return k+' ('+o[k]+'x)';}).join(', ')||'nenhum';}
+    var flags=r.filter(function(e){return e.long24;}).map(function(e){return fmt(e.date);});
+    return 'Registros nos últimos 30 dias: '+r.length+'\nFadiga média: '+avg+'/10\nSintomas mais frequentes: '+top(cnt)+'\nGatilhos mais frequentes: '+top(tc)+'\nSintoma novo ou mais forte por mais de 24h: '+(flags.length?flags.join(', '):'nenhum');
+  }
+  function render(){
+    entries.sort(function(a,b){return b.date<a.date?-1:b.date>a.date?1:b.id-a.id;});
+    var r=recent();
+    $('dCount').textContent=r.length?(r.length+(r.length===1?' registro':' registros')):'Nenhum registro ainda';
+    $('dResumo').innerHTML=r.length?'<p>'+esc(summaryText()).replace(/\n/g,'<br>')+'</p>':'<p>Quando você salvar registros, o resumo aparece aqui.</p>';
+    var sp=entries.slice(0,14).reverse();
+    $('dSpark').innerHTML=sp.map(function(e){return '<i style="height:'+Math.max(6,e.fad*10)+'%" title="'+fmt(e.date)+': '+e.fad+'"></i>';}).join('');
+    $('dSpark').parentNode.hidden=!sp.length;
+    $('dLista').innerHTML=entries.slice(0,30).map(function(e){
+      return '<div class="entry"><div class="d">'+fmt(e.date)+'<br>'+e.fad+'/10</div><div class="b">'+
+        (e.sym.length?'<p><strong>Sintomas:</strong> '+esc(e.sym.join(', '))+'</p>':'')+
+        (e.trg.length?'<p><strong>Gatilhos:</strong> '+esc(e.trg.join(', '))+'</p>':'')+
+        (e.long24?'<p><strong>Sintoma novo ou mais forte por mais de 24h</strong></p>':'')+
+        (e.nota?'<p>'+esc(e.nota)+'</p>':'')+
+        '<button class="btn sm" type="button" data-del="'+e.id+'">Apagar</button></div></div>';
+    }).join('');
+    $('dLista').style.borderTop=entries.length?'var(--bw) solid var(--ink)':'0';
+  }
+  $('dLista').addEventListener('click',function(ev){
+    var b=ev.target.closest('[data-del]'); if(!b) return;
+    if(!confirm('Apagar este registro?')) return;
+    entries=entries.filter(function(e){return String(e.id)!==b.dataset.del;}); store(KEY,entries); render();
+  });
+  $('dSalvar').addEventListener('click',function(){
+    if(!dData.value){flash(dMsg,'Escolha a data.');return;}
+    var e={id:Date.now(),date:dData.value,fad:+dFad.value,sym:checked($('dSym')),trg:checked($('dTrg')),long24:$('d24').checked,nota:$('dNota').value.trim()};
+    entries.push(e);
+    if(!store(KEY,entries)){flash(dMsg,'Não foi possível salvar neste navegador.');return;}
+    render();
+    dMsg.className='msg'+(e.long24?' alert':'');
+    flash(dMsg,e.long24?'Registro salvo. Sintoma novo ou mais forte por mais de 24 horas pode ser um surto: avise seu neurologista.':'Registro salvo.');
+    [].forEach.call(document.querySelectorAll('#diario input[type=checkbox]'),function(i){i.checked=false;});
+    $('dNota').value='';
+  });
+  function diaryText(){
+    var lines=['DIÁRIO DE SINTOMAS — esclerose múltipla','',summaryText(),'','REGISTROS'];
+    entries.forEach(function(e){lines.push('','['+fmt(e.date)+'/'+e.date.slice(0,4)+'] Fadiga '+e.fad+'/10');
+      if(e.sym.length) lines.push('Sintomas: '+e.sym.join(', '));
+      if(e.trg.length) lines.push('Gatilhos: '+e.trg.join(', '));
+      if(e.long24) lines.push('Sintoma novo ou mais forte por mais de 24h');
+      if(e.nota) lines.push('Anotações: '+e.nota);});
+    return lines.join('\n');
+  }
+  $('dExport').addEventListener('click',function(){ if(!entries.length){flash(dMsg,'Ainda não há registros para baixar.');return;} savePdf(diaryPdf,'diario-de-sintomas.pdf',dMsg,'diario-de-sintomas.txt',diaryText); });
+  $('dLimpar').addEventListener('click',function(){ if(!entries.length) return; if(!confirm('Apagar todos os registros do diário? Isso não pode ser desfeito.')) return; entries=[]; store(KEY,entries); render(); });
+  render();
+
+  // ---------- Preparador de consulta
+  var CK='em-consulta', cs=load(CK,{q:[],minhas:'',rem:'',mud:''});
+  var qboxes=[].slice.call(document.querySelectorAll('#consulta [data-q]'));
+  qboxes.forEach(function(b){b.checked=cs.q.indexOf(+b.dataset.q)>-1;});
+  $('cMinhas').value=cs.minhas; $('cRem').value=cs.rem; $('cMud').value=cs.mud;
+  function persist(){cs={q:qboxes.filter(function(b){return b.checked;}).map(function(b){return +b.dataset.q;}),minhas:$('cMinhas').value,rem:$('cRem').value,mud:$('cMud').value};store(CK,cs);}
+  document.getElementById('consulta').addEventListener('change',persist);
+  document.getElementById('consulta').addEventListener('input',persist);
+  $('cDiario').addEventListener('click',function(){
+    var t=summaryText(); var m=$('cMud'); m.value=(m.value?m.value.trim()+'\n\n':'')+'Resumo do diário:\n'+t; persist(); flash($('cMsg'),'Resumo do diário incluído.');
+  });
+  function roteiro(){
+    var L=['ROTEIRO PARA A CONSULTA','Data: '+new Date().toLocaleDateString('pt-BR'),''];
+    var sel=qboxes.filter(function(b){return b.checked;}).map(function(b){return b.value;});
+    var own=$('cMinhas').value.split('\n').map(function(x){return x.trim();}).filter(Boolean);
+    var all=sel.concat(own);
+    L.push('PERGUNTAS'); if(all.length) all.forEach(function(q,i){L.push((i+1)+'. '+q);}); else L.push('(nenhuma marcada)');
+    if($('cRem').value.trim()) L.push('','REMÉDIOS E SUPLEMENTOS QUE USO',$('cRem').value.trim());
+    if($('cMud').value.trim()) L.push('','O QUE MUDOU DESDE A ÚLTIMA CONSULTA',$('cMud').value.trim());
+    L.push('','ANOTAÇÕES DA CONSULTA','','');
+    return L.join('\n');
+  }
+  $('cGerar').addEventListener('click',function(){ var o=$('cOut'); o.textContent=roteiro(); o.hidden=false; $('cAcoes').hidden=false; o.scrollIntoView({block:'nearest'}); });
+  $('cCopiar').addEventListener('click',function(){
+    var t=$('cOut').textContent, msg=$('cMsg');
+    function fallback(){var ta=document.createElement('textarea');ta.value=t;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();var ok=false;try{ok=document.execCommand('copy');}catch(e){}ta.remove();flash(msg,ok?'Roteiro copiado.':'Selecione o texto acima e copie manualmente.');}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){flash(msg,'Roteiro copiado.');},fallback);} else fallback();
+  });
+  function baixarRoteiro(){ savePdf(roteiroPdf,'roteiro-consulta.pdf',$('cMsg'),'roteiro-consulta.txt',roteiro); }
+  $('cBaixar').addEventListener('click',baixarRoteiro);
+  $('cPdfDireto').addEventListener('click',baixarRoteiro);
+
+  // ---------- PDF
+  var INK=[13,39,33], ORANGE=[224,96,58], TEAL=[111,209,200], SAND=[195,182,151], LIGHT=[244,240,230], SUN=[242,179,61];
+  function clean(t){return String(t||'').replace(/[\u201C\u201D]/g,'"').replace(/[\u2018\u2019]/g,"'").replace(/[\u2013\u2014]/g,'-').replace(/\u2026/g,'...').replace(/[^\x00-\xFF]/g,'').trim();}
+  function hasPdf(){return !!(window.jspdf&&window.jspdf.jsPDF);}
+  function newDoc(title,sub){
+    var doc=new window.jspdf.jsPDF({unit:'mm',format:'a4'});
+    doc._t=title;
+    header(doc,title,sub,true);
+    return doc;
+  }
+  function header(doc,title,sub,big){
+    var h=big?34:16;
+    doc.setFillColor.apply(doc,INK);doc.rect(0,0,210,h,'F');
+    doc.setFillColor.apply(doc,ORANGE);doc.rect(0,h,210,3,'F');
+    doc.setTextColor.apply(doc,LIGHT);doc.setFont('helvetica','bold');
+    if(big){
+      doc.setFontSize(9);doc.text('TUDO SOBRE ESCLEROSE MULTIPLA',16,11);
+      doc.setFontSize(22);doc.text(clean(title).toUpperCase(),16,23);
+      if(sub){doc.setFont('helvetica','normal');doc.setFontSize(9.5);doc.text(clean(sub),16,30);}
+    }else{doc.setFontSize(10);doc.text(clean(title).toUpperCase(),16,10.5);}
+    // sunflower dot
+    doc.setFillColor.apply(doc,SUN);doc.circle(196,big?17:8,big?6:3.5,'F');
+    doc.setFillColor.apply(doc,INK);doc.circle(196,big?17:8,big?2.6:1.5,'F');
+    doc.setTextColor.apply(doc,INK);
+    return big?46:28;
+  }
+  function footers(doc){
+    var n=doc.getNumberOfPages(), d=new Date().toLocaleDateString('pt-BR');
+    for(var i=1;i<=n;i++){doc.setPage(i);doc.setDrawColor.apply(doc,INK);doc.setLineWidth(.4);doc.line(16,284,194,284);
+      doc.setFont('helvetica','normal');doc.setFontSize(8);doc.setTextColor.apply(doc,INK);
+      doc.text('Gerado em '+d+'  |  Este documento nao substitui avaliacao medica.',16,289);
+      doc.text('Pagina '+i+' de '+n,194,289,{align:'right'});}
+  }
+  function ensure(doc,y,need){ if(y+need>278){doc.addPage();return header(doc,doc._t,null,false);} return y; }
+  function para(doc,txt,x,y,w,size,style,color){
+    doc.setFont('helvetica',style||'normal');doc.setFontSize(size||10.5);doc.setTextColor.apply(doc,color||INK);
+    var lines=doc.splitTextToSize(clean(txt),w), lh=(size||10.5)*0.3528*1.4;
+    lines.forEach(function(l){y=ensure(doc,y,lh);doc.text(l,x,y);y+=lh;});
+    return y;
+  }
+  function sectionTitle(doc,txt,y,color){
+    y=ensure(doc,y,14);
+    doc.setFillColor.apply(doc,color||TEAL);doc.setDrawColor.apply(doc,INK);doc.setLineWidth(.6);doc.rect(16,y,178,9,'FD');
+    doc.setFont('helvetica','bold');doc.setFontSize(11.5);doc.setTextColor.apply(doc,INK);doc.text(clean(txt).toUpperCase(),19.5,y+6.2);
+    return y+15;
+  }
+
+  function diaryPdf(){
+    var r=recent(), doc=newDoc('Diario de sintomas','Registros de '+entries.length+(entries.length===1?' dia':' dias')+' para levar ao neurologista');
+    var y=46;
+    y=sectionTitle(doc,'Resumo dos ultimos 30 dias',y);
+    summaryText().split('\n').forEach(function(l){var i=l.indexOf(':');
+      if(i>0){doc.setFont('helvetica','bold');doc.setFontSize(10.5);y=ensure(doc,y,6);doc.text(clean(l.slice(0,i+1)),19,y);
+        var w=doc.getTextWidth(clean(l.slice(0,i+1)))+2;y=para(doc,l.slice(i+1),19+w,y,175-w);} else y=para(doc,l,19,y,175);});
+    y+=4;
+    // chart
+    var pts=entries.slice(0,30).reverse();
+    if(pts.length){
+      y=sectionTitle(doc,'Fadiga (0 a 10)',y,SAND); y=ensure(doc,y,48);
+      var x0=26,cw=166,ch=36,base=y+ch;
+      doc.setDrawColor.apply(doc,INK);doc.setLineWidth(.3);
+      [0,5,10].forEach(function(v){var yy=base-ch*v/10;doc.setLineDashPattern(v?[1,1]:[],0);doc.line(x0,yy,x0+cw,yy);doc.setFont('helvetica','normal');doc.setFontSize(7.5);doc.text(String(v),x0-3,yy+1,{align:'right'});});
+      doc.setLineDashPattern([],0);
+      var bw=cw/pts.length;
+      pts.forEach(function(e,i){var h=Math.max(.8,ch*e.fad/10);doc.setFillColor.apply(doc,ORANGE);doc.setLineWidth(.3);doc.rect(x0+i*bw+bw*.15,base-h,bw*.7,h,'FD');
+        if(e.long24){doc.setFillColor.apply(doc,INK);doc.circle(x0+i*bw+bw/2,base-h-2.2,1,'F');}});
+      doc.setFontSize(7.5);doc.text(fmt(pts[0].date),x0,base+4.5);doc.text(fmt(pts[pts.length-1].date),x0+cw,base+4.5,{align:'right'});
+      doc.text('Ponto escuro: sintoma novo ou mais forte por mais de 24h',x0+cw/2,base+4.5,{align:'center'});
+      y=base+12;
+    }
+    y=sectionTitle(doc,'Registros',y,SAND);
+    entries.forEach(function(e){
+      var lines=[];
+      if(e.sym.length) lines.push(['Sintomas: ',e.sym.join(', ')]);
+      if(e.trg.length) lines.push(['Gatilhos: ',e.trg.join(', ')]);
+      if(e.long24) lines.push(['Atencao: ','sintoma novo ou mais forte por mais de 24 horas']);
+      if(e.nota) lines.push(['Anotacoes: ',e.nota]);
+      y=ensure(doc,y,14);
+      doc.setFillColor.apply(doc,e.long24?ORANGE:TEAL);doc.rect(16,y-4.5,3,6,'F');
+      doc.setFont('helvetica','bold');doc.setFontSize(11);doc.setTextColor.apply(doc,INK);
+      var dd=e.date.split('-');doc.text(dd[2]+'/'+dd[1]+'/'+dd[0],22,y);
+      doc.setFont('helvetica','normal');doc.text('Fadiga '+e.fad+'/10',194,y,{align:'right'});
+      y+=5.5;
+      lines.forEach(function(l){doc.setFont('helvetica','bold');doc.setFontSize(9.8);y=ensure(doc,y,5);doc.text(clean(l[0]),22,y);var w=doc.getTextWidth(clean(l[0]));y=para(doc,l[1],22+w,y,172-w,9.8);});
+      doc.setDrawColor.apply(doc,SAND);doc.setLineWidth(.3);doc.line(22,y-1.5,194,y-1.5);y+=4;
+    });
+    footers(doc); return doc;
+  }
+
+  function roteiroPdf(){
+    var doc=newDoc('Roteiro para a consulta','Data: '+new Date().toLocaleDateString('pt-BR')+'   |   Neurologista: ______________________________'), y=46;
+    var sel=qboxes.filter(function(b){return b.checked;}).map(function(b){return b.value;});
+    var own=$('cMinhas').value.split('\n').map(function(x){return x.trim();}).filter(Boolean);
+    var all=sel.concat(own);
+    y=sectionTitle(doc,'Minhas perguntas',y);
+    if(!all.length) y=para(doc,'Nenhuma pergunta marcada.',19,y,175);
+    all.forEach(function(q,i){
+      y=ensure(doc,y,16);
+      doc.setDrawColor.apply(doc,INK);doc.setLineWidth(.5);doc.rect(19,y-3.6,4,4,'S');
+      doc.setFont('helvetica','bold');doc.setFontSize(10.5);doc.text((i+1)+'.',26,y);
+      y=para(doc,q,32,y,162,10.5,'bold');
+      doc.setDrawColor.apply(doc,SAND);doc.setLineWidth(.3);doc.setLineDashPattern([1,1],0);
+      y=ensure(doc,y,7);doc.line(32,y+1.5,194,y+1.5);doc.setLineDashPattern([],0);y+=7.5;
+    });
+    if($('cRem').value.trim()){y+=2;y=sectionTitle(doc,'Remedios e suplementos que uso',y,SAND);y=para(doc,$('cRem').value,19,y,175);y+=3;}
+    if($('cMud').value.trim()){y+=2;y=sectionTitle(doc,'O que mudou desde a ultima consulta',y,SAND);y=para(doc,$('cMud').value,19,y,175);y+=3;}
+    y+=2;y=sectionTitle(doc,'Anotacoes da consulta',y,SUN);
+    doc.setDrawColor.apply(doc,SAND);doc.setLineWidth(.3);
+    var n=0; while(y<274&&n<14){doc.line(19,y,194,y);y+=8;n++;}
+    if(n<6){doc.addPage();y=header(doc,doc._t,null,false);for(var i=0;i<14;i++){doc.line(19,y,194,y);y+=8;}}
+    footers(doc); return doc;
+  }
+
+  function savePdf(make,name,msgEl,txtName,txtMake){
+    if(!hasPdf()){ saveFile(txtName,txtMake(),msgEl); return; }
+    var doc; try{doc=make();}catch(e){ saveFile(txtName,txtMake(),msgEl); return; }
+    getDownloads().then(function(dl){
+      if(dl){ dl.save({filename:name,data:doc.output('blob')}).catch(function(e){
+          if(e&&e.code==='declined') return;
+          if(e&&e.code==='extension_not_enabled'){flash(msgEl,'O PDF não está disponível nesta visualização. Use o botão Copiar.');return;}
+          flash(msgEl,'Não foi possível baixar o PDF aqui. Tente novamente em instantes.'); });
+        return; }
+      if(window.claude){ flash(msgEl,'Baixar não está disponível nesta visualização.'); return; }
+      doc.save(name);
+    });
+  }
+
+
+  // ---------- Glossário
+  var rows=[].slice.call(document.querySelectorAll('#glLista .gl-row'));
+  function norm(t){return t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');}
+  $('glBusca').addEventListener('input',function(){
+    var q=norm(this.value.trim()), n=0;
+    rows.forEach(function(r){var ok=!q||norm(r.textContent).indexOf(q)>-1; r.hidden=!ok; if(ok) n++;});
+    $('glVazio').hidden=n>0;
+  });
+})();
+</script>
+</body>
+</html>
