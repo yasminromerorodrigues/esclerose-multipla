@@ -36,7 +36,7 @@
   --paper:#10231E; --ink:#E4D9BE; --teal:#5CC2B8; --orange:#E0603A; --sage:#2E4640; --hl:#1A322C;
 }
 *,*::before,*::after{box-sizing:inherit}
-html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px);scroll-behavior:smooth}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px);scroll-behavior:auto}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--mono);font-size:.95rem;line-height:1.6;-webkit-text-size-adjust:100%}
 img,svg{max-width:100%}
@@ -298,6 +298,29 @@ nav.tabs .menu{border:var(--bw) solid var(--ink);border-top:0;background:var(--c
 nav.tabs .mlinks a{text-transform:none;display:flex;gap:.6rem;align-items:center;text-decoration:none;font-weight:700;font-size:1rem;padding:.45rem .6rem;border:2px solid var(--ink);background:var(--paper)}
 nav.tabs .mlinks a span{font-family:var(--display);font-size:1.05rem;opacity:1}
 nav.tabs .mlinks a.on{background:var(--teal);color:var(--on-teal)}
+/* ===== Páginas ===== */
+main > section{display:none;padding-top:1.2rem}
+main > section.active{display:block}
+body:not([data-page="inicio"]) header.hero{display:none}
+.homebtn{font-family:var(--display);font-weight:700;font-size:1.05rem;text-transform:uppercase;text-decoration:none;padding:.45rem .8rem;border-left:var(--bw) solid var(--ink);display:flex;align-items:center;white-space:nowrap}
+body[data-page="inicio"] .homebtn{display:none}
+.idx-h{font-family:var(--display);font-weight:700;font-size:1.3rem;margin:1.4rem 0 .6rem}
+.idx{display:grid;grid-template-columns:1fr;gap:.6rem}
+@media (min-width:640px){.idx{grid-template-columns:1fr 1fr}}
+.idx-card{display:grid;grid-template-columns:3.6rem 1fr;border:var(--bw) solid var(--ink);background:var(--card);text-decoration:none;color:var(--ink);min-height:4.6rem}
+.idx-card .n{background:var(--teal);color:var(--on-teal);border-right:var(--bw) solid var(--ink);font-family:var(--display);font-weight:700;font-size:1.6rem;display:grid;place-items:center}
+.idx-card .b{padding:.6rem .8rem;display:flex;flex-direction:column;justify-content:center;gap:.15rem}
+.idx-card strong{font-family:var(--display);font-size:1.3rem;line-height:1.15}
+.idx-card small{font-size:.92rem;line-height:1.35}
+.idx-card:hover strong,.idx-card:focus-visible strong{text-decoration:underline;text-decoration-thickness:2px}
+.pager{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin:2rem 0 .5rem}
+.pager a{border:var(--bw) solid var(--ink);background:var(--card);text-decoration:none;padding:.7rem .9rem;display:flex;flex-direction:column;gap:.15rem;color:var(--ink)}
+.pager a small{font-size:.85rem;font-weight:700}
+.pager a strong{font-family:var(--display);font-size:1.25rem;line-height:1.15}
+.pager a.next{grid-column:2;text-align:right;background:var(--teal);color:var(--on-teal)}
+.pager a.prev{grid-column:1}
+.pager a:hover strong{text-decoration:underline}
+footer{padding-bottom:6rem}
 </style>
 </head>
 <body>
@@ -316,13 +339,15 @@ nav.tabs .mlinks a.on{background:var(--teal);color:var(--on-teal)}
   <div class="wrap">
     <div class="bar">
       <button type="button" id="menuBtn" aria-expanded="false" aria-controls="menuPanel"><span aria-hidden="true">☰</span> Menu</button>
-      <span class="cur" id="curSec" aria-live="polite">01 Entender</span>
+      <span class="cur" id="curSec" aria-live="polite">Início</span>
+      <a class="homebtn" href="#inicio" aria-label="Voltar ao início">⌂ Início</a>
     </div>
-    <div class="menu" id="menuPanel" hidden><div class="mgroup"><h3>Para começar</h3><div class="mlinks"><a href="#entender"><span>01</span>Entender</a><a href="#primeiros"><span>02</span>Primeiros 30 dias</a><a href="#sintomas"><span>03</span>Sintomas</a></div></div><div class="mgroup"><h3>No dia a dia</h3><div class="mlinks"><a href="#ferramentas"><span>04</span>Ferramentas</a><a href="#ajudar"><span>05</span>Como ajudar</a><a href="#direitos"><span>06</span>Direitos e acessibilidade</a><a href="#glossario"><span>07</span>Glossário e mitos</a></div></div><div class="mgroup"><h3>Ciência e tratamento</h3><div class="mlinks"><a href="#noticias"><span>08</span>Notícias de 2026</a><a href="#estudos"><span>09</span>Estudos pelo mundo</a><a href="#pesquisas"><span>10</span>Pesquisas marcantes</a><a href="#tratamentos"><span>11</span>Tratamentos</a><a href="#mundo"><span>12</span>Acesso no mundo</a></div></div><div class="mgroup"><h3>Histórias e mais</h3><div class="mlinks"><a href="#pessoas"><span>13</span>Pessoas</a><a href="#cultura"><span>14</span>Filmes e livros</a><a href="#sobre"><span>15</span>Sobre mim</a><a href="#fontes"><span>16</span>Fontes</a></div></div></div>
+    <div class="menu" id="menuPanel" hidden><div class="mgroup"><div class="mlinks"><a href="#inicio"><span>00</span>Início</a></div></div><div class="mgroup"><h3>Para começar</h3><div class="mlinks"><a href="#entender"><span>01</span>Entender</a><a href="#primeiros"><span>02</span>Primeiros 30 dias</a><a href="#sintomas"><span>03</span>Sintomas</a></div></div><div class="mgroup"><h3>No dia a dia</h3><div class="mlinks"><a href="#ferramentas"><span>04</span>Ferramentas</a><a href="#ajudar"><span>05</span>Como ajudar</a><a href="#direitos"><span>06</span>Direitos e acessibilidade</a><a href="#glossario"><span>07</span>Glossário e mitos</a></div></div><div class="mgroup"><h3>Ciência e tratamento</h3><div class="mlinks"><a href="#noticias"><span>08</span>Notícias de 2026</a><a href="#estudos"><span>09</span>Estudos pelo mundo</a><a href="#pesquisas"><span>10</span>Pesquisas marcantes</a><a href="#tratamentos"><span>11</span>Tratamentos</a><a href="#mundo"><span>12</span>Acesso no mundo</a></div></div><div class="mgroup"><h3>Histórias e mais</h3><div class="mlinks"><a href="#pessoas"><span>13</span>Pessoas</a><a href="#cultura"><span>14</span>Filmes e livros</a><a href="#sobre"><span>15</span>Sobre mim</a><a href="#fontes"><span>16</span>Fontes</a></div></div></div>
   </div>
 </nav>
 
 <main class="wrap" id="conteudo" tabindex="-1">
+<section id="inicio">
 
 <div class="board" style="margin-top:1rem">
   <div class="rh"><div class="num">00</div><div class="ttl">O guia</div><div class="tag">Atualizado 11.10.2026</div></div>
@@ -345,6 +370,10 @@ nav.tabs .mlinks a.on{background:var(--teal);color:var(--on-teal)}
     <p style="font-size:.8rem;margin:.5rem 0 0">A mielina (laranja) isola o nervo. Na EM, o sistema imune a destrói e o sinal falha onde ela some.</p>
   </div>
 </div>
+
+<h2 class="sub">Escolha por onde <b>começar</b></h2>
+<h3 class="idx-h">Para começar</h3><div class="idx"><a class="idx-card" href="#entender"><span class="n">01</span><span class="b"><strong>Entender</strong><small>O que é a EM, suas formas e causas</small></span></a><a class="idx-card" href="#primeiros"><span class="n">02</span><span class="b"><strong>Primeiros 30 dias</strong><small>Roteiro para quem acabou de receber o diagnóstico</small></span></a><a class="idx-card" href="#sintomas"><span class="n">03</span><span class="b"><strong>Sintomas</strong><small>Os sintomas mais comuns e quando procurar ajuda</small></span></a></div><h3 class="idx-h">No dia a dia</h3><div class="idx"><a class="idx-card" href="#ferramentas"><span class="n">04</span><span class="b"><strong>Ferramentas</strong><small>Diário de sintomas e preparador de consulta</small></span></a><a class="idx-card" href="#ajudar"><span class="n">05</span><span class="b"><strong>Como ajudar</strong><small>Para amigos, família e colegas</small></span></a><a class="idx-card" href="#direitos"><span class="n">06</span><span class="b"><strong>Direitos e acessibilidade</strong><small>SUS, INSS, isenções e adaptações</small></span></a><a class="idx-card" href="#glossario"><span class="n">07</span><span class="b"><strong>Glossário e mitos</strong><small>Termos dos laudos e dúvidas comuns</small></span></a></div><h3 class="idx-h">Ciência e tratamento</h3><div class="idx"><a class="idx-card" href="#noticias"><span class="n">08</span><span class="b"><strong>Notícias de 2026</strong><small>O que aconteceu neste ano</small></span></a><a class="idx-card" href="#estudos"><span class="n">09</span><span class="b"><strong>Estudos pelo mundo</strong><small>Pesquisas recentes, traduzidas</small></span></a><a class="idx-card" href="#pesquisas"><span class="n">10</span><span class="b"><strong>Pesquisas marcantes</strong><small>Os estudos que mudaram a EM</small></span></a><a class="idx-card" href="#tratamentos"><span class="n">11</span><span class="b"><strong>Tratamentos</strong><small>Remédios aprovados e o que vem por aí</small></span></a><a class="idx-card" href="#mundo"><span class="n">12</span><span class="b"><strong>Acesso no mundo</strong><small>Como a EM é tratada em cada país</small></span></a></div><h3 class="idx-h">Histórias e mais</h3><div class="idx"><a class="idx-card" href="#pessoas"><span class="n">13</span><span class="b"><strong>Pessoas</strong><small>Famosos que falaram sobre a EM</small></span></a><a class="idx-card" href="#cultura"><span class="n">14</span><span class="b"><strong>Filmes e livros</strong><small>Indicações sobre EM</small></span></a><a class="idx-card" href="#sobre"><span class="n">15</span><span class="b"><strong>Sobre mim</strong><small>Quem fez este site</small></span></a><a class="idx-card" href="#fontes"><span class="n">16</span><span class="b"><strong>Fontes</strong><small>De onde vem cada informação</small></span></a></div>
+</section>
 
 <!-- ENTENDER -->
 <section id="entender">
@@ -952,7 +981,6 @@ nav.tabs .mlinks a.on{background:var(--teal);color:var(--on-teal)}
         if(en.isIntersecting){
           var i=secs.indexOf(en.target);
           links.forEach(function(l,j){l.classList.toggle('on',i===j); if(i===j) l.setAttribute('aria-current','location'); else l.removeAttribute('aria-current');});
-          if(links[i]) cur.textContent=links[i].textContent.replace(/^(\d\d)/,'$1 ');
         }
       });
     },{rootMargin:'-40% 0px -55% 0px'});
@@ -989,12 +1017,7 @@ nav.tabs .mlinks a.on{background:var(--teal);color:var(--on-teal)}
   if(!synth||typeof SpeechSynthesisUtterance==='undefined'){document.getElementById('speakRow').hidden=true;return;}
   var speaking=false;
   function stop(){try{synth.cancel();}catch(e){} speaking=false; tS.setAttribute('aria-pressed','false'); tS.textContent='▶ Ouvir esta seção';}
-  function currentSection(){
-    var secs=[].slice.call(document.querySelectorAll('main section'));
-    var mid=window.innerHeight*0.35, best=secs[0];
-    secs.forEach(function(s){var r=s.getBoundingClientRect(); if(r.top<=mid) best=s;});
-    return best;
-  }
+  function currentSection(){ return document.querySelector('main > section.active')||document.querySelector('main section'); }
   function textOf(sec){
     var parts=[];
     sec.querySelectorAll('h2, .kicker, .rh .ttl, .rh .tag, .txt h4, .txt p, .txt li, .full p, .ch, .quotes li, .form strong, .form p, summary .ttl, details[open] .body .chip, details[open] .body p, dt, dd, td, th').forEach(function(el){
@@ -1277,6 +1300,49 @@ nav.tabs .mlinks a.on{background:var(--teal);color:var(--on-teal)}
     rows.forEach(function(r){var ok=!q||norm(r.textContent).indexOf(q)>-1; r.hidden=!ok; if(ok) n++;});
     $('glVazio').hidden=n>0;
   });
+})();
+// ---------- Páginas
+(function(){
+  var pages=[].slice.call(document.querySelectorAll('main > section'));
+  var ids=pages.map(function(p){return p.id;});
+  var cur=document.getElementById('curSec');
+  var menuLinks=[].slice.call(document.querySelectorAll('#menuPanel a'));
+  function label(id){ var a=document.querySelector('#menuPanel a[href="#'+id+'"]'); return a?a.textContent.replace(/^(\d\d)/,'$1 ').replace(/^00 /,''):'Início'; }
+  // pager
+  pages.forEach(function(p,i){
+    if(p.id==='inicio') return;
+    var prev=pages[i-1], next=pages[i+1], nav=document.createElement('nav');
+    nav.className='pager'; nav.setAttribute('aria-label','Navegação entre páginas');
+    if(prev) nav.innerHTML+='<a class="prev" href="#'+prev.id+'"><small>← Anterior</small><strong>'+label(prev.id).replace(/^\d\d /,'')+'</strong></a>';
+    if(next) nav.innerHTML+='<a class="next" href="#'+next.id+'"><small>Próxima →</small><strong>'+label(next.id).replace(/^\d\d /,'')+'</strong></a>';
+    else nav.innerHTML+='<a class="next" href="#inicio"><small>Fim →</small><strong>Voltar ao início</strong></a>';
+    p.appendChild(nav);
+  });
+  function toTop(){ var h=document.documentElement, b=h.style.scrollBehavior; h.style.scrollBehavior='auto'; window.scrollTo(0,0); h.style.scrollBehavior=b; }
+  function show(id,target,initial){
+    var pg=document.getElementById(id);
+    pages.forEach(function(p){p.classList.toggle('active',p===pg);});
+    document.body.setAttribute('data-page',id);
+    cur.textContent=label(id);
+    menuLinks.forEach(function(l){var on=l.getAttribute('href')==='#'+id; l.classList.toggle('on',on); if(on) l.setAttribute('aria-current','page'); else l.removeAttribute('aria-current');});
+    document.title=(id==='inicio'?'':label(id).replace(/^\d\d /,'')+' | ')+'Tudo sobre esclerose múltipla';
+    try{window.speechSynthesis&&window.speechSynthesis.cancel();}catch(e){}
+    if(target){ setTimeout(function(){target.scrollIntoView({block:'start'});},0); }
+    else toTop();
+    if(!initial){ var h=pg.querySelector('h2'); if(h){h.setAttribute('tabindex','-1');h.focus({preventScroll:true});} }
+  }
+  function route(initial){
+    var h=decodeURIComponent(location.hash.slice(1));
+    if(!h){ show('inicio',null,initial); return; }
+    if(ids.indexOf(h)>-1){ show(h,null,initial); return; }
+    var el=document.getElementById(h);
+    if(el&&el.tagName==='MAIN'){ el.focus(); return; }
+    var sec=el&&el.closest('main > section');
+    if(sec){ show(sec.id,el,initial); return; }
+    show('inicio',null,initial);
+  }
+  window.addEventListener('hashchange',function(){route(false);});
+  route(true);
 })();
 </script>
 </body>
