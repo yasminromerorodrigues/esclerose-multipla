@@ -1,6 +1,18 @@
 {
- "updated": "2026-10-12T03:37:19+00:00",
+ "updated": "2026-10-12T03:41:47+00:00",
  "watch": [],
- "review": [],
+ "review": [
+  {
+   "date": "2026-10-08",
+   "title": "FDA Expands Novartis Remibrutinib Use",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSEl0NU53MGRTaG1sZVpURVBLVFJIZVMydy0tU2RFYk9QN081ZVJsVUgyQnI5SFYzQnVtZDc5TzJ3eHFUU0JURUZDTDZpa2VYSEJiQ2hDS0pKUGMwVU05M0F6UTZ6QmRmQUk0amEyZXdIUUttYkJPSU4yM29TY0lVeDRnQ0VFcGRLM0xCN1JqNlNONXI0cnQweTVMVEtMcnR5?oc=5",
+   "source": "Voice of Healthcare",
+   "lang": "en",
+   "status": "revisao",
+   "reason": "remédio ligado à EM, mas a notícia não cita a doença",
+   "captured_at": "2026-10-12T00:41-03:00",
+   "dedicated": false
+  }
+ ],
  "errors": []
 }
