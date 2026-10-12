@@ -1104,13 +1104,15 @@ footer{padding-bottom:6rem}
 <script>
 (function(){
   var root=document.documentElement, btn=document.getElementById('themeBtn');
-  try{var t=localStorage.getItem('em-theme'); if(t) root.setAttribute('data-theme',t);}catch(e){}
+  // O site sempre abre no tema claro. O escuro vale só até a pessoa fechar o site.
+  try{localStorage.removeItem('em-theme');}catch(e){}
+  try{var t=sessionStorage.getItem('em-theme'); if(t==='dark') root.setAttribute('data-theme','dark');}catch(e){}
   btn.addEventListener('click',function(){
     var cur=root.getAttribute('data-theme');
     if(!cur){cur='light';}
     var next=cur==='dark'?'light':'dark';
     root.setAttribute('data-theme',next);
-    try{localStorage.setItem('em-theme',next);}catch(e){}
+    try{sessionStorage.setItem('em-theme',next);}catch(e){}
   });
   document.querySelectorAll('.filters').forEach(function(group){
     var kind=group.getAttribute('data-target');
