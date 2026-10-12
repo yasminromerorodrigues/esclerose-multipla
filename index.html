@@ -696,7 +696,7 @@ footer{padding-bottom:6rem}
 <!-- NOTÍCIAS -->
 <section id="noticias">
   <h2><b>09</b> O que aconteceu em <span class="ano-vigente">2026</span></h2>
-  <p class="kicker"><span data-ano="2026">O ano foi dominado pelos inibidores de BTK, remédios orais que agem dentro do cérebro. </span>Datas em laranja são reveses. Toda semana um robô procura novos marcos sobre esclerose múltipla e acrescenta os que encontrar.</p>
+  <p class="kicker"><span data-ano="2026">O ano foi dominado pelos inibidores de BTK, remédios orais que agem dentro do cérebro. </span>Datas em laranja são reveses. Toda semana um robô separa notícias que podem ser marcos, e uma vez por mês os confirmados entram nesta linha do tempo.</p>
   <p class="chips" style="margin-top:-.4rem"><span class="chip wait" id="noticiasStamp">Carregando…</span></p>
   <div class="board tl">
     <div class="rb neg" data-ano="2026" data-data="2025-12-15"><div class="ico">Dez 2025</div><div class="txt"><h4>FDA recusa o tolebrutinibe</h4><p>Carta de recusa nos EUA para a EMSP sem surtos, apesar do estudo HERCULES positivo. O estudo PERSEUS mostrou que ele não funcionou na EMPP.</p></div></div>
@@ -710,7 +710,12 @@ footer{padding-bottom:6rem}
     <div class="full" id="noticiasVazio" hidden><p>Ainda não há marcos registrados neste ano. O robô verifica as notícias toda semana.</p></div>
     <div class="full" data-ano="2026" style="font-size:.85rem"><p>No radar: ublituximabe atingiu o objetivo no estudo ENHANCE; o remielinizante PTD802 foi liberado para testes em humanos; dados do foralumabe nasal são esperados para o fim de 2026.</p></div>
   </div>
-  <div class="board"><div class="full" style="background:var(--orange);color:var(--on-orange)"><p><strong>Resumo automático:</strong> os eventos marcados assim foram acrescentados por um robô, com texto escrito por inteligência artificial a partir das notícias, sem revisão. Podem conter erros: confira a fonte pelo link e não mude seu tratamento sem falar com o médico.</p></div></div>
+  <div class="board">
+    <div class="rh"><div class="num">?</div><div class="ttl">Para acompanhar</div><div class="tag">Notícias recentes que podem virar marcos</div></div>
+    <div class="rlist" id="noticiasLista"></div>
+    <div class="full" style="border-top:var(--bw) solid var(--ink);font-size:.92rem"><p>Um robô separa estas notícias toda semana pelas palavras do título, sem revisão. Os títulos ficam no idioma original. As que se confirmarem como marcos entram na linha do tempo na revisão mensal.</p></div>
+  </div>
+  <div class="board"><div class="full" style="background:var(--orange);color:var(--on-orange)"><p><strong>Atenção:</strong> os links levam a sites externos, que não foram revisados por este site. Desconfie de qualquer promessa de cura e não mude seu tratamento sem falar com o médico.</p></div></div>
 </section>
 
 <!-- RADAR -->
@@ -1635,34 +1640,51 @@ footer{padding-bottom:6rem}
   window.addEventListener('hashchange',function(){route(false);});
   route(true);
 })();
-// ---------- Notícias do ano vigente (robô semanal)
+// ---------- Notícias do ano vigente (marcos revisados + lista do robô)
 (function(){
-  var tl=document.querySelector('#noticias .board.tl'), stamp=document.getElementById('noticiasStamp'), vazio=document.getElementById('noticiasVazio');
-  if(!tl||!stamp||!vazio) return;
+  var tl=document.querySelector('#noticias .board.tl'), stamp=document.getElementById('noticiasStamp'), vazio=document.getElementById('noticiasVazio'), lista=document.getElementById('noticiasLista');
+  if(!tl||!stamp||!vazio||!lista) return;
   var ano=String(new Date().getFullYear());
   var MES=['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
   document.querySelectorAll('#noticias [data-ano]').forEach(function(e){ e.hidden=e.getAttribute('data-ano')!==ano; });
   function el(tag,cls,txt){ var e=document.createElement(tag); if(cls) e.className=cls; if(txt!=null) e.textContent=txt; return e; }
   function checar(){ vazio.hidden=[].some.call(tl.querySelectorAll('.rb'),function(r){ return !r.hidden; }); }
+  function json(u){ return fetch(u,{cache:'no-store'}).then(function(r){ if(!r.ok) throw 0; return r.json(); }); }
+  function fmt(d){ var p=(d||'').split('-'); return p.length===3?p[2]+'/'+p[1]+'/'+p[0]:''; }
+  function link(u){ return /^https:\/\//.test(u||'')?u:null; }
   checar();
-  fetch('noticias.json',{cache:'no-store'}).then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(d){
-    stamp.textContent=d.updated?'Robô verificou em '+new Date(d.updated).toLocaleDateString('pt-BR'):'O robô ainda não fez a primeira busca';
+  var revisado='outubro de 2026';
+  json('marcos.json').then(function(d){
+    if(d.updated) revisado=fmt(d.updated)||revisado;
     (d.items||[]).forEach(function(it){
       if(!it||!it.title||!it.text||!/^\d{4}-\d{2}-\d{2}$/.test(it.date||'')||it.date.slice(0,4)!==ano) return;
       var dia=+it.date.slice(8,10), mes=MES[+it.date.slice(5,7)-1]||'';
-      var rb=el('div','rb auto'+(it.neg?' neg':'')); rb.setAttribute('data-data',it.date);
+      var rb=el('div','rb'+(it.neg?' neg':'')); rb.setAttribute('data-data',it.date);
       rb.appendChild(el('div','ico',(dia===1?'1º':dia)+' '+mes));
-      var tx=el('div','txt'), src=el('span','src');
-      tx.appendChild(el('h4',null,it.title)); tx.appendChild(el('p',null,it.text));
-      src.appendChild(document.createTextNode('Resumo automático'+(it.source?' · '+it.source:'')));
-      if(/^https:\/\//.test(it.url||'')){ src.appendChild(document.createTextNode(' · ')); var a=el('a',null,'Ler a notícia'); a.href=it.url; a.target='_blank'; a.rel='noopener noreferrer'; src.appendChild(a); }
-      tx.appendChild(src); rb.appendChild(tx);
+      var tx=el('div','txt'); tx.appendChild(el('h4',null,it.title)); tx.appendChild(el('p',null,it.text));
+      var u=link(it.url); if(u){ var src=el('span','src','Fonte: '), a=el('a',null,it.source||'ver a notícia'); a.href=u; a.target='_blank'; a.rel='noopener noreferrer'; src.appendChild(a); tx.appendChild(src); }
+      rb.appendChild(tx);
       var antes=vazio, rows=tl.querySelectorAll('.rb[data-data]');
       for(var i=0;i<rows.length;i++){ if(rows[i].getAttribute('data-data')>it.date){ antes=rows[i]; break; } }
       tl.insertBefore(rb,antes);
     });
     checar();
-  }).catch(function(){ stamp.textContent='Última revisão manual: outubro de 2026'; });
+  }).catch(function(){}).then(function(){
+    return json('noticias.json').then(function(d){
+      stamp.textContent='Linha do tempo revisada em '+revisado+(d.updated?' · lista do robô de '+new Date(d.updated).toLocaleDateString('pt-BR'):'');
+      var itens=(d.watch||[]).filter(function(it){ return it&&it.title&&link(it.url)&&(it.date||'').slice(0,4)===ano; }).slice(0,10);
+      lista.textContent='';
+      if(!itens.length){ lista.appendChild(el('div','rempty',d.updated?'Nenhuma notícia com cara de marco nas últimas semanas.':'A lista aparece aqui depois da primeira busca do robô.')); return; }
+      itens.forEach(function(it){
+        var row=el('div','ritem'), a=el('a',null,it.title); a.href=it.url; a.target='_blank'; a.rel='noopener noreferrer';
+        row.appendChild(a); row.appendChild(el('small',null,[it.source,fmt(it.date),it.lang==='en'?'em inglês':''].filter(Boolean).join(' · ')));
+        lista.appendChild(row);
+      });
+    });
+  }).catch(function(){
+    stamp.textContent='Linha do tempo revisada em '+revisado;
+    lista.textContent=''; lista.appendChild(el('div','rempty','A lista não carregou agora. Tente de novo mais tarde.'));
+  });
 })();
 // ---------- Radar diário
 (function(){
