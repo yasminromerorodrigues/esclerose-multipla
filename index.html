@@ -1015,10 +1015,10 @@ footer{padding-bottom:6rem}
 <!-- PRIVACIDADE -->
 <section id="privacidade">
   <h2><b>18</b> Política de privacidade</h2>
-  <p class="kicker">Versão 1.0, de outubro de 2026. Em linguagem simples, como o resto do site.</p>
+  <p class="kicker">Versão 1.1, de outubro de 2026. Em linguagem simples, como o resto do site.</p>
   <div class="board">
     <div class="rh"><div class="num">1</div><div class="ttl">Sem conta, nada sai do seu aparelho</div><div class="tag">Uso sem cadastro</div></div>
-    <div class="rb"><div class="ico">1</div><div class="txt"><p>Se você usa o diário e o preparador de consulta sem criar conta, tudo fica guardado só no navegador do seu aparelho. Nenhuma informação é enviada para este site ou para qualquer outro lugar.</p><p>O site também não usa cookies de rastreamento nem ferramentas de publicidade. Ele guarda no seu aparelho apenas preferências, como tema e tamanho da letra.</p></div></div>
+    <div class="rb"><div class="ico">1</div><div class="txt"><p>Se você usa o diário e o preparador de consulta sem criar conta, tudo fica guardado só no navegador do seu aparelho. Nenhum dos seus registros é enviado para este site ou para qualquer outro lugar.</p><p>O site também não usa cookies de rastreamento nem ferramentas de publicidade. Ele guarda no seu aparelho apenas preferências, como tema e tamanho da letra.</p><p>Para saber quantas pessoas o site alcança, usamos o GoatCounter, uma ferramenta de estatística sem cookies. Ela conta as visitas de forma anônima: registra a página aberta, o site de onde a pessoa veio, o tipo de aparelho e de navegador, o país e a região. Ela não guarda o endereço IP, não identifica quem visita e nunca recebe o conteúdo do diário.</p></div></div>
     <div class="rh"><div class="num">2</div><div class="ttl">O que guardamos se você criar uma conta</div><div class="tag">Dados coletados</div></div>
     <div class="rb"><div class="ico">2</div><div class="txt"><p>Seu e-mail, sua senha (guardada de forma criptografada, que ninguém consegue ler), a data em que você autorizou o uso dos dados e os registros que você faz no diário: data, nível de fadiga, sintomas, gatilhos e anotações.</p><p>Os registros do diário são <strong>dados de saúde</strong>, que a Lei Geral de Proteção de Dados (LGPD) considera sensíveis. Por isso só os guardamos com a sua autorização expressa, dada na hora de criar a conta.</p></div></div>
     <div class="rh"><div class="num">3</div><div class="ttl">Para que usamos</div><div class="tag">Só para o seu diário</div></div>
@@ -1661,5 +1661,23 @@ footer{padding-bottom:6rem}
   });
 })();
 </script>
+<!-- Estatísticas de visitas (GoatCounter, sem cookies). Conta só o nome da página, nunca o resto do endereço. -->
+<script>
+window.goatcounter={no_onload:true};
+(function(){
+  var last='';
+  function send(){
+    var gc=window.goatcounter;
+    if(!gc||typeof gc.count!=='function') return;
+    var id=document.body.getAttribute('data-page')||'inicio';
+    if(id===last) return;
+    last=id;
+    gc.count({path:'/'+id,title:document.title});
+  }
+  window.addEventListener('hashchange',function(){setTimeout(send,0);});
+  window.emContarVisita=send;
+})();
+</script>
+<script data-goatcounter="https://esclerosemultipla.goatcounter.com/count" async src="https://gc.zgo.at/count.js" onload="window.emContarVisita&&window.emContarVisita()"></script>
 </body>
 </html>
