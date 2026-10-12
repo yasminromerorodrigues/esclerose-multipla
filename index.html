@@ -736,8 +736,8 @@ footer{padding-bottom:6rem}
 <!-- ESTUDOS -->
 <section id="estudos">
   <h2><b>11</b> Estudos pelo mundo</h2>
-  <p class="kicker">Pesquisas em vários idiomas, com os achados traduzidos e resumidos. Filtre pelo idioma original.</p>
-  <p class="chips" style="margin-top:-.4rem"><span class="chip wait">Última atualização: outubro de 2026</span></p>
+  <p class="kicker">Pesquisas de vários países, com os achados traduzidos e resumidos em português. Toda semana um robô acrescenta estudos novos, com resumo automático, e logo abaixo deles ficam os destaques revisados. Filtre pelo idioma do país de origem.</p>
+  <p class="chips" style="margin-top:-.4rem"><span class="chip wait" id="estudosStamp">Carregando os estudos novos…</span></p>
   <div class="filters" role="group" aria-label="Filtrar por idioma" data-target="study">
     <button type="button" data-f="all" aria-pressed="true">Todos</button>
     <button type="button" data-f="en" aria-pressed="false">EN</button>
@@ -747,8 +747,12 @@ footer{padding-bottom:6rem}
     <button type="button" data-f="ja" aria-pressed="false">JA</button>
     <button type="button" data-f="fr" aria-pressed="false">FR/NL</button>
   </div>
+  <div class="board"><div class="full" style="background:var(--orange);color:var(--on-orange)"><p><strong>Resumo automático:</strong> as fichas marcadas assim são escritas por inteligência artificial a partir do resumo científico de cada estudo e não passam por revisão, então podem conter erros. Confira a fonte pelo link e não mude seu tratamento sem falar com o médico.</p></div></div>
 
   <div id="studies">
+  <p class="chips"><span class="chip">Novos estudos · resumo automático</span></p>
+  <div id="studiesAuto"></div>
+  <p class="chips" style="margin-top:.4rem"><span class="chip">Destaques revisados · outubro de 2026</span></p>
   <div class="board study" data-lang="de"><div class="rh"><div class="num">01</div><div class="ttl">O "bairro" de cada lesão</div><div class="tag">Alemão · Alemanha</div></div><div class="rb"><div class="ico">DE</div><div class="txt"><p>Um mapeamento celular de lesões subcorticais mostrou que o ambiente muda conforme a lesão envelhece, de inflamatória para crônica, e descreveu um subtipo de astrócito com cílios, possível alvo para frear a progressão.</p><span class="src">idw · "Cell type mapping reveals tissue niches…"</span></div></div></div>
 
   <div class="board study" data-lang="de"><div class="rh"><div class="num">02</div><div class="ttl">Borda larga, piora rápida</div><div class="tag">Alemão · Münster</div></div><div class="rb"><div class="ico">DE</div><div class="txt"><p>Em 186 cérebros doados, confirmados por PET em 114 pessoas, lesões cercadas por uma borda larga de células imunes marcaram quem progride mais depressa. Publicado na Nature Medicine.</p><span class="src">Univ. de Münster, "Paper of the Month"</span></div></div></div>
@@ -1112,7 +1116,7 @@ footer{padding-bottom:6rem}
       var b=ev.target.closest('button'); if(!b) return;
       group.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
       var f=b.getAttribute('data-f');
-      items.forEach(function(it){
+      document.querySelectorAll('.'+kind).forEach(function(it){
         var tags=(it.getAttribute(kind==='study'?'data-lang':'data-g')||'').split(' ');
         it.hidden=!(f==='all'||tags.indexOf(f)>-1);
       });
@@ -1631,6 +1635,38 @@ footer{padding-bottom:6rem}
   }
   window.addEventListener('hashchange',function(){route(false);});
   route(true);
+})();
+// ---------- Estudos pelo mundo (robô semanal)
+(function(){
+  var box=document.getElementById('studiesAuto'), stamp=document.getElementById('estudosStamp');
+  if(!box||!stamp) return;
+  function fmt(d){ if(!d) return ''; var p=d.slice(0,10).split('-'); return p.length===3?p[2]+'/'+p[1]+'/'+p[0]:(p.length===2?p[1]+'/'+p[0]:p[0]); }
+  function el(tag,cls,txt){ var e=document.createElement(tag); if(cls) e.className=cls; if(txt!=null) e.textContent=txt; return e; }
+  function vazio(t){ box.textContent=''; var b=el('div','board'), f=el('div','full'); f.appendChild(el('p',null,t)); b.appendChild(f); box.appendChild(b); }
+  fetch('estudos.json',{cache:'no-store'}).then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(d){
+    if(!d.updated){ stamp.textContent='O robô ainda não fez a primeira busca'; vazio('Os estudos novos aparecem aqui depois da primeira busca do robô.'); return; }
+    stamp.textContent='Estudos novos: atualizado em '+new Date(d.updated).toLocaleDateString('pt-BR');
+    var items=(d.items||[]).filter(function(it){ return it&&it.title&&it.summary&&/^https:\/\/pubmed\.ncbi\.nlm\.nih\.gov\//.test(it.url||''); });
+    if(!items.length){ vazio('Nenhum estudo novo nas últimas semanas.'); return; }
+    box.textContent='';
+    items.forEach(function(it){
+      var b=el('div','board study auto'); b.setAttribute('data-lang',/^(en|de|es|pt|ja|fr)$/.test(it.lang||'')?it.lang:'');
+      var rh=el('div','rh'), n=el('div','num','+'); n.setAttribute('aria-hidden','true');
+      rh.appendChild(n); rh.appendChild(el('div','ttl',it.title)); rh.appendChild(el('div','tag',(it.country?it.country+' · ':'')+'resumo automático'));
+      var rb=el('div','rb'), tx=el('div','txt'), src=el('span','src');
+      rb.appendChild(el('div','ico',String(it.code||'').slice(0,3)));
+      tx.appendChild(el('p',null,it.summary));
+      if(it.kind){ src.appendChild(el('strong',null,it.kind)); src.appendChild(document.createTextNode(' · ')); }
+      var meta=[it.journal,fmt(it.date)].filter(Boolean).join(' · ');
+      if(meta) src.appendChild(document.createTextNode(meta+' · '));
+      var a=el('a',null,'Ver o estudo no PubMed'); a.href=it.url; a.target='_blank'; a.rel='noopener noreferrer'; src.appendChild(a);
+      tx.appendChild(src);
+      if(it.original_title) tx.appendChild(el('span','src','Título original: '+it.original_title));
+      rb.appendChild(tx); b.appendChild(rh); b.appendChild(rb); box.appendChild(b);
+    });
+    var on=document.querySelector('.filters[data-target="study"] button[aria-pressed="true"]');
+    if(on&&on.getAttribute('data-f')!=='all') on.click();
+  }).catch(function(){ stamp.textContent='Não foi possível carregar os estudos novos'; vazio('Os estudos novos não carregaram agora. Tente de novo mais tarde.'); });
 })();
 // ---------- Radar diário
 (function(){
