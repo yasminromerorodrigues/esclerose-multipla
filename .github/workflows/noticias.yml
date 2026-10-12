@@ -1,0 +1,56 @@
+name: Noticias do ano
+
+on:
+  schedule:
+    - cron: "0 12 * * 1"   # toda segunda-feira, 9h de Brasília: atualiza a lista "Para acompanhar"
+    - cron: "0 12 1 * *"   # todo dia 1º, 9h de Brasília: abre o lembrete da revisão mensal
+  workflow_dispatch:        # botão "Run workflow" para rodar a lista na hora
+
+jobs:
+  noticias:
+    if: github.event.schedule != '0 12 1 * *'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Procurar notícias com cara de marco
+        run: python3 noticias.py
+
+      - name: Salvar no site
+        run: |
+          git config user.name "noticias-bot"
+          git config user.email "noticias-bot@users.noreply.github.com"
+          git add noticias.json
+          if git diff --cached --quiet; then echo "Nada novo para salvar"; exit 0; fi
+          git commit -m "Noticias do ano: lista semanal"
+          git pull --rebase
+          git push
+
+  lembrete:
+    if: github.event.schedule == '0 12 1 * *'
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Abrir o lembrete da revisão mensal
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cat > corpo.md <<'TEXTO'
+          @${{ github.repository_owner }}, chegou a hora da revisão mensal da linha do tempo! 🌻
+
+          Abra o Claude, copie a mensagem abaixo e envie:
+
+          ```
+          Revisão mensal da linha do tempo do meu site sobre esclerose múltipla.
+          Notícias que o robô separou: https://yasminromerorodrigues.github.io/esclerose-multipla/noticias.json
+          Marcos que já estão no site: https://yasminromerorodrigues.github.io/esclerose-multipla/marcos.json
+          Escolha só os marcos importantes do ano (aprovações e recusas de remédios, resultados de fase 3, Anvisa, SUS, grandes congressos), confira cada um na fonte e me devolva o marcos.json atualizado, no mesmo formato, para eu subir no GitHub.
+          ```
+
+          Depois é só subir o marcos.json novo pela aba Code, em Add file > Upload files, e fechar este lembrete.
+          TEXTO
+          sed -i 's/^          //' corpo.md
+          gh issue create --repo "$GITHUB_REPOSITORY" --title "Revisão mensal da linha do tempo" --body-file corpo.md
