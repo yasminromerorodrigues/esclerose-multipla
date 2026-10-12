@@ -1,0 +1,30 @@
+name: Estudos pelo mundo
+
+on:
+  schedule:
+    - cron: "0 11 * * 1"   # toda segunda-feira, 8h no horário de Brasília
+  workflow_dispatch:        # botão "Run workflow" para rodar na hora
+
+permissions:
+  contents: write
+
+jobs:
+  estudos:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Buscar e resumir estudos
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python3 estudos.py
+
+      - name: Salvar no site
+        run: |
+          git config user.name "estudos-bot"
+          git config user.email "estudos-bot@users.noreply.github.com"
+          git add estudos.json
+          if git diff --cached --quiet; then echo "Nada novo para salvar"; exit 0; fi
+          git commit -m "Estudos pelo mundo: atualização semanal"
+          git pull --rebase
+          git push
