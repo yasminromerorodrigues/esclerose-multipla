@@ -454,6 +454,14 @@ summary{grid-template-columns:minmax(0,1fr) 3.4rem}
 .cm-av.c1{background:var(--teal)}.cm-av.c2{background:var(--sun)}.cm-av.c3{background:var(--orange)}.cm-av.c4{background:var(--sage)}
 .cm-compor{display:grid;grid-template-columns:3rem minmax(0,1fr);gap:.9rem;align-items:start}
 .cm-ola{margin:.15rem 0 .45rem;font-weight:700}
+.cm-ola-linha{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:.1rem .8rem}
+.cm-ola-linha .cm-discreto{margin-left:0;min-height:auto;padding:.1rem 0}
+.cm-trocar{border:2px dashed var(--ink);padding:.7rem .8rem;margin:.1rem 0 .8rem}
+.cm-trocar label{font-weight:700;display:block;margin-bottom:.35rem}
+.cm-trocar-linha{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+.cm-trocar input{font:inherit;font-size:1rem;color:var(--ink);background:var(--paper);border:2px solid var(--ink);padding:.45rem .6rem;flex:1 1 12rem;min-height:40px;border-radius:0}
+.cm-trocar .hint{margin:.5rem 0 0}
+.cm-trocar .msg{margin-top:.5rem}
 .cm-compor textarea{font:inherit;font-size:1.05rem;color:var(--ink);background:var(--paper);border:2px solid var(--ink);padding:.7rem .8rem;width:100%;min-height:6.5rem;resize:vertical;border-radius:0}
 .cm-compor textarea:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
 .cm-compor-pe{display:flex;justify-content:space-between;align-items:center;gap:.6rem;margin-top:.7rem}
@@ -1389,7 +1397,13 @@ input.vh:focus-visible + .cm-discreto,#hsFoto:focus-visible ~ .hs-foto-btn{outli
         <span class="cm-av" id="cmMeuAv" aria-hidden="true">?</span>
         <div class="cm-compor-corpo">
           <label class="vh" for="cmTexto">Escreva seu post</label>
-          <p class="cm-ola" id="cmOla"></p>
+          <div class="cm-ola-linha"><p class="cm-ola" id="cmOla"></p><button type="button" class="cm-discreto" id="cmTrocarBtn">Trocar apelido</button></div>
+          <div class="cm-trocar" id="cmTrocar" hidden>
+            <label for="cmNovoApelido">Novo apelido</label>
+            <div class="cm-trocar-linha"><input type="text" id="cmNovoApelido" maxlength="24" autocomplete="off"><button type="button" class="cm-acao" id="cmTrocarSalvar">Salvar</button><button type="button" class="cm-discreto" id="cmTrocarCancelar">Cancelar</button></div>
+            <p class="hint">A primeira troca é livre. Depois, você pode trocar uma vez a cada 30 dias. Seus posts antigos passam a mostrar o novo apelido.</p>
+            <div class="msg" id="cmTrocarMsg" role="status" hidden></div>
+          </div>
           <textarea id="cmTexto" maxlength="2000" placeholder="Compartilhe algo com a comunidade…"></textarea>
           <div class="cm-pilulas" role="radiogroup" aria-label="Tema do post" id="cmTemaEscolha"></div>
           <div class="cm-compor-pe"><span class="cm-cont" id="cmCont">0/2000</span><button class="btn pri" type="button" id="cmPublicar">Publicar</button></div>
@@ -2281,6 +2295,31 @@ input.vh:focus-visible + .cm-discreto,#hsFoto:focus-visible ~ .hs-foto-btn{outli
     $('cmTexto').disabled=suspensa(); $('cmPublicar').disabled=suspensa();
     if(ativa()) carregar();
   }
+
+  // ----- Trocar apelido
+  $('cmTrocarBtn').addEventListener('click',function(){
+    $('cmTrocar').hidden=false; $('cmTrocarMsg').hidden=true;
+    $('cmNovoApelido').value=perfil?perfil.apelido:''; $('cmNovoApelido').focus(); $('cmNovoApelido').select();
+  });
+  $('cmTrocarCancelar').addEventListener('click',function(){ $('cmTrocar').hidden=true; });
+  $('cmTrocarSalvar').addEventListener('click',function(){
+    var btn=this, msg=$('cmTrocarMsg'), ap=$('cmNovoApelido').value.trim().replace(/\s+/g,' ');
+    if(!/^[A-Za-zÀ-ÿ0-9_. ]{3,24}$/.test(ap)){ aviso(msg,'Use de 3 a 24 caracteres: letras, números, espaço, ponto ou _.',true); return; }
+    if(temPalavrao(ap)){ aviso(msg,'Escolha um apelido sem palavrões ou ofensas.',true); return; }
+    if(perfil&&ap===perfil.apelido){ $('cmTrocar').hidden=true; return; }
+    btn.disabled=true;
+    sb.rpc('cm_trocar_apelido',{p_apelido:ap}).then(function(r){
+      btn.disabled=false;
+      if(r.error){
+        var m=r.error.message||'', espera=m.match(/ESPERE:(\S+)/);
+        aviso(msg,espera?'Você trocou de apelido há pouco tempo. Poderá trocar de novo a partir de '+espera[1]+'.':(r.error.code==='23505'?'Esse apelido já está em uso. Escolha outro.':(r.error.code==='23514'?'Esse apelido não é permitido. Escolha outro.':erroTxt(r.error))),true);
+        return;
+      }
+      perfil.apelido=r.data||ap; $('cmTrocar').hidden=true;
+      entrar();
+      $('cmOla').textContent='Pronto! Agora você é '+perfil.apelido+'. 🌻';
+    });
+  });
 
   // ----- Criar perfil
   $('cmCriarPerfil').addEventListener('click',function(){
