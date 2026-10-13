@@ -426,6 +426,33 @@ summary{grid-template-columns:minmax(0,1fr) 3.4rem}
 .extnote{margin:-.6rem 0 1.9rem;padding:.75rem 1rem;background:var(--hl);border-left:6px solid var(--ink);font-size:.95rem;max-width:68ch}
 .studylink{display:inline-flex;align-items:center;min-height:44px;margin-top:.3rem;font-weight:700;font-size:.95rem;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;overflow-wrap:anywhere}
 .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* ===== Comunidade ===== */
+.fld select{font:inherit;font-size:1rem;color:var(--ink);background:var(--paper);border:2px solid var(--ink);padding:.5rem .6rem;width:100%;border-radius:0;min-height:44px}
+.cm-regras .full ol{margin:0 0 1rem;padding-left:1.3rem}
+.cm-regras .full li{margin-bottom:.55rem;max-width:68ch}
+.cm-check{text-transform:none;font-family:var(--mono);font-weight:400;font-size:.95rem}
+.cm-bar{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;justify-content:space-between;margin:0 0 1rem}
+.cm-ola{margin:0;font-weight:700}
+.cm-filtros{margin-bottom:1rem}
+.cm-item{margin-bottom:.9rem}
+.cm-head{display:flex;flex-wrap:wrap;gap:.4rem .8rem;align-items:center;padding:.55rem 1rem;background:var(--hl)}
+.cm-head .chip{margin:0}
+.cm-meta{font-size:.88rem;font-weight:700}
+.cm-t{font-family:var(--display);font-weight:700;font-size:1.45rem;line-height:1.2;margin:0 0 .4rem}
+.cm-open{all:unset;cursor:pointer;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;overflow-wrap:anywhere}
+.cm-open:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+.cm-corpo{white-space:pre-wrap;overflow-wrap:anywhere;margin:0}
+.cm-resumo{margin:0;overflow-wrap:anywhere}
+.cm-acoes{display:flex;flex-wrap:wrap;gap:.5rem;padding:.7rem 1rem}
+.cm-acoes .btn{font-size:.95rem;padding:.3rem .7rem}
+.cm-forca[aria-pressed="true"]{background:var(--sun);color:#0D2721}
+.cm-oculto{background:var(--orange);color:var(--on-orange);font-weight:700;font-size:.9rem;padding:.45rem 1rem}
+.cm-den{padding:.2rem 0 .4rem}
+.cm-voltar{margin:0 0 1rem}
+.cm-vazio{padding:1rem;border:var(--bw) dashed var(--ink);margin:0 0 1rem}
+.cm-pend{border-top:var(--bw) solid var(--ink)}
+.cm-pend:first-child{border-top:0}
+.cm-pend .full p{margin:0 0 .5rem}
 </style>
 </head>
 <body>
@@ -447,7 +474,7 @@ summary{grid-template-columns:minmax(0,1fr) 3.4rem}
       <span class="cur" id="curSec" aria-live="polite">Início</span>
       <a class="homebtn" href="#inicio" aria-label="Voltar ao início">⌂ Início</a>
     </div>
-    <div class="menu" id="menuPanel" hidden><div class="mgroup sitesearch"><label for="buscaMenu">Buscar no site</label><input type="search" id="buscaMenu" placeholder="Ex.: gadolínio, vacinas" autocomplete="off"><div class="sres" id="buscaMenuRes" aria-live="polite"></div></div><div class="mgroup"><div class="mlinks"><a href="#inicio"><span>00</span>Início</a></div></div><div class="mgroup"><h3>Para começar</h3><div class="mlinks"><a href="#entender"><span>01</span>Entender</a><a href="#primeiros"><span>02</span>Primeiros 30 dias</a><a href="#sintomas"><span>03</span>Sintomas</a></div></div><div class="mgroup"><h3>No dia a dia</h3><div class="mlinks"><a href="#ferramentas"><span>04</span>Ferramentas</a><a href="#ajudar"><span>05</span>Como ajudar</a><a href="#direitos"><span>06</span>Direitos e acessibilidade</a><a href="#vacinas"><span>07</span>Vacinas</a><a href="#mitos"><span>08</span>Mitos e verdades</a></div></div><div class="mgroup"><h3>Ciência e tratamento</h3><div class="mlinks"><a href="#noticias"><span>09</span>Notícias de <span class="ano-vigente">2026</span></a><a href="#radar"><span>10</span>Radar diário</a><a href="#estudos"><span>11</span>Estudos pelo mundo</a><a href="#pesquisas"><span>12</span>Pesquisas marcantes</a><a href="#tratamentos"><span>13</span>Tratamentos</a><a href="#mundo"><span>14</span>Acesso no mundo</a></div></div><div class="mgroup"><h3>Histórias e mais</h3><div class="mlinks"><a href="#pessoas"><span>15</span>Pessoas</a><a href="#cultura"><span>16</span>Filmes e livros</a><a href="#sobre"><span>17</span>Sobre mim</a><a href="#privacidade"><span>18</span>Privacidade</a><a href="#fontes"><span>19</span>Fontes</a><a href="#glossario"><span>20</span>Glossário</a><a href="https://yasminromerorodrigues.github.io/wiki-esclerose-multipla/" target="_blank" rel="noopener noreferrer"><span>↗</span>Wiki da comunidade<span class="vh"> (abre em nova aba)</span></a></div></div></div>
+    <div class="menu" id="menuPanel" hidden><div class="mgroup sitesearch"><label for="buscaMenu">Buscar no site</label><input type="search" id="buscaMenu" placeholder="Ex.: gadolínio, vacinas" autocomplete="off"><div class="sres" id="buscaMenuRes" aria-live="polite"></div></div><div class="mgroup"><div class="mlinks"><a href="#inicio"><span>00</span>Início</a></div></div><div class="mgroup"><h3>Para começar</h3><div class="mlinks"><a href="#entender"><span>01</span>Entender</a><a href="#primeiros"><span>02</span>Primeiros 30 dias</a><a href="#sintomas"><span>03</span>Sintomas</a></div></div><div class="mgroup"><h3>No dia a dia</h3><div class="mlinks"><a href="#ferramentas"><span>04</span>Ferramentas</a><a href="#ajudar"><span>05</span>Como ajudar</a><a href="#direitos"><span>06</span>Direitos e acessibilidade</a><a href="#vacinas"><span>07</span>Vacinas</a><a href="#mitos"><span>08</span>Mitos e verdades</a></div></div><div class="mgroup"><h3>Ciência e tratamento</h3><div class="mlinks"><a href="#noticias"><span>09</span>Notícias de <span class="ano-vigente">2026</span></a><a href="#radar"><span>10</span>Radar diário</a><a href="#estudos"><span>11</span>Estudos pelo mundo</a><a href="#pesquisas"><span>12</span>Pesquisas marcantes</a><a href="#tratamentos"><span>13</span>Tratamentos</a><a href="#mundo"><span>14</span>Acesso no mundo</a></div></div><div class="mgroup"><h3>Histórias e mais</h3><div class="mlinks"><a href="#pessoas"><span>15</span>Pessoas</a><a href="#cultura"><span>16</span>Filmes e livros</a><a href="#sobre"><span>17</span>Sobre mim</a><a href="#privacidade"><span>18</span>Privacidade</a><a href="#fontes"><span>19</span>Fontes</a><a href="#glossario"><span>20</span>Glossário</a></div></div><div class="mgroup"><h3>Participe</h3><div class="mlinks"><a href="#comunidade"><span>21</span>Comunidade</a><a href="https://yasminromerorodrigues.github.io/wiki-esclerose-multipla/" target="_blank" rel="noopener noreferrer"><span>↗</span>Wiki da comunidade<span class="vh"> (abre em nova aba)</span></a></div></div></div>
   </div>
 </nav>
 
@@ -488,7 +515,7 @@ summary{grid-template-columns:minmax(0,1fr) 3.4rem}
 </div>
 
 <h2 class="sub">Escolha por onde <b>começar</b></h2>
-<h3 class="idx-h">Para começar</h3><div class="idx"><a class="idx-card" href="#entender"><span class="n">01</span><span class="b"><strong>Entender</strong><small>O que é a EM, suas formas e causas</small></span></a><a class="idx-card" href="#primeiros"><span class="n">02</span><span class="b"><strong>Primeiros 30 dias</strong><small>Roteiro para quem acabou de receber o diagnóstico</small></span></a><a class="idx-card" href="#sintomas"><span class="n">03</span><span class="b"><strong>Sintomas</strong><small>Os sintomas mais comuns e quando procurar ajuda</small></span></a></div><h3 class="idx-h">No dia a dia</h3><div class="idx"><a class="idx-card" href="#ferramentas"><span class="n">04</span><span class="b"><strong>Ferramentas</strong><small>Diário de sintomas e preparador de consulta</small></span></a><a class="idx-card" href="#ajudar"><span class="n">05</span><span class="b"><strong>Como ajudar</strong><small>Para amigos, família e colegas</small></span></a><a class="idx-card" href="#direitos"><span class="n">06</span><span class="b"><strong>Direitos e acessibilidade</strong><small>SUS, INSS, isenções e adaptações</small></span></a><a class="idx-card" href="#vacinas"><span class="n">07</span><span class="b"><strong>Vacinas</strong><small>O que revisar antes e durante o tratamento</small></span></a><a class="idx-card" href="#mitos"><span class="n">08</span><span class="b"><strong>Mitos e verdades</strong><small>As dúvidas mais comuns, respondidas</small></span></a></div><h3 class="idx-h">Ciência e tratamento</h3><div class="idx"><a class="idx-card" href="#noticias"><span class="n">09</span><span class="b"><strong>Notícias de <span class="ano-vigente">2026</span></strong><small>O que aconteceu neste ano, explicado</small></span></a><a class="idx-card" href="#radar"><span class="n">10</span><span class="b"><strong>Radar diário</strong><small>Novidades buscadas todo dia, automaticamente</small></span></a><a class="idx-card" href="#estudos"><span class="n">11</span><span class="b"><strong>Estudos pelo mundo</strong><small>Pesquisas recentes, traduzidas</small></span></a><a class="idx-card" href="#pesquisas"><span class="n">12</span><span class="b"><strong>Pesquisas marcantes</strong><small>Os estudos que mudaram a EM</small></span></a><a class="idx-card" href="#tratamentos"><span class="n">13</span><span class="b"><strong>Tratamentos</strong><small>Remédios aprovados e o que vem por aí</small></span></a><a class="idx-card" href="#mundo"><span class="n">14</span><span class="b"><strong>Acesso no mundo</strong><small>Como a EM é tratada em cada país</small></span></a></div><h3 class="idx-h">Histórias e mais</h3><div class="idx"><a class="idx-card" href="#pessoas"><span class="n">15</span><span class="b"><strong>Pessoas</strong><small>Famosos que falaram sobre a EM</small></span></a><a class="idx-card" href="#cultura"><span class="n">16</span><span class="b"><strong>Filmes e livros</strong><small>Indicações sobre EM</small></span></a><a class="idx-card" href="#sobre"><span class="n">17</span><span class="b"><strong>Sobre mim</strong><small>Quem fez este site</small></span></a><a class="idx-card" href="#privacidade"><span class="n">18</span><span class="b"><strong>Privacidade</strong><small>Como cuidamos dos seus dados</small></span></a><a class="idx-card" href="#fontes"><span class="n">19</span><span class="b"><strong>Fontes</strong><small>De onde vem cada informação</small></span></a><a class="idx-card" href="#glossario"><span class="n">20</span><span class="b"><strong>Glossário</strong><small>Termos dos laudos e das consultas, explicados</small></span></a><a class="idx-card" href="https://yasminromerorodrigues.github.io/wiki-esclerose-multipla/" target="_blank" rel="noopener noreferrer"><span class="n">↗</span><span class="b"><strong>Wiki da comunidade</strong><small>Corrija, sugira e conte sua história</small><span class="vh"> (abre em nova aba)</span></span></a></div>
+<h3 class="idx-h">Para começar</h3><div class="idx"><a class="idx-card" href="#entender"><span class="n">01</span><span class="b"><strong>Entender</strong><small>O que é a EM, suas formas e causas</small></span></a><a class="idx-card" href="#primeiros"><span class="n">02</span><span class="b"><strong>Primeiros 30 dias</strong><small>Roteiro para quem acabou de receber o diagnóstico</small></span></a><a class="idx-card" href="#sintomas"><span class="n">03</span><span class="b"><strong>Sintomas</strong><small>Os sintomas mais comuns e quando procurar ajuda</small></span></a></div><h3 class="idx-h">No dia a dia</h3><div class="idx"><a class="idx-card" href="#ferramentas"><span class="n">04</span><span class="b"><strong>Ferramentas</strong><small>Diário de sintomas e preparador de consulta</small></span></a><a class="idx-card" href="#ajudar"><span class="n">05</span><span class="b"><strong>Como ajudar</strong><small>Para amigos, família e colegas</small></span></a><a class="idx-card" href="#direitos"><span class="n">06</span><span class="b"><strong>Direitos e acessibilidade</strong><small>SUS, INSS, isenções e adaptações</small></span></a><a class="idx-card" href="#vacinas"><span class="n">07</span><span class="b"><strong>Vacinas</strong><small>O que revisar antes e durante o tratamento</small></span></a><a class="idx-card" href="#mitos"><span class="n">08</span><span class="b"><strong>Mitos e verdades</strong><small>As dúvidas mais comuns, respondidas</small></span></a></div><h3 class="idx-h">Ciência e tratamento</h3><div class="idx"><a class="idx-card" href="#noticias"><span class="n">09</span><span class="b"><strong>Notícias de <span class="ano-vigente">2026</span></strong><small>O que aconteceu neste ano, explicado</small></span></a><a class="idx-card" href="#radar"><span class="n">10</span><span class="b"><strong>Radar diário</strong><small>Novidades buscadas todo dia, automaticamente</small></span></a><a class="idx-card" href="#estudos"><span class="n">11</span><span class="b"><strong>Estudos pelo mundo</strong><small>Pesquisas recentes, traduzidas</small></span></a><a class="idx-card" href="#pesquisas"><span class="n">12</span><span class="b"><strong>Pesquisas marcantes</strong><small>Os estudos que mudaram a EM</small></span></a><a class="idx-card" href="#tratamentos"><span class="n">13</span><span class="b"><strong>Tratamentos</strong><small>Remédios aprovados e o que vem por aí</small></span></a><a class="idx-card" href="#mundo"><span class="n">14</span><span class="b"><strong>Acesso no mundo</strong><small>Como a EM é tratada em cada país</small></span></a></div><h3 class="idx-h">Histórias e mais</h3><div class="idx"><a class="idx-card" href="#pessoas"><span class="n">15</span><span class="b"><strong>Pessoas</strong><small>Famosos que falaram sobre a EM</small></span></a><a class="idx-card" href="#cultura"><span class="n">16</span><span class="b"><strong>Filmes e livros</strong><small>Indicações sobre EM</small></span></a><a class="idx-card" href="#sobre"><span class="n">17</span><span class="b"><strong>Sobre mim</strong><small>Quem fez este site</small></span></a><a class="idx-card" href="#privacidade"><span class="n">18</span><span class="b"><strong>Privacidade</strong><small>Como cuidamos dos seus dados</small></span></a><a class="idx-card" href="#fontes"><span class="n">19</span><span class="b"><strong>Fontes</strong><small>De onde vem cada informação</small></span></a><a class="idx-card" href="#glossario"><span class="n">20</span><span class="b"><strong>Glossário</strong><small>Termos dos laudos e das consultas, explicados</small></span></a></div><h3 class="idx-h">Participe</h3><div class="idx"><a class="idx-card" href="#comunidade"><span class="n">21</span><span class="b"><strong>Comunidade</strong><small>Converse, tire dúvidas e apoie quem convive com EM</small></span></a><a class="idx-card" href="https://yasminromerorodrigues.github.io/wiki-esclerose-multipla/" target="_blank" rel="noopener noreferrer"><span class="n">↗</span><span class="b"><strong>Wiki da comunidade</strong><small>Corrija, sugira e conte sua história</small><span class="vh"> (abre em nova aba)</span></span></a></div>
 </section>
 
 <!-- ENTENDER -->
@@ -1125,7 +1152,7 @@ summary{grid-template-columns:minmax(0,1fr) 3.4rem}
 <!-- PRIVACIDADE -->
 <section id="privacidade">
   <h2><b>18</b> Política de privacidade</h2>
-  <p class="kicker">Versão 1.2, de outubro de 2026. Em linguagem simples, como o resto do site.</p>
+  <p class="kicker">Versão 1.3, de outubro de 2026. Em linguagem simples, como o resto do site.</p>
   <div class="board">
     <div class="rh"><div class="num">1</div><div class="ttl">Sem conta, seus registros ficam no aparelho</div><div class="tag">Uso sem cadastro</div></div>
     <div class="rb"><div class="ico">1</div><div class="txt"><p>Se você usa o diário e o preparador de consulta sem criar conta, tudo fica guardado só no navegador do seu aparelho. Nenhum dos seus registros é enviado para este site ou para qualquer outro lugar.</p><p>O site também não usa cookies de rastreamento nem ferramentas de publicidade. Ele guarda no seu aparelho apenas preferências, como tema e tamanho da letra.</p><p>Para saber quantas pessoas o site alcança, usamos o GoatCounter, uma ferramenta de estatística sem cookies. Ela conta as visitas de forma anônima: registra a página aberta, o site de onde a pessoa veio, o tipo de aparelho e de navegador, o país e a região. Ela não guarda o endereço IP nem cria perfis de quem visita, e nunca recebe o conteúdo do diário. O serviço de hospedagem do site, o GitHub, pode registrar dados técnicos de acesso, como acontece em qualquer site.</p></div></div>
@@ -1141,6 +1168,8 @@ summary{grid-template-columns:minmax(0,1fr) 3.4rem}
     <div class="rb"><div class="ico">6</div><div class="txt"><p>Os registros ficam guardados enquanto a sua conta existir. Quando você exclui a conta, eles são apagados junto.</p></div></div>
     <div class="rh"><div class="num">7</div><div class="ttl">Segurança e mudanças</div><div class="tag">Compromisso</div></div>
     <div class="rb"><div class="ico">7</div><div class="txt"><p>Nenhum sistema na internet é 100% seguro, mas adotamos cuidados para proteger seus dados. Se acontecer algum incidente que afete suas informações, você será avisada por e-mail. Se esta política mudar, a nova versão será publicada aqui com a data atualizada.</p><p>Responsável pelo site e pelos dados: Yasmin Romero Rodrigues.</p></div></div>
+    <div class="rh"><div class="num">8</div><div class="ttl">Comunidade</div><div class="tag">Se você participar</div></div>
+    <div class="rb"><div class="ico">8</div><div class="txt"><p>Se você entrar na comunidade, guardamos o apelido que você escolher, a confirmação de que você tem 18 anos ou mais e aceitou os combinados, e os tópicos, respostas, forças (🌻) e denúncias que você fizer.</p><p>Seus posts ficam visíveis, com o seu apelido, para todos os membros conectados. Eles não aparecem para quem não tem conta nem para buscadores. Contar algo sobre a sua saúde na comunidade é compartilhar um dado sensível: publique só o que quiser e evite informações que identifiquem você.</p><p>Para aplicar os combinados, a moderação pode ler, ocultar e excluir posts e suspender contas. Você pode apagar seus posts quando quiser, e ao excluir sua conta tudo o que você publicou na comunidade é apagado junto.</p></div></div>
   </div>
 </section>
 
@@ -1204,12 +1233,106 @@ summary{grid-template-columns:minmax(0,1fr) 3.4rem}
   </div>
 </section>
 
+<!-- COMUNIDADE -->
+<section id="comunidade">
+  <h2><b>21</b> Comunidade</h2>
+  <p class="kicker">Um espaço para quem convive com EM conversar, tirar dúvidas e se apoiar. Os posts aparecem na hora, só membros com conta conseguem ler e cada pessoa participa com um apelido.</p>
+
+  <details class="cm-regras">
+    <summary><span class="ttl">Combinados da comunidade</span><span class="pm"></span></summary>
+    <div class="full">
+      <ol class="cm-lista-regras">
+        <li><strong>Respeito sempre.</strong> Sem ofensas, palavrões, deboche ou discriminação de qualquer tipo. Discordar pode, atacar não.</li>
+        <li><strong>Conte sua experiência, não prescreva.</strong> Vale dizer "comigo funcionou assim". Não vale indicar dose, mandar alguém parar um remédio ou dar diagnóstico. Nada aqui substitui o neurologista.</li>
+        <li><strong>Sem curas milagrosas nem desinformação.</strong> Posts que prometem cura, desestimulam vacinas ou vendem terapias sem comprovação são removidos. Ao citar um estudo ou notícia, coloque a fonte.</li>
+        <li><strong>Sem vendas nem propaganda.</strong> Inclui produtos, consultas, rifas, links de afiliado, pedidos de dinheiro e recrutamento para pesquisas sem autorização da moderação.</li>
+        <li><strong>Proteja sua privacidade e a dos outros.</strong> Não publique telefone, endereço, CPF ou exames com seu nome. Não exponha médicos, hospitais ou outras pessoas pelo nome, nem poste prints de conversas privadas.</li>
+        <li><strong>Um assunto, um tópico.</strong> Veja se já existe um tópico igual antes de abrir outro e não repita o mesmo post.</li>
+        <li><strong>Fique no tema.</strong> O foco é a EM e a vida com ela. Política partidária, correntes e tentativas de convencer outras pessoas da sua religião ficam de fora.</li>
+        <li><strong>Humor com cuidado.</strong> Rir junto é ótimo, mas piadas que ridicularizam pessoas ou condições são removidas.</li>
+        <li><strong>Momentos difíceis são acolhidos.</strong> Se você não estiver bem, fale. Em uma crise, ligue para o CVV (188) ou, em emergência, para o SAMU (192).</li>
+        <li><strong>Só para maiores de 18 anos.</strong></li>
+        <li><strong>Viu algo errado? Denuncie</strong> pelo botão do post, em vez de discutir no tópico.</li>
+      </ol>
+      <p><strong>Se alguém quebrar os combinados:</strong> aviso, remoção do post, suspensão temporária e banimento. Casos graves, como ameaça, assédio ou golpe, levam ao banimento direto. Um post com 3 denúncias some até a moderação revisar.</p>
+      <p>O que os membros escrevem é opinião e experiência de cada um, e não do site.</p>
+    </div>
+  </details>
+
+  <div class="board" id="cmEntrar">
+    <div class="rh"><div class="num">🌻</div><div class="ttl">Participe da conversa</div><div class="tag">Gratuito, só com apelido</div></div>
+    <div class="full"><p id="cmEntrarTxt">Para ler e publicar, entre com a mesma conta do diário de sintomas ou crie uma conta gratuita.</p></div>
+    <div class="btns"><a class="btn pri" href="#conta">Entrar ou criar conta</a></div>
+  </div>
+
+  <div class="board" id="cmPerfil" hidden>
+    <div class="rh"><div class="num">👋</div><div class="ttl">Escolha como quer aparecer</div><div class="tag">Uma vez só</div></div>
+    <div class="full"><p>Use um apelido, não o seu nome completo. Ele aparece em tudo o que você publicar.</p></div>
+    <div class="fld"><label for="cmApelido">Apelido</label><input type="text" id="cmApelido" maxlength="24" autocomplete="off" placeholder="Ex.: Girassol_SP"><span class="hint">De 3 a 24 caracteres: letras, números, espaço, ponto ou _.</span></div>
+    <div class="fld"><label class="q cm-check"><input type="checkbox" id="cmMaior"><span>Tenho 18 anos ou mais.</span></label><label class="q cm-check"><input type="checkbox" id="cmAceite"><span>Li os combinados da comunidade e a <a href="#privacidade">política de privacidade</a>. Entendo que o que eu publicar fica visível para os membros, com o meu apelido.</span></label></div>
+    <div class="btns"><button class="btn pri" type="button" id="cmCriarPerfil">Entrar na comunidade</button></div>
+    <div class="msg" id="cmPerfilMsg" role="status" hidden></div>
+  </div>
+
+  <div id="cmApp" hidden>
+    <div class="board" id="cmModeracao" hidden>
+      <div class="rh"><div class="num">⚑</div><div class="ttl">Moderação</div><div class="tag" id="cmPendQtd">Carregando…</div></div>
+      <div id="cmPend"></div>
+    </div>
+
+    <div class="board cm-ajuda" id="cmAjuda" hidden>
+      <div class="full" style="background:var(--orange);color:var(--on-orange)"><p><strong>Obrigada por compartilhar. Você não está sozinha.</strong> Se estiver pensando em se machucar, converse agora com o CVV, de graça e 24 horas: ligue 188 ou use o chat no site do CVV. Em emergência, ligue 192.</p></div>
+      <div class="btns"><button class="btn sm" type="button" id="cmAjudaFechar">Fechar aviso</button></div>
+    </div>
+
+    <div id="cmListaWrap">
+      <div class="cm-bar">
+        <p class="cm-ola" id="cmOla"></p>
+        <button class="btn pri" type="button" id="cmNovoBtn">Novo tópico</button>
+      </div>
+
+      <div class="board" id="cmForm" hidden>
+        <div class="rh"><div class="num">+</div><div class="ttl">Novo tópico</div><div class="tag">Publicado na hora</div></div>
+        <div class="fld"><label for="cmTema">Tema</label><select id="cmTema"><option value="diagnostico">Diagnóstico</option><option value="sintomas">Sintomas</option><option value="tratamentos">Tratamentos</option><option value="direitos">Direitos</option><option value="desabafo">Desabafo</option><option value="conquistas">Conquistas</option><option value="outros" selected>Outros assuntos</option></select></div>
+        <div class="fld"><label for="cmTitulo">Título</label><input type="text" id="cmTitulo" maxlength="120" placeholder="Sobre o que você quer conversar?"></div>
+        <div class="fld"><label for="cmTexto">Texto</label><textarea id="cmTexto" maxlength="5000" placeholder="Conte com suas palavras. Lembre de não colocar dados pessoais."></textarea></div>
+        <div class="btns"><button class="btn pri" type="button" id="cmPublicar">Publicar</button><button class="btn" type="button" id="cmCancelar">Cancelar</button></div>
+        <div class="msg" id="cmFormMsg" role="status" hidden></div>
+      </div>
+
+      <div class="filters cm-filtros" role="group" aria-label="Filtrar por tema" id="cmFiltros">
+        <button type="button" data-tema="all" aria-pressed="true">Todos</button>
+        <button type="button" data-tema="diagnostico" aria-pressed="false">Diagnóstico</button>
+        <button type="button" data-tema="sintomas" aria-pressed="false">Sintomas</button>
+        <button type="button" data-tema="tratamentos" aria-pressed="false">Tratamentos</button>
+        <button type="button" data-tema="direitos" aria-pressed="false">Direitos</button>
+        <button type="button" data-tema="desabafo" aria-pressed="false">Desabafo</button>
+        <button type="button" data-tema="conquistas" aria-pressed="false">Conquistas</button>
+        <button type="button" data-tema="outros" aria-pressed="false">Outros</button>
+      </div>
+      <div id="cmLista" aria-live="polite"></div>
+    </div>
+
+    <div id="cmTopico" hidden>
+      <button class="btn sm cm-voltar" type="button" id="cmVoltar">← Voltar aos tópicos</button>
+      <div id="cmTopicoCorpo"></div>
+      <h3 class="idx-h" id="cmRespTitulo">Respostas</h3>
+      <div id="cmRespostas"></div>
+      <div class="board" id="cmResponder">
+        <div class="fld"><label for="cmRespTexto">Sua resposta</label><textarea id="cmRespTexto" maxlength="3000" placeholder="Acolha, conte sua experiência, sem prescrever."></textarea></div>
+        <div class="btns"><button class="btn pri" type="button" id="cmRespEnviar">Responder</button></div>
+        <div class="msg" id="cmRespMsg" role="status" hidden></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main>
 
 <footer class="wrap">
   <div class="board foot">
     <div class="full" style="background:var(--orange);color:var(--on-orange)"><p>Conteúdo informativo, não substitui consulta médica. Com sintomas ou dúvidas sobre o tratamento, procure um neurologista. No Brasil, a ABEM e a AME (Amigos Múltiplos pela Esclerose) oferecem acolhimento e informação.</p></div>
-    <nav class="full footnav" aria-label="Links do rodapé"><a href="#inicio">Início</a><a href="#ferramentas">Diário de sintomas</a><a href="#sobre">Sobre mim</a><a href="#fontes">Fontes</a><a href="#privacidade">Privacidade</a><a href="mailto:tudosobreesclerosemultipla@gmail.com">Contato</a><a href="https://yasminromerorodrigues.github.io/wiki-esclerose-multipla/" target="_blank" rel="noopener noreferrer">Wiki da comunidade<span class="vh"> (abre em nova aba)</span></a></nav>
+    <nav class="full footnav" aria-label="Links do rodapé"><a href="#inicio">Início</a><a href="#ferramentas">Diário de sintomas</a><a href="#sobre">Sobre mim</a><a href="#fontes">Fontes</a><a href="#privacidade">Privacidade</a><a href="mailto:tudosobreesclerosemultipla@gmail.com">Contato</a><a href="#comunidade">Comunidade</a><a href="https://yasminromerorodrigues.github.io/wiki-esclerose-multipla/" target="_blank" rel="noopener noreferrer">Wiki da comunidade<span class="vh"> (abre em nova aba)</span></a></nav>
   </div>
 </footer>
 
@@ -1442,6 +1565,7 @@ summary{grid-template-columns:minmax(0,1fr) 3.4rem}
   function clearMsg(){ acMsg.hidden=true; }
   var sb=null;
   try{ if(window.supabase&&window.supabase.createClient) sb=window.supabase.createClient(SB_URL,SB_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true,storageKey:'em-auth'}}); }catch(err){ sb=null; }
+  window.__emSb=sb;
   function offline(){ amsg('Não foi possível conectar. Verifique sua internet. A conta funciona no site oficial: yasminromerorodrigues.github.io/esclerose-multipla',true); }
   function errText(err){
     var m=((err&&err.message)||'').toLowerCase();
@@ -1472,6 +1596,8 @@ summary{grid-template-columns:minmax(0,1fr) 3.4rem}
     $('acModo').textContent=user?'Salvando na sua conta':'Usando só neste aparelho';
     if(user){ $('acEmailLogado').textContent=user.email||''; loadCloud(); } else { entries=localEntries(); render(); }
     updateMigrar();
+    window.__emUser=user||null; window.__emAuthReady=true;
+    try{ document.dispatchEvent(new CustomEvent('em-auth',{detail:user||null})); }catch(e){}
   }
   $('acEntrar').addEventListener('click',function(){
     var btn=this, email=$('acEmail').value.trim(), senha=$('acSenha').value;
@@ -1894,6 +2020,264 @@ summary{grid-template-columns:minmax(0,1fr) 3.4rem}
   }
   attach(document.getElementById('buscaHome'),document.getElementById('buscaHomeRes'));
   attach(document.getElementById('buscaMenu'),document.getElementById('buscaMenuRes'));
+})();
+// ---------- Comunidade
+(function(){
+  var sec=document.getElementById('comunidade'); if(!sec) return;
+  function $(id){return document.getElementById(id);}
+  function esc(t){var d=document.createElement('div');d.textContent=t==null?'':String(t);return d.innerHTML;}
+  var TEMAS={diagnostico:'Diagnóstico',sintomas:'Sintomas',tratamentos:'Tratamentos',direitos:'Direitos',desabafo:'Desabafo',conquistas:'Conquistas',outros:'Outros assuntos'};
+  var MOTIVOS={ofensa:'Ofensa ou palavrão',desinformacao:'Desinformação ou cura milagrosa',propaganda:'Venda ou propaganda',privacidade:'Expõe dados de alguém',spam:'Spam ou repetido',risco:'Alguém pode estar em risco',outro:'Outro motivo'};
+  // Mesma lista do banco de dados (função cm_tem_palavrao). Se mudar lá, mude aqui também.
+  var PALAVRAO=/\b(pora|poha|caralh\w*|cacete|kct|krl|crl|merdas?|bostas?|put[ao]s?|putaria|fdp|pqp|vsf|vtnc|tnc|fod[aeio]\w*|fud\w*|cu|cuzao|cuzoes|arombad[ao]s?|desgracad[ao]s?|bucetas?|bocetas?|xoxotas?|xerecas?|punhet\w*|pirocas?|cornos?|babacas?|otari[ao]s?|idiotas?|imbecil|imbecis|vagabund[ao]s?|vadias?|safad[ao]s?|retardad[ao]s?|mongoloides?|aleijad[ao]s?|debil mental|viados?|travecos?|crioul[ao]s?)\b/;
+  var ALERTA=/(suicid|me matar|me mate|tirar (a )?minha (propria )?vida|acabar com (a )?minha vida|nao quero mais viver|quero morrer|me machucar|me cortar|sumir de vez)/;
+  function semAcento(t){return String(t||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');}
+  function temPalavrao(t){var s=semAcento(t).replace(/[@4]/g,'a').replace(/3/g,'e').replace(/1/g,'i').replace(/0/g,'o').replace(/[$5]/g,'s').replace(/(.)\1+/g,'$1');return PALAVRAO.test(s);}
+  function temAlerta(t){return ALERTA.test(semAcento(t));}
+  function quando(iso){try{return new Date(iso).toLocaleString('pt-BR',{day:'2-digit',month:'2-digit',year:'2-digit',hour:'2-digit',minute:'2-digit'});}catch(e){return '';}}
+  function aviso(el,txt,alerta){el.className='msg'+(alerta?' alert':'');el.textContent=txt;el.hidden=false;}
+  function erroTxt(e){
+    var m=(e&&e.message)||'', c=e&&e.code;
+    if(/PALAVRAO/.test(m)) return 'Seu texto tem um palavrão ou uma ofensa. Que tal reescrever com outras palavras?';
+    if(/LIMITE/.test(m)) return 'Você publicou bastante na última hora. Espere um pouco e tente de novo.';
+    if(/LINK/.test(m)) return 'Contas criadas há menos de 3 dias ainda não podem publicar links. É uma proteção contra spam.';
+    if(/SUSPENSO/.test(m)) return 'Sua participação está suspensa no momento por não seguir os combinados.';
+    if(/SEM_PERFIL/.test(m)) return 'Crie seu apelido antes de publicar.';
+    if(c==='23505'||/duplicate/i.test(m)) return 'Isso já foi registrado.';
+    if(/fetch|network/i.test(m)) return 'Sem conexão. Verifique sua internet e tente de novo.';
+    return 'Algo deu errado. Tente de novo em instantes.';
+  }
+
+  var sb=null, user=null, perfil=null, filtro='all', aberto=null, carregado=false;
+
+  function mostrar(estado){
+    $('cmEntrar').hidden=estado!=='entrar';
+    $('cmPerfil').hidden=estado!=='perfil';
+    $('cmApp').hidden=estado!=='app';
+  }
+  function ativa(){return document.body.getAttribute('data-page')==='comunidade';}
+
+  function iniciar(u){
+    sb=window.__emSb||null; user=u||null; perfil=null; carregado=false;
+    if(!sb){ $('cmEntrarTxt').textContent='A comunidade precisa de internet para funcionar. Verifique sua conexão e atualize a página.'; mostrar('entrar'); return; }
+    if(!user){ mostrar('entrar'); return; }
+    sb.from('perfis').select('id,apelido,is_admin,suspenso_ate').eq('id',user.id).maybeSingle().then(function(r){
+      if(r.error){ $('cmEntrarTxt').textContent='Não foi possível abrir a comunidade agora. Tente atualizar a página.'; mostrar('entrar'); return; }
+      if(!r.data){ mostrar('perfil'); return; }
+      perfil=r.data; entrar();
+    });
+  }
+  function entrar(){
+    mostrar('app');
+    var susp=perfil.suspenso_ate&&new Date(perfil.suspenso_ate)>new Date();
+    $('cmOla').textContent='Olá, '+perfil.apelido+'!'+(susp?' Sua participação está suspensa até '+quando(perfil.suspenso_ate)+'.':'');
+    $('cmNovoBtn').hidden=!!susp;
+    $('cmModeracao').hidden=!perfil.is_admin;
+    if(ativa()) carregar();
+  }
+
+  // ----- Criar perfil
+  $('cmCriarPerfil').addEventListener('click',function(){
+    var btn=this, ap=$('cmApelido').value.trim().replace(/\s+/g,' '), msg=$('cmPerfilMsg');
+    if(!/^[A-Za-zÀ-ÿ0-9_. ]{3,24}$/.test(ap)){ aviso(msg,'Use de 3 a 24 caracteres: letras, números, espaço, ponto ou _.',true); return; }
+    if(temPalavrao(ap)){ aviso(msg,'Escolha um apelido sem palavrões ou ofensas.',true); return; }
+    if(!$('cmMaior').checked){ aviso(msg,'A comunidade é só para maiores de 18 anos.',true); return; }
+    if(!$('cmAceite').checked){ aviso(msg,'Para entrar, marque que leu os combinados e a política de privacidade.',true); return; }
+    btn.disabled=true;
+    sb.from('perfis').insert({id:user.id,apelido:ap,maior_18:true}).then(function(r){
+      btn.disabled=false;
+      if(r.error){ aviso(msg,(r.error.code==='23505')?'Esse apelido já está em uso. Escolha outro.':(r.error.code==='23514'?'Esse apelido não é permitido. Escolha outro.':erroTxt(r.error)),true); return; }
+      perfil={id:user.id,apelido:ap,is_admin:false,suspenso_ate:null}; entrar();
+    });
+  });
+
+  // ----- Lista de tópicos
+  function carregar(){
+    if(!perfil) return;
+    carregado=true;
+    $('cmLista').innerHTML='<p class="cm-vazio">Carregando os tópicos…</p>';
+    var q=sb.from('topicos').select('id,tema,titulo,texto,criado_em,ultima_atividade,n_respostas,oculto,autor,perfis(apelido)').order('ultima_atividade',{ascending:false}).limit(60);
+    if(filtro!=='all') q=q.eq('tema',filtro);
+    q.then(function(r){
+      if(r.error){ $('cmLista').innerHTML='<p class="cm-vazio">Não foi possível carregar os tópicos agora.</p>'; return; }
+      var ts=r.data||[];
+      forcas(ts.map(function(t){return t.id;})).then(function(f){ renderLista(ts,f); });
+    });
+    if(perfil.is_admin) carregarPendencias();
+  }
+  function forcas(ids){
+    if(!ids.length) return Promise.resolve({n:{},minhas:{}});
+    return sb.from('forcas').select('alvo,autor').in('alvo',ids).then(function(r){
+      var n={},minhas={};
+      (r.data||[]).forEach(function(x){ n[x.alvo]=(n[x.alvo]||0)+1; if(x.autor===user.id) minhas[x.alvo]=true; });
+      return {n:n,minhas:minhas};
+    });
+  }
+  function apelidoDe(x){return (x.perfis&&x.perfis.apelido)||'Membro';}
+  function renderLista(ts,f){
+    var box=$('cmLista');
+    if(!ts.length){ box.innerHTML='<p class="cm-vazio">'+(filtro==='all'?'Ainda não há tópicos. Que tal abrir o primeiro?':'Nenhum tópico neste tema ainda.')+'</p>'; return; }
+    box.innerHTML=ts.map(function(t){
+      var resumo=t.texto.length>220?t.texto.slice(0,220).trim()+'…':t.texto;
+      return '<article class="board cm-item">'+
+        (t.oculto?'<div class="cm-oculto">Oculto pela moderação. Só você e a moderação veem este tópico.</div>':'')+
+        '<div class="cm-head"><span class="chip ok">'+esc(TEMAS[t.tema]||t.tema)+'</span><span class="cm-meta">'+esc(apelidoDe(t))+' · '+quando(t.criado_em)+'</span></div>'+
+        '<div class="full"><h3 class="cm-t"><button type="button" class="cm-open" data-abrir="'+t.id+'">'+esc(t.titulo)+'</button></h3><p class="cm-resumo">'+esc(resumo)+'</p></div>'+
+        '<div class="cm-head"><span class="cm-meta">🌻 '+(f.n[t.id]||0)+' · '+t.n_respostas+(t.n_respostas===1?' resposta':' respostas')+'</span></div>'+
+      '</article>';
+    }).join('');
+  }
+  $('cmLista').addEventListener('click',function(ev){ var b=ev.target.closest('[data-abrir]'); if(b) abrir(b.getAttribute('data-abrir')); });
+  $('cmFiltros').addEventListener('click',function(ev){
+    var b=ev.target.closest('button[data-tema]'); if(!b) return;
+    [].forEach.call(this.querySelectorAll('button'),function(x){x.setAttribute('aria-pressed',String(x===b));});
+    filtro=b.getAttribute('data-tema'); carregar();
+  });
+
+  // ----- Novo tópico
+  $('cmNovoBtn').addEventListener('click',function(){ $('cmForm').hidden=false; $('cmTitulo').focus(); });
+  $('cmCancelar').addEventListener('click',function(){ $('cmForm').hidden=true; $('cmFormMsg').hidden=true; });
+  $('cmPublicar').addEventListener('click',function(){
+    var btn=this, msg=$('cmFormMsg'), tema=$('cmTema').value, titulo=$('cmTitulo').value.trim(), texto=$('cmTexto').value.trim();
+    if(titulo.length<5){ aviso(msg,'Escreva um título com pelo menos 5 caracteres.',true); return; }
+    if(!texto){ aviso(msg,'Escreva o texto do tópico.',true); return; }
+    if(temPalavrao(titulo+' '+texto)){ aviso(msg,'Seu texto tem um palavrão ou uma ofensa. Que tal reescrever com outras palavras?',true); return; }
+    btn.disabled=true;
+    sb.from('topicos').insert({tema:tema,titulo:titulo,texto:texto}).select('id').single().then(function(r){
+      btn.disabled=false;
+      if(r.error){ aviso(msg,erroTxt(r.error),true); return; }
+      $('cmTitulo').value=''; $('cmTexto').value=''; $('cmForm').hidden=true; msg.hidden=true;
+      if(temAlerta(titulo+' '+texto)) mostrarAjuda();
+      abrir(r.data.id);
+    });
+  });
+  function mostrarAjuda(){ $('cmAjuda').hidden=false; $('cmAjuda').scrollIntoView({block:'start'}); }
+  $('cmAjudaFechar').addEventListener('click',function(){ $('cmAjuda').hidden=true; });
+
+  // ----- Ver um tópico
+  function abrir(id){
+    aberto=id;
+    $('cmListaWrap').hidden=true; $('cmTopico').hidden=false;
+    $('cmTopicoCorpo').innerHTML='<p class="cm-vazio">Carregando…</p>'; $('cmRespostas').innerHTML=''; $('cmRespMsg').hidden=true;
+    Promise.all([
+      sb.from('topicos').select('id,tema,titulo,texto,criado_em,oculto,autor,perfis(apelido)').eq('id',id).maybeSingle(),
+      sb.from('respostas').select('id,texto,criado_em,oculto,autor,perfis(apelido)').eq('topico',id).order('criado_em',{ascending:true}).limit(300)
+    ]).then(function(rs){
+      var t=rs[0].data, rp=rs[1].data||[];
+      if(!t){ $('cmTopicoCorpo').innerHTML='<p class="cm-vazio">Este tópico não está mais disponível.</p>'; $('cmResponder').hidden=true; $('cmRespTitulo').hidden=true; return; }
+      $('cmResponder').hidden=!!t.oculto||!!(perfil.suspenso_ate&&new Date(perfil.suspenso_ate)>new Date()); $('cmRespTitulo').hidden=false;
+      forcas([t.id].concat(rp.map(function(x){return x.id;}))).then(function(f){
+        $('cmTopicoCorpo').innerHTML=post('topico',t,f,true);
+        $('cmRespTitulo').textContent=rp.length?(rp.length===1?'1 resposta':rp.length+' respostas'):'Ainda sem respostas';
+        $('cmRespostas').innerHTML=rp.map(function(x){return post('resposta',x,f,false);}).join('');
+        $('cmTopico').scrollIntoView({block:'start'});
+      });
+    });
+  }
+  function post(tipo,x,f,principal){
+    var meu=x.autor===user.id, n=f.n[x.id]||0, dei=!!f.minhas[x.id];
+    return '<article class="board cm-item" data-tipo="'+tipo+'" data-id="'+x.id+'">'+
+      (x.oculto?'<div class="cm-oculto">Oculto pela moderação. Só '+(meu?'você':'a autora')+' e a moderação veem.</div>':'')+
+      '<div class="cm-head">'+(principal?'<span class="chip ok">'+esc(TEMAS[x.tema]||x.tema)+'</span>':'')+'<span class="cm-meta">'+esc(apelidoDe(x))+' · '+quando(x.criado_em)+'</span></div>'+
+      '<div class="full">'+(principal?'<h3 class="cm-t">'+esc(x.titulo)+'</h3>':'')+'<p class="cm-corpo">'+esc(x.texto)+'</p></div>'+
+      '<div class="cm-acoes">'+
+        '<button type="button" class="btn cm-forca" data-acao="forca" aria-pressed="'+dei+'">🌻 Força · '+n+'</button>'+
+        (meu?'':'<button type="button" class="btn" data-acao="denunciar">Denunciar</button>')+
+        ((meu||perfil.is_admin)?'<button type="button" class="btn" data-acao="apagar">Apagar</button>':'')+
+      '</div>'+
+    '</article>';
+  }
+  $('cmVoltar').addEventListener('click',function(){ aberto=null; $('cmTopico').hidden=true; $('cmListaWrap').hidden=false; carregar(); });
+
+  // ----- Ações nos posts
+  $('cmTopico').addEventListener('click',function(ev){
+    var b=ev.target.closest('[data-acao]'); if(!b) return;
+    var art=b.closest('article'), tipo=art.getAttribute('data-tipo'), id=art.getAttribute('data-id'), acao=b.getAttribute('data-acao');
+    if(acao==='forca'){
+      var dei=b.getAttribute('aria-pressed')==='true', n=parseInt(b.textContent.replace(/\D+/g,''),10)||0;
+      b.disabled=true;
+      var req=dei?sb.from('forcas').delete().eq('alvo',id).eq('autor',user.id):sb.from('forcas').insert({alvo:id,tipo:tipo});
+      req.then(function(r){ b.disabled=false; if(r.error) return; n=dei?n-1:n+1; b.setAttribute('aria-pressed',String(!dei)); b.textContent='🌻 Força · '+Math.max(0,n); });
+    } else if(acao==='apagar'){
+      if(!confirm(tipo==='topico'?'Apagar este tópico e todas as respostas dele?':'Apagar esta resposta?')) return;
+      sb.from(tipo==='topico'?'topicos':'respostas').delete().eq('id',id).then(function(r){
+        if(r.error){ alert(erroTxt(r.error)); return; }
+        if(tipo==='topico'){ $('cmVoltar').click(); } else { abrir(aberto); }
+      });
+    } else if(acao==='denunciar'){
+      if(art.querySelector('.cm-den')) return;
+      var box=document.createElement('div'); box.className='cm-den';
+      box.innerHTML='<div class="fld"><label>Por que você está denunciando?</label><select class="cm-motivo">'+
+        Object.keys(MOTIVOS).map(function(k){return '<option value="'+k+'">'+MOTIVOS[k]+'</option>';}).join('')+
+        '</select></div><div class="fld"><label>Detalhes (opcional)</label><textarea class="cm-detalhe" maxlength="500"></textarea></div>'+
+        '<div class="btns"><button type="button" class="btn pri" data-acao="enviar-den">Enviar denúncia</button><button type="button" class="btn" data-acao="fechar-den">Cancelar</button></div><div class="msg" role="status" hidden></div>';
+      art.appendChild(box);
+    } else if(acao==='fechar-den'){
+      art.querySelector('.cm-den').remove();
+    } else if(acao==='enviar-den'){
+      var dbox=art.querySelector('.cm-den'), motivo=dbox.querySelector('.cm-motivo').value, det=dbox.querySelector('.cm-detalhe').value.trim().slice(0,500), m=dbox.querySelector('.msg');
+      b.disabled=true;
+      sb.from('denuncias').insert({alvo:id,tipo:tipo,motivo:motivo,detalhe:det||null}).then(function(r){
+        b.disabled=false;
+        if(r.error&&r.error.code!=='23505'){ aviso(m,erroTxt(r.error),true); return; }
+        dbox.innerHTML='<div class="msg">'+(r.error?'Você já denunciou este post. A moderação vai analisar.':'Obrigada por avisar. A moderação vai analisar.')+(motivo==='risco'?' Se for uma emergência, ligue 192.':'')+'</div>';
+      });
+    }
+  });
+
+  // ----- Responder
+  $('cmRespEnviar').addEventListener('click',function(){
+    var btn=this, msg=$('cmRespMsg'), texto=$('cmRespTexto').value.trim();
+    if(!texto){ aviso(msg,'Escreva sua resposta.',true); return; }
+    if(temPalavrao(texto)){ aviso(msg,'Sua resposta tem um palavrão ou uma ofensa. Que tal reescrever com outras palavras?',true); return; }
+    btn.disabled=true;
+    sb.from('respostas').insert({topico:aberto,texto:texto}).then(function(r){
+      btn.disabled=false;
+      if(r.error){ aviso(msg,erroTxt(r.error),true); return; }
+      $('cmRespTexto').value='';
+      if(temAlerta(texto)) mostrarAjuda();
+      abrir(aberto);
+    });
+  });
+
+  // ----- Moderação (só aparece para quem é admin)
+  function carregarPendencias(){
+    sb.rpc('cm_pendencias').then(function(r){
+      var box=$('cmPend'), itens=r.data||[];
+      if(r.error){ $('cmPendQtd').textContent='Erro ao carregar'; box.innerHTML=''; return; }
+      $('cmPendQtd').textContent=itens.length?(itens.length===1?'1 item para revisar':itens.length+' itens para revisar'):'Nada pendente';
+      box.innerHTML=itens.map(function(x){
+        return '<div class="cm-pend" data-tipo="'+x.tipo+'" data-id="'+x.id+'" data-autor="'+x.autor+'">'+
+          '<div class="cm-head"><span class="chip '+(x.atencao?'no':'wait')+'">'+(x.atencao?'Atenção: possível risco':'Denunciado')+'</span><span class="cm-meta">'+(x.tipo==='topico'?'Tópico':'Resposta')+' de '+esc(x.apelido)+' · '+quando(x.criado_em)+(x.oculto?' · oculto':'')+'</span></div>'+
+          '<div class="full">'+(x.titulo?'<p><strong>'+esc(x.titulo)+'</strong></p>':'')+'<p class="cm-corpo">'+esc(x.texto)+'</p>'+
+          (x.n_denuncias>0?'<p><strong>'+x.n_denuncias+(x.n_denuncias==1?' denúncia':' denúncias')+':</strong> '+esc((x.motivos||'').split(', ').map(function(k){return MOTIVOS[k]||k;}).join(', '))+'</p>':'')+'</div>'+
+          '<div class="cm-acoes"><button type="button" class="btn" data-mod="manter">Está tudo certo</button><button type="button" class="btn" data-mod="ocultar">Ocultar</button><button type="button" class="btn" data-mod="excluir">Excluir</button><button type="button" class="btn" data-mod="suspender">Suspender 7 dias</button><button type="button" class="btn" data-mod="banir">Banir</button><button type="button" class="btn" data-mod="ver" data-topico="'+x.topico+'">Ver tópico</button></div>'+
+        '</div>';
+      }).join('');
+    });
+  }
+  $('cmPend').addEventListener('click',function(ev){
+    var b=ev.target.closest('[data-mod]'); if(!b) return;
+    var item=b.closest('.cm-pend'), tipo=item.getAttribute('data-tipo'), id=item.getAttribute('data-id'), autor=item.getAttribute('data-autor'), mod=b.getAttribute('data-mod');
+    if(mod==='ver'){ abrir(b.getAttribute('data-topico')); return; }
+    if(mod==='excluir'&&!confirm('Excluir este post para sempre?')) return;
+    if(mod==='banir'&&!confirm('Banir esta pessoa da comunidade? Ela não poderá mais publicar.')) return;
+    var req=(mod==='suspender'||mod==='banir')?sb.rpc('cm_suspender',{p_usuario:autor,p_dias:mod==='banir'?36500:7}):sb.rpc('cm_moderar',{p_tipo:tipo,p_id:id,p_acao:mod});
+    b.disabled=true;
+    req.then(function(r){
+      b.disabled=false;
+      if(r.error){ alert('Não foi possível concluir: '+erroTxt(r.error)); return; }
+      if(mod==='suspender'||mod==='banir'){ alert(mod==='banir'?'Pessoa banida. Agora decida o que fazer com o post.':'Pessoa suspensa por 7 dias. Agora decida o que fazer com o post.'); return; }
+      carregar();
+    });
+  });
+
+  // ----- Ligações com o resto do site
+  document.addEventListener('em-auth',function(e){ iniciar(e.detail); });
+  window.addEventListener('hashchange',function(){ if(location.hash==='#comunidade'&&perfil){ if(!aberto) carregar(); } });
+  if(window.__emAuthReady) iniciar(window.__emUser);
+  else if(!window.__emSb){ setTimeout(function(){ if(!window.__emAuthReady) iniciar(null); },3000); }
+  if(ativa()&&perfil&&!carregado) carregar();
 })();
 </script>
 </body>
