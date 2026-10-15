@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-14T09:20+00:00",
+ "updated": "2026-10-15T09:19+00:00",
  "news": [
   {
    "title": "PE: Defensoria Pública de Pernambuco atua para garantir tratamento de paciente com esclerose múltipla",
@@ -51,8 +51,8 @@
   },
   {
    "title": "Remédio derivado de medicamentos contra HIV reverte sintomas de esclerose múltipla",
-   "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQZGIyYzFjLXMtR2tDWk9wdDVDTVRDVWVIZm9zWE0tZGN1cHlmeDUxWF9wSE5IRzl2VUNPclJacUJsVWRqek1oUk1uc1d1eFF0OGdoS19UZUp6TmZCUnF0a3lUTkFZZ29xNkNfZUFlcVRRcEZkMHRma2pRMF9Da0U0SmE4UkF0YmtzV1RaR2FpNm1HQ2RMU1hfbFhMZ0lnQXJuSGRpY2g0T0JmN3FfWnBvYXdsQkVrMDgteXJXSA?oc=5",
-   "source": "Observatório G",
+   "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPWFlfcVdEMHpiNnlaY1Y0ckYxbTBGbDdvSFltYVBRZW11THYtSERSTy1hV2RWeVZwX1hOVHRlWkdkZ0tTekJLZWNoaWtveWY1cjUwcTEtNGZOb0FMZEdWYU5TSVdvTTdwYXQ3Q0FDSTg1TkhobjVvaWpFVm5PNVNRbXB2S0pBOHBEbmthd0YtclBKNTRGbVhjOHFOVTdhenAxeVFXTHdnWTdKT0dRdTdlRUlybFdEd2tYZWdUODNKdGNPaFI1cmR1bkZzY0xOdw?oc=5",
+   "source": "O TEMPO",
    "date": "2026-10-10"
   },
   {
@@ -138,13 +138,15 @@
  ],
  "trials": [
   {
-   "title": "A Pharmacokinetics (PK), Pharmacodynamics (PD), Safety and Tolerability Study of Fenebrutinib in Children and Adolescents With Relapsing Multiple Sclerosis (RMS)",
-   "url": "https://clinicaltrials.gov/study/NCT07161258",
-   "phase": "Fase 2",
+   "title": "A Study to Evaluate the Efficacy and Safety of Remibrutinib in Secondary Progressive Multiple Sclerosis",
+   "url": "https://clinicaltrials.gov/study/NCT07225504",
+   "phase": "Fase 3",
    "cities": [
-    "Brasília",
-    "Curitiba",
+    "Fortaleza",
+    "Joinville",
     "Porto Alegre",
+    "Rio de Janeiro",
+    "Santo André",
     "São Paulo"
    ],
    "date": "2026-10-13"
@@ -161,15 +163,13 @@
    "date": "2026-10-13"
   },
   {
-   "title": "A Study to Evaluate the Efficacy and Safety of Remibrutinib in Secondary Progressive Multiple Sclerosis",
-   "url": "https://clinicaltrials.gov/study/NCT07225504",
-   "phase": "Fase 3",
+   "title": "A Pharmacokinetics (PK), Pharmacodynamics (PD), Safety and Tolerability Study of Fenebrutinib in Children and Adolescents With Relapsing Multiple Sclerosis (RMS)",
+   "url": "https://clinicaltrials.gov/study/NCT07161258",
+   "phase": "Fase 2",
    "cities": [
-    "Fortaleza",
-    "Joinville",
+    "Brasília",
+    "Curitiba",
     "Porto Alegre",
-    "Rio de Janeiro",
-    "Santo André",
     "São Paulo"
    ],
    "date": "2026-10-13"
