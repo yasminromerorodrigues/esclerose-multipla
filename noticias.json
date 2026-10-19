@@ -1,6 +1,29 @@
 {
- "updated": "2026-10-12T12:22:44+00:00",
- "watch": [],
+ "updated": "2026-10-19T12:30:59+00:00",
+ "watch": [
+  {
+   "date": "2026-10-18",
+   "title": "Ocrelizumab Shows MRI Benefits vs Fingolimod in Phase 3 Pediatric-Onset Multiple Sclerosis Study",
+   "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNMlI3UUkwbVJPUF9ySkI2OTczTHV0MW1KR3hDVmd0S1pWOXh0Q2hPWUtobjI0Tm85Snl2WmpKTThrZ3kxTEZrWktUVnduRjNrVjRPTnFIX2pBOUxrYVpVMU9HWmtHX3hYa2RtV04tbjVkb2Z0MHRwNDdVT25VOFZZNUJDVXpuM0t2Y1dScy0yamdKNlpoYTUzX1ppZnFxLWJfUVRQUXU5R1hCdjB0VEE?oc=5",
+   "source": "NeurologyLive",
+   "lang": "en",
+   "status": "aprovado",
+   "reason": "fala de esclerose múltipla",
+   "captured_at": "2026-10-19T09:30-03:00",
+   "dedicated": false
+  },
+  {
+   "date": "2026-10-13",
+   "title": "MS therapy may work in part by lowering EBV immune response",
+   "url": "https://multiplesclerosisnewstoday.com/news-posts/2026/10/13/ms-therapy-work-part-lowering-ebv-immune-response/",
+   "source": "Multiple Sclerosis News Today",
+   "lang": "en",
+   "status": "aprovado",
+   "reason": "fala de esclerose múltipla",
+   "captured_at": "2026-10-19T09:30-03:00",
+   "dedicated": true
+  }
+ ],
  "review": [
   {
    "date": "2026-10-08",
