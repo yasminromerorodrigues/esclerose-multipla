@@ -1,6 +1,72 @@
 {
- "updated": "2026-10-19T12:30:59+00:00",
+ "updated": "2026-10-26T14:34:06+00:00",
  "watch": [
+  {
+   "date": "2026-10-26",
+   "title": "Novartis' remibrutinib cuts relapse rates by up to 35% in Phase III multiple sclerosis trials",
+   "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQbEEtdHp3MzIzLXB3SUctOHpKS1NtRlBzaHlyZEFtYmctNElsTTZFcXpzS2pRd3JfdkUwNjZ0ZzVpalkxNDRUUnB3NDVueExPN2k0eTZ0ZW5tMy1BSG9CZF9yQ1JnaGd3Mm4zQTU0ckJIVmFEdW9hVEJJeEhmMW5BSXBGbEF5Y0VzSWxWZFhfaTk?oc=5",
+   "source": "AllSci",
+   "lang": "en",
+   "status": "aprovado",
+   "reason": "fala de esclerose múltipla",
+   "captured_at": "2026-10-26T11:34-03:00",
+   "dedicated": false
+  },
+  {
+   "date": "2026-10-25",
+   "title": "Remibrutinib Cuts Multiple Sclerosis Relapse Rates in Phase III Trials",
+   "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9mbHFON0VpR2x1MURjd08taFNQN0lGRjUyQ2czT192NHFDcFJZQmRab1R2WW0wV0FLbXVRMnVmMlQwU0xkUmpvNFhOa2NVdXliWTFPbE1Tc1RaMWpvaGJaVzBLSTNBaGhOeDI0?oc=5",
+   "source": "MedPage Today",
+   "lang": "en",
+   "status": "aprovado",
+   "reason": "fala de esclerose múltipla",
+   "captured_at": "2026-10-26T11:34-03:00",
+   "dedicated": false
+  },
+  {
+   "date": "2026-10-24",
+   "title": "Justiça garante medicamento para esclerose múltipla não fornecido pelo SUS",
+   "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxORWFITzVhaVpMWWhnN0hRZmM2QTVnSFRMZXhOVHFGSGdOem1aZWNBanJ3TmlVLXNWbUFPUVhlTExpM0xsR2JkTm9JYkVPU253b21JRnhrQVl3eGVrc2hhc05qbXk4cGQ4QmZ1OUZqNjFFLXBRekhDSTJJcGhiTXJoVUMwdTlJbkZRRDlZZEhYc1lWb3duaVRKWndNSEM4Q1B5aVlmMnhB?oc=5",
+   "source": "Bom Dia Advogado",
+   "lang": "pt",
+   "status": "aprovado",
+   "reason": "fala de esclerose múltipla",
+   "captured_at": "2026-10-26T11:34-03:00",
+   "dedicated": false
+  },
+  {
+   "date": "2026-10-23",
+   "title": "Experimental therapy may curb chronic brain inflammation in MS",
+   "url": "https://multiplesclerosisnewstoday.com/news-posts/2026/10/23/experimental-therapy-curb-chronic-brain-inflammation-ms/",
+   "source": "Multiple Sclerosis News Today",
+   "lang": "en",
+   "status": "aprovado",
+   "reason": "fala de esclerose múltipla",
+   "captured_at": "2026-10-26T11:34-03:00",
+   "dedicated": true
+  },
+  {
+   "date": "2026-10-23",
+   "title": "Novartis Says Remibrutinib Delivers Disease Control in Phase 3 Relapsing Multiple Sclerosis Trials",
+   "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNZl94QV83bFV1V2NhLUhVUnZuZXFRcDFXVF9fT2hkQTVfSFRIUEF5bE5GZXpndnRObFZSU3pYT2FYSEJQSnVmWGlKTjNKd0t5Y3ZpMEJTRHlGZ2FVc1ZIOUJUWnBIRTlnODJzLUtnZndjZ3dwVDZiTXNwSE00SHNiZFM0bUxvLUNHQm53dkxCdFlocDBDcUJkRWtyclVLUjI1aWtBZmlmdmxSZjdjNWtHLWl6b2Q3QS1vMWJKeWZXNXl0NEpOb1JTX1FMZk1LRzg0RUF0TEJNeGZRSTlyNEgxOTBfRndaZw?oc=5",
+   "source": "marketscreener.com",
+   "lang": "en",
+   "status": "aprovado",
+   "reason": "fala de esclerose múltipla",
+   "captured_at": "2026-10-26T11:34-03:00",
+   "dedicated": false
+  },
+  {
+   "date": "2026-10-21",
+   "title": "Roche builds blockbuster BTK case for fenebrutinib in multiple sclerosis as FDA decision approaches",
+   "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOOWs4Qmd1QzFZSU40eU1NMDduQkZtOUF2ZlZ6RzQ2MjB4MWY5Tkh0OVNhQVhrMHlVTnQ4MGhpckZsRENDZ2dkR2JlNnAtUVRPVVFIemtOUG1YUTZQVm1lVnAyaUR5UGNvampSbHlRbmpMZUNxbU9rSWd0STRZVTBkY3RObXFVTUpCZGNWS0RtZWxNaWkwMUkxWU1XeGYwVXE5dTZKaVE3dUtILXM5eEpyWURHNHA?oc=5",
+   "source": "Fierce Biotech",
+   "lang": "en",
+   "status": "aprovado",
+   "reason": "fala de esclerose múltipla",
+   "captured_at": "2026-10-26T11:34-03:00",
+   "dedicated": false
+  },
   {
    "date": "2026-10-18",
    "title": "Ocrelizumab Shows MRI Benefits vs Fingolimod in Phase 3 Pediatric-Onset Multiple Sclerosis Study",
@@ -11,20 +77,31 @@
    "reason": "fala de esclerose múltipla",
    "captured_at": "2026-10-19T09:30-03:00",
    "dedicated": false
-  },
-  {
-   "date": "2026-10-13",
-   "title": "MS therapy may work in part by lowering EBV immune response",
-   "url": "https://multiplesclerosisnewstoday.com/news-posts/2026/10/13/ms-therapy-work-part-lowering-ebv-immune-response/",
-   "source": "Multiple Sclerosis News Today",
-   "lang": "en",
-   "status": "aprovado",
-   "reason": "fala de esclerose múltipla",
-   "captured_at": "2026-10-19T09:30-03:00",
-   "dedicated": true
   }
  ],
  "review": [
+  {
+   "date": "2026-10-26",
+   "title": "Novartis Reports Lower Relapse Rates and No Hy’s Law Cases in Phase 3 Remibrutinib MS Trials",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQckFhbnVaRHpWUm1JS2pqR0J0T1pCNjFvdlhhLVpyUE5STzc4LUtURzVibHJ2WldUc0tIc21XQjctencxenhlYTQtSWlqQVVxOGRvN1VXM2JsWlNWMllyMlFUanF4dXF1ajZMZFZyOVhkeGNDVVFRMUoyV1l2MV9zMDFMa1laWmtUVlFFUjF3TlJhZ18xLWdYVGFjNVYzdw?oc=5",
+   "source": "Yahoo Finance",
+   "lang": "en",
+   "status": "revisao",
+   "reason": "remédio ligado à EM, mas a notícia não cita a doença",
+   "captured_at": "2026-10-26T11:34-03:00",
+   "dedicated": false
+  },
+  {
+   "date": "2026-10-23",
+   "title": "Novartis remibrutinib delivered comprehensive disease control in Phase III RMS trials, with proven, robust safety profile",
+   "url": "https://news.google.com/rss/articles/CBMimwJBVV95cUxOQUloNGNYNnExVE5uMVgyVFhnQ1Q4eEQyQmM5QkQzQVhta0hCUGJESDdsekp1cUJQc1d2QmlHVW1qUi1qZWhvUkZVcHBhT2FTTWdUSmtHWDZvUXNzMTdZX1BiYldsZ05FYk9zZ08zMmVZLUVCUmhqQzZBbHFMNWlmU0pqbmhJRmd4c3NqdUlDUWhURmQwZDNLakxSSnRzQ2lwWHNpd1d6dFFRSWxlLUFDMlRmQzJhWkZjZTRsUnIySXhLcjJ0dnZXMXQya1RPdjdVd0RvQU5aaXNla1NPNWY3QmhaX19pSU0wdDQtRndPR0VmdmhoNS1XM19vU3NCRGpzRFU0eFduZHVKeDNzaUREdDFITmhLMGQ4MnhJ?oc=5",
+   "source": "GlobeNewswire",
+   "lang": "en",
+   "status": "revisao",
+   "reason": "remédio ligado à EM, mas a notícia não cita a doença",
+   "captured_at": "2026-10-26T11:34-03:00",
+   "dedicated": false
+  },
   {
    "date": "2026-10-08",
    "title": "FDA Expands Novartis Remibrutinib Use",
