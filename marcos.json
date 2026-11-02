@@ -1,4 +1,26 @@
 {
- "updated": "2026-10-11",
- "items": []
+ "updated": "2026-11-02",
+ "items": [
+  {
+   "date": "2026-05-08",
+   "title": "FDA aprova o ocrelizumabe para crianças",
+   "text": "O Ocrevus foi liberado nos EUA para EM remitente-recorrente a partir dos 10 anos e 25 kg. É o segundo remédio aprovado para essa idade, depois do fingolimode. No estudo OPERETTA 2, com 187 crianças e adolescentes, houve 48% menos surtos que com o fingolimode.",
+   "url": "https://www.gene.com/media/statements/ps_050826",
+   "source": "Genentech, comunicado da empresa (em inglês)"
+  },
+  {
+   "date": "2026-07-20",
+   "title": "Anvisa libera o ocrelizumabe para adolescentes",
+   "text": "O Ocrevus passou a ser indicado no Brasil para EM remitente-recorrente a partir dos 12 anos e 40 kg. A resolução saiu no Diário Oficial. A nova indicação não significa oferta pelo SUS, que depende de análise da Conitec.",
+   "url": "https://agenciabrasil.ebc.com.br/saude/noticia/2026-07/anvisa-aprova-medicamentos-pediatricos-para-lupus-e-esclerose-multipla",
+   "source": "Agência Brasil"
+  },
+  {
+   "date": "2026-10-23",
+   "title": "Congresso ACTRIMS-ECTRIMS em Toronto",
+   "text": "Os dados completos do remibrutinibe saíram no congresso e na revista The Lancet. Comparado à teriflunomida, ele teve 31% a 35% menos surtos e cerca de dois terços menos lesões novas na ressonância, sem casos de lesão grave no fígado. A Novartis vai pedir aprovação no mundo todo.",
+   "url": "https://www.novartis.com/news/media-releases/novartis-remibrutinib-delivered-comprehensive-disease-control-phase-iii-rms-trials-proven-robust-safety-profile",
+   "source": "Novartis, comunicado da empresa (em inglês)"
+  }
+ ]
 }
