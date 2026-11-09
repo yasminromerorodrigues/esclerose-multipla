@@ -1,6 +1,50 @@
 {
- "updated": "2026-11-02T12:51:33+00:00",
+ "updated": "2026-11-09T12:56:08+00:00",
  "watch": [
+  {
+   "date": "2026-11-06",
+   "title": "Immunic Plans Phase 3 Progressive MS Trial After Mixed Phase 2 Results",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQVkJXanFpQmxqX3g0THM1ZVJ2c0I3dWxRVkZ4czRVN0c3UjZhb0FOYjRzWmZkWDZBUFdVWFc4VTRSc2F6TkVrekFrT2tleXlSSncyaWtjZVFYTTl0TFhVVGU5Sk9jS01MYldLc2JIeWt0NUxabDAzbnllUkZEN1RZV2ZzeGF4VDZxQ1Mxa0dycDZLWDhhMi1xVnRn?oc=5",
+   "source": "Yahoo Finance",
+   "lang": "en",
+   "status": "aprovado",
+   "reason": "fala de esclerose múltipla",
+   "captured_at": "2026-11-09T09:56-03:00",
+   "dedicated": false
+  },
+  {
+   "date": "2026-11-04",
+   "title": "Canadian families gain new therapy for children with relapsing MS",
+   "url": "https://multiplesclerosisnewstoday.com/news-posts/2026/11/04/canada-expands-ocrevus-approval-children-relapsing-ms/",
+   "source": "Multiple Sclerosis News Today",
+   "lang": "en",
+   "status": "aprovado",
+   "reason": "fala de esclerose múltipla",
+   "captured_at": "2026-11-09T09:56-03:00",
+   "dedicated": true
+  },
+  {
+   "date": "2026-11-03",
+   "title": "Experimental MS therapy outperforms approved treatment in two trials",
+   "url": "https://multiplesclerosisnewstoday.com/news-posts/2026/11/03/experimental-ms-therapy-outperforms-approved-treatment-trials/",
+   "source": "Multiple Sclerosis News Today",
+   "lang": "en",
+   "status": "aprovado",
+   "reason": "fala de esclerose múltipla",
+   "captured_at": "2026-11-09T09:56-03:00",
+   "dedicated": true
+  },
+  {
+   "date": "2026-11-03",
+   "title": "Health Canada approves (Pr)Ocrevus® (ocrelizumab) for treating pediatric relapsing-remitting multiple sclerosis",
+   "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNTk9tVTFHQklnZndHd0lCRGNVVXZJUGVnZHNDVzJ2Nm9IUWxDcWo1V0J5M3lSVFRPQkVsZ19FRHI5OUVuM0dZYkJKbDZvck96eVlYOWRtWnpNdXpPdFZxLXZ4eWhPNjE5MXgwTWlseUJFWWhvZTh6NURtRVFYN1RqdmZRYUZzT1ZsVXlpVUN4MVQ1TlV5Y3BfcEcxbHQwcVlWU3VGNW1UdG92WGJlbFVSOFIyb25sSTFxNUE4SHN5OTNTamx5WlhwaG1fYUJwUW9VcnhpRGlWc2NEenMtUmRv?oc=5",
+   "source": "BioSpace",
+   "lang": "en",
+   "status": "aprovado",
+   "reason": "fala de esclerose múltipla",
+   "captured_at": "2026-11-09T09:56-03:00",
+   "dedicated": false
+  },
   {
    "date": "2026-10-31",
    "title": "Número de pessoas tratando esclerose múltipla no SUS cresce 26% em 4 anos",
