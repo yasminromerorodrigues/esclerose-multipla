@@ -1,6 +1,50 @@
 {
- "updated": "2026-11-16T14:50:57+00:00",
+ "updated": "2026-11-23T23:27:37+00:00",
  "watch": [
+  {
+   "date": "2026-11-23",
+   "title": "FDA Grants First Marketing Authorization for Neurofilament Light Chain Blood Test to Siemens Healthineers for Use in Multiple Sclerosis",
+   "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxOb2RCdlRUUnpXclRxX1hIR2pLSl9mSG42Qy1uajI0SEZKVi1wWDdxOE5KSld3TFdzeUtsWElRTWhWV2tWV1NlbFFxUXRJbXpNUWhpQUdIb1FLZ1p5cmhOWUdtR282ZTRYX3Ytc3cxT044MlhqV19jcGNfLWJ4LWQ4c1lLWUxma2pjejMyOTZKa0QxNEF3RUhFSmI5RU1TZG9RLWcwTk5zT1RmNHBvNlFhZElvMkJMNWhYY3JhT0EwRU9WSXluWVVoWDFpalcySG10YUNLNHdvcWNhRTdXQlk5U2lvWjZDRW1k?oc=5",
+   "source": "www.marketscreener.com",
+   "lang": "en",
+   "status": "aprovado",
+   "reason": "fala de esclerose múltipla",
+   "captured_at": "2026-11-23T20:27-03:00",
+   "dedicated": false
+  },
+  {
+   "date": "2026-11-19",
+   "title": "FDA clears expanded access program for MS stem cell therapy",
+   "url": "https://multiplesclerosisnewstoday.com/news-posts/2026/11/19/fda-clears-expanded-access-program-ms-stem-cell-therapy/",
+   "source": "Multiple Sclerosis News Today",
+   "lang": "en",
+   "status": "aprovado",
+   "reason": "fala de esclerose múltipla",
+   "captured_at": "2026-11-23T20:27-03:00",
+   "dedicated": true
+  },
+  {
+   "date": "2026-11-18",
+   "title": "Neuroprotective therapy cleared by FDA for testing in acute MS relapses",
+   "url": "https://multiplesclerosisnewstoday.com/news-posts/2026/11/18/neuroprotective-therapy-cleared-testing-acute-ms-relapses/",
+   "source": "Multiple Sclerosis News Today",
+   "lang": "en",
+   "status": "aprovado",
+   "reason": "fala de esclerose múltipla",
+   "captured_at": "2026-11-23T20:27-03:00",
+   "dedicated": true
+  },
+  {
+   "date": "2026-11-18",
+   "title": "MS therapy preserves cognitive function over 4 years, study shows",
+   "url": "https://multiplesclerosisnewstoday.com/news-posts/2026/11/18/ms-therapy-preserves-cognitive-function-4-years-study-shows/",
+   "source": "Multiple Sclerosis News Today",
+   "lang": "en",
+   "status": "aprovado",
+   "reason": "fala de esclerose múltipla",
+   "captured_at": "2026-11-23T20:27-03:00",
+   "dedicated": true
+  },
   {
    "date": "2026-11-16",
    "title": "Oculis Announces FDA IND Clearance Enabling Acceleration of Privosegtor Development Program in Acute Multiple Sclerosis Relapses",
@@ -232,17 +276,6 @@
    "status": "revisao",
    "reason": "remédio ligado à EM, mas a notícia não cita a doença",
    "captured_at": "2026-10-26T11:34-03:00",
-   "dedicated": false
-  },
-  {
-   "date": "2026-10-08",
-   "title": "FDA Expands Novartis Remibrutinib Use",
-   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSEl0NU53MGRTaG1sZVpURVBLVFJIZVMydy0tU2RFYk9QN081ZVJsVUgyQnI5SFYzQnVtZDc5TzJ3eHFUU0JURUZDTDZpa2VYSEJiQ2hDS0pKUGMwVU05M0F6UTZ6QmRmQUk0amEyZXdIUUttYkJPSU4yM29TY0lVeDRnQ0VFcGRLM0xCN1JqNlNONXI0cnQweTVMVEtMcnR5?oc=5",
-   "source": "Voice of Healthcare",
-   "lang": "en",
-   "status": "revisao",
-   "reason": "remédio ligado à EM, mas a notícia não cita a doença",
-   "captured_at": "2026-10-12T00:41-03:00",
    "dedicated": false
   }
  ],
